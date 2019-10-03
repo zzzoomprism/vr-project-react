@@ -1,5 +1,6 @@
 const info =[
     {
+        curveImgId: 'photo-1',
         collection: 'Soon',
         id_collection: '1',
         img_src: 'foo.jpg',
@@ -7,6 +8,7 @@ const info =[
         description: 'Description ',
     },
     {
+        curveImgId: 'photo-2',
         collection: 'Soon',
         id_collection: '1',
         img_src: '2.jpg',
@@ -14,6 +16,7 @@ const info =[
         description: 'Description ',
     },
     {
+        curveImgId: 'photo-3',
         collection: 'Soon',
         id_collection: '1',
         img_src: '3.jpg',
@@ -21,6 +24,7 @@ const info =[
         description: 'Description ',
     },
     {
+        curveImgId: 'photo-4',
         collection: 'Soon',
         id_collection: '1',
         img_src: '4.jpg',
@@ -29,6 +33,7 @@ const info =[
     },
 
     {
+        curveImgId: 'photo-5',
         collection: 'Soon',
         id_collection: '1',
         img_src: '2.jpg',
@@ -36,6 +41,7 @@ const info =[
         description: 'Description ',
     },
     {
+        curveImgId: 'photo-6',
         collection: 'Soon',
         id_collection: '1',
         img_src: '3.jpg',
@@ -43,6 +49,7 @@ const info =[
         description: 'Description ',
     },
     {
+        curveImgId: 'photo-7',
         collection: 'Soon',
         id_collection: '1',
         img_src: '4.jpg',
@@ -51,6 +58,7 @@ const info =[
     },
 
     {
+        curveImgId: 'photo-8',
         collection: 'Soon',
         id_collection: '1',
         img_src: '4.jpg',
@@ -59,6 +67,7 @@ const info =[
     },
 
     {
+        curveImgId: 'photo-9',
         collection: 'Soon',
         id_collection: '1',
         img_src: '3.jpg',

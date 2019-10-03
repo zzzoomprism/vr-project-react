@@ -22,12 +22,5 @@ AFRAME.registerComponent('bar', {
         let obj = new AFRAME.THREE.Object3D();
         obj.add(stars);
         el.setObject3D('bar', obj);
-
-      // let sphere = new THREE.SphereGeometry(3, 64, 64);
-      // let material = new THREE.MeshPhongMaterial({color: 'blue'});
-      // let geometry = new THREE.Mesh(sphere, material);
-      // let obj = new AFRAME.THREE.Object3D();
-      // obj.add(geometry);
-      // el.setObject3D('bar', obj);
     },
 });
