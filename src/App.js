@@ -29,6 +29,7 @@ class App extends React.Component{
             menu[i].setAttribute("animation", "property: rotation; to: " + rotation + " ; dur: 2500;");
            // menu[i].setAttribute("animation__smoothing", "property: position; to: 0 3.8 0; " +
               //  "dur: 4000; loop: true; dir: alternate; easing: linear; delay:" + Math.random()*1000);
+
         }
     }
 
@@ -64,13 +65,13 @@ class App extends React.Component{
             <Curvedimage className={"curve-gallery-images"} visible={'true'} src={require('./media/images/' + info.img_src)}
                          height="5.0" radius="20.0" theta-length="35" id={info.curveImgId}
                          rotation={"0 0 0" } scale="0.8 0.8 0.8"
-                         position={'0 -2.5 0'} material={"wireframe: true; "}
+                         position={'0 -2.3 0'} material={"wireframe: true; "}
             />
         );
         return(
             <Scene>
             <Sky color={"#222"}>
-                <Entity geometry="primitive: circle; radius: 60;" material="color: #222; transparent: true; opacity: 0.3; depthTest: false; "
+                <Entity geometry="primitive: circle; radius: 60;" material="color: #222; transparent: true; opacity: 0.5; depthTest: false; "
                         rotation={'-90 0 0'} position={'0 -2 0'}/>
                 {informs}
                 {informs2}
@@ -92,6 +93,7 @@ class App extends React.Component{
                      />
                 <Menu position="-1.5 3 -1.5" text="ABOUT US" click={this.handleClick.bind(this)} visible={"false"}
                       />
+                 <Entity bar position={"-1 -2 0"} animation={"property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 100000;"} scale={"5 5 5"}/>
 
             </Sky>
         <Camera position="1 2 0">

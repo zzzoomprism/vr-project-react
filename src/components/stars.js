@@ -11,11 +11,15 @@ AFRAME.registerComponent('bar', {
         var starsGeometry = new THREE.Geometry();
         var starsMaterial = new THREE.PointsMaterial({size: 1, sizeAttenuation: false});
         var angle = 0;
-        for(var i = 0; i<1000; i++){
+        var radius = 10;
+        for(var i = 0; i<10000; i++){
             var vertex = new THREE.Vector3();
-            vertex.x += Math.random()*Math.sin(Math.random()*5-1);
-            vertex.y += Math.random()*Math.cos(Math.random()*5-1);
-            vertex.z += Math.random()*Math.sin(Math.random()*5-1);
+
+            const theta = 2 * Math.PI * Math.random();
+            const phi = Math.acos(2 * Math.random() - 1);
+            vertex.x = radius * Math.sin(phi) * Math.cos(theta);
+            vertex.y = radius * Math.sin(phi) * Math.sin(theta);
+            vertex.z = radius * Math.cos(phi);
             starsGeometry.vertices.push(vertex);
         }
         let stars = new THREE.Points(starsGeometry, starsMaterial);
