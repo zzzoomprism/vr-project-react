@@ -12,7 +12,7 @@ AFRAME.registerComponent('button', {
         let group = new THREE.Group();
         let el = this.el;
         let material = new THREE.MeshBasicMaterial({color: '#fff', side: THREE.DoubleSide, transparent: true, opacity: 0.6});
-        console.log(this.group);
+
         //the biggest ring
         let segment = 0;
         for(let i = 0; i < 2; i++){

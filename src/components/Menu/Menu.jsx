@@ -14,7 +14,9 @@ class Menu extends React.Component{
                     visible={this.props.visible}
                     animation__scale={this.props.animation}>
                 <Text value={this.props.text} material={"color: white;"}
-                      text={"side: double; align: center;"} rotation={"0 -180 0"} position={"0 0 -0.35"} />
+                      text={"side: double; align: center; negate: false;"} rotation={"0 -180 0"} position={"0 0 -0.35"}
+                      events={{'click': this.props.click}}
+                />
             </Entity>
         )
     };
