@@ -15,22 +15,26 @@ import img3 from './media/images/3.jpg';
 
 class App extends React.Component{
     info = infoLoader;
-
     constructor(props){
         super(props);
     }
 
     handleClick(props){
-        let menu = document.getElementsByClassName("curve-gallery-images");
+        let gallery = document.getElementsByClassName("curve-gallery-images");
         let angle = 0;
-        for(let i = 0; i < menu.length; i++) {
-            menu[i].setAttribute("visible", 'true');
+        let an;
+        for(let i = 0; i < gallery.length; i++) {
+            gallery[i].setAttribute("visible", 'true');
             let rotation = "0 " + `${angle+=40}` + " 0" ;
-            menu[i].setAttribute("animation", "property: rotation; to: " + rotation + " ; dur: 2500;");
-           // menu[i].setAttribute("animation__smoothing", "property: position; to: 0 3.8 0; " +
-              //  "dur: 4000; loop: true; dir: alternate; easing: linear; delay:" + Math.random()*1000);
-
+            gallery[i].setAttribute("animation", "property: rotation; to: " + rotation + " ; dur: 2500;");
+            if(gallery[i].getAttribute("direction") === "right")
+            an = angle + 360;
+            else an = angle - 360;
+            gallery[i].setAttribute("animation__rotation", "property: rotation; from: "
+            + rotation + ";to: " + "0 " + an + " 0" + "; loop: true; dur: 80000; delay: 2500; easing: linear;" );
         }
+
+        console.log(this.state);
     }
 
     handleMenuClick(){
@@ -50,6 +54,7 @@ class App extends React.Component{
                      height="5.0" radius="20.0" theta-length="35" id={info.curveImgId}
                      rotation={"0 0 0" } scale="0.8 0.8 0.8"
                      position={'0 2.8 0'} material={"wireframe: true; "}
+                     direction={"left"}
                        />
 
         );
@@ -59,6 +64,7 @@ class App extends React.Component{
                          height="5.0" radius="20.0" theta-length="35" id={info.curveImgId}
                          rotation={"0 0 0" } scale="0.8 0.8 0.8"
                          position={'0 7.5 0'} material={"wireframe: true; "}
+                         direction={"right"}
             />);
 
         const informs3 = this.info.map(info=>
@@ -66,6 +72,7 @@ class App extends React.Component{
                          height="5.0" radius="20.0" theta-length="35" id={info.curveImgId}
                          rotation={"0 0 0" } scale="0.8 0.8 0.8"
                          position={'0 -2.3 0'} material={"wireframe: true; "}
+                         direction={"right"}
             />
         );
         return(
