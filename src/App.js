@@ -1,14 +1,15 @@
 import React from 'react';
 import AFRAME from "aframe";
-import 'aframe-particle-system-component';
-import Assets from "aframe-react-assets";
 import {Entity, Box, Cylinder, Sphere, Plane, Sky, Text, Scene, Curvedimage, Camera, Cursor, Image, Ring, Event,Circle} from "react-aframe-ar";
 import {Light, Video, Videosphere} from "react-aframe-ar/src";
+
+import {BrowserRouter, Router} from "react-router-dom";
 import infoLoader from './info';
 import './components/stars';
 import './components/button';
 
 import Menu from "./components/Menu/Menu";
+import AboutUs from "./components/AboutUs/AboutUs";
 import obj from "./media/globe.obj";
 
 import img3 from './media/images/3.jpg';
@@ -34,6 +35,13 @@ class App extends React.Component{
             + rotation + ";to: " + "0 " + an + " 0" + "; loop: true; dur: 80000; delay: 2500; easing: linear;" );
         }
 
+        let menuElement = document.getElementsByClassName("menu");
+        for(let i = 0; i < menuElement.length; i++){
+            menuElement[i].setAttribute("animation", "property: scale; to: 0 0 0; dur: 500;");
+            menuElement[i].setAttribute("visible", "false");
+        }
+        console.log(menuElement[0]);
+
         console.log(this.state);
     }
 
@@ -56,7 +64,6 @@ class App extends React.Component{
                      position={'0 2.8 0'} material={"wireframe: true; "}
                      direction={"left"}
                        />
-
         );
 
         const informs2 = this.info.map(info=>
@@ -93,15 +100,16 @@ class App extends React.Component{
                 </Entity>
                 </Entity>
 
-                <Light color="#00fffb" type={"point"} position={"-1 -1 -7.5"} intensity={10} penumbra={1} angle={360} distance={30} decay={50}/>
                 <Menu position="-3 2.5 -2.5" text="COLLECTION" visible={"false"}
                       />
                 <Menu position="1.5 3 -2.5" text="GALLERY" click={this.handleClick.bind(this)} visible={"false"}
                      />
                 <Menu position="-1.5 3 -1.5" text="ABOUT US" click={this.handleClick.bind(this)} visible={"false"}
                       />
-                 <Entity bar position={"-1 -2 0"} animation={"property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 100000;"} scale={"5 5 5"}/>
 
+                      <AboutUs/>
+
+                 <Entity bar position={"-1 -2 0"} animation={"property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 100000;"} scale={"5 5 5"}/>
             </Sky>
         <Camera position="1 2 0">
             <Cursor color="white"/>
