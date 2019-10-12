@@ -3,7 +3,6 @@ import AFRAME from "aframe";
 import {Entity, Box, Cylinder, Sphere, Plane, Sky, Text, Scene, Curvedimage, Camera, Cursor, Image, Ring, Event,Circle} from "react-aframe-ar";
 import {Light, Video, Videosphere} from "react-aframe-ar/src";
 
-import {BrowserRouter, Router} from "react-router-dom";
 import infoLoader from './info';
 import './components/stars';
 import './components/button';
@@ -108,6 +107,7 @@ class App extends React.Component{
                       />
 
                       <AboutUs/>
+
 
                  <Entity bar position={"-1 -2 0"} animation={"property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 100000;"} scale={"5 5 5"}/>
             </Sky>
