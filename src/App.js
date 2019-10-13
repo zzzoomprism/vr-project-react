@@ -6,6 +6,7 @@ import {Light, Video, Videosphere} from "react-aframe-ar/src";
 import infoLoader from './info';
 import './components/stars';
 import './components/button';
+import './components/AboutUs/Dushes';
 
 import Menu from "./components/Menu/Menu";
 import AboutUs from "./components/AboutUs/AboutUs";
@@ -106,10 +107,10 @@ class App extends React.Component{
                 <Menu position="-1.5 3 -1.5" text="ABOUT US" click={this.handleClick.bind(this)} visible={"false"}
                       />
 
-                      <AboutUs/>
+                      <AboutUs click={this.handleVisible()}/>
 
+                 <Entity bar={"radius: 10;"} position={"-1 -2 0"} animation={"property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 100000;"} scale={"5 5 5"}/>
 
-                 <Entity bar position={"-1 -2 0"} animation={"property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 100000;"} scale={"5 5 5"}/>
             </Sky>
         <Camera position="1 2 0">
             <Cursor color="white"/>

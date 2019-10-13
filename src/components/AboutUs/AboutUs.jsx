@@ -6,13 +6,24 @@ import descriptionLoader from "./description";
 
 class AboutUs extends React.Component{
     descr = descriptionLoader;
+    constructor(props){
+        super(props);
+        this.handleVisible.bind(this);
+    }
+
+    handleVisible(){
+        let planes = document.getElementsByClassName("about-us-plane");
+        for(let i = 0; i < planes.length; i++){
+            planes[i].setAttribute("visible", 'true');
+        }
+    }
     render() {
         let positionX=0;
         let positionZ=-3;
         let rotation = 160;
         const plane = this.descr.map(info=>
-            <Plane key={info.id} width={2} height={3.2} position={info.position} rotation={info.rotation}
-                   material={"transparent: true; opacity: 0.4; color: #000; side: double;"} >
+            <Plane class={"about-us-plane"} key={info.id} width={2} height={3.2} position={info.position} rotation={info.rotation}
+                   material={"transparent: true; opacity: 0.4; color: #00fffb; side: double; "} visible={false}>
                 <Text value={info.title} side={"double"} z-offset={-0.01} align={"center"} font={"dejavu"}
                       width={2} height={3.2} position={"0 1.3 0"} letter-spacing={"5"} wrap-count={"25"}
                 />
