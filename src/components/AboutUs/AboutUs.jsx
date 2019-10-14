@@ -3,20 +3,15 @@ import AFRAME from "aframe";
 import {Entity, Box, Cylinder, Sphere, Plane, Sky, Text, Scene, Curvedimage, Camera, Cursor, Image, Ring, Event,Circle} from "react-aframe-ar";
 import {Light} from "react-aframe-ar/src";
 import descriptionLoader from "./description";
+import visible from "./../functions";
 
 class AboutUs extends React.Component{
     descr = descriptionLoader;
+    v = visible;
     constructor(props){
         super(props);
-        this.handleVisible.bind(this);
     }
 
-    handleVisible(){
-        let planes = document.getElementsByClassName("about-us-plane");
-        for(let i = 0; i < planes.length; i++){
-            planes[i].setAttribute("visible", 'true');
-        }
-    }
     render() {
         let positionX=0;
         let positionZ=-3;

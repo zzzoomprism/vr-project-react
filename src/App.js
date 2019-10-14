@@ -4,6 +4,7 @@ import {Entity, Box, Cylinder, Sphere, Plane, Sky, Text, Scene, Curvedimage, Cam
 import {Light, Video, Videosphere} from "react-aframe-ar/src";
 
 import infoLoader from './info';
+import visible from "./components/functions";
 import './components/stars';
 import './components/button';
 import './components/AboutUs/Dushes';
@@ -16,6 +17,7 @@ import img3 from './media/images/3.jpg';
 
 class App extends React.Component{
     info = infoLoader;
+    v = visible;
     constructor(props){
         super(props);
     }
@@ -40,9 +42,6 @@ class App extends React.Component{
             menuElement[i].setAttribute("animation", "property: scale; to: 0 0 0; dur: 500;");
             menuElement[i].setAttribute("visible", "false");
         }
-        console.log(menuElement[0]);
-
-        console.log(this.state);
     }
 
     handleMenuClick(){
@@ -104,10 +103,10 @@ class App extends React.Component{
                       />
                 <Menu position="1.5 3 -2.5" text="GALLERY" click={this.handleClick.bind(this)} visible={"false"}
                      />
-                <Menu position="-1.5 3 -1.5" text="ABOUT US" click={this.handleClick.bind(this)} visible={"false"}
+                <Menu position="-1.5 3 -1.5" text="ABOUT US" click={this.v.add("about-us-plane")} visible={"false"}
                       />
 
-                      <AboutUs click={this.handleVisible()}/>
+                      <AboutUs />
 
                  <Entity bar={"radius: 10;"} position={"-1 -2 0"} animation={"property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 100000;"} scale={"5 5 5"}/>
 
