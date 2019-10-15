@@ -4,20 +4,24 @@ import {Entity, Box, Cylinder, Sphere, Plane, Sky, Text, Scene, Curvedimage, Cam
 import {Light, Video, Videosphere} from "react-aframe-ar/src";
 
 import infoLoader from './info';
-import visible from "./components/functions";
+
 import './components/stars';
 import './components/button';
-import './components/AboutUs/Dushes';
+
 
 import Menu from "./components/Menu/Menu";
 import AboutUs from "./components/AboutUs/AboutUs";
 import obj from "./media/globe.obj";
 
+import aboutUs from "./components/AboutUs/functions";
+import menuFunction from "./components/Menu/functions";
+
 import img3 from './media/images/3.jpg';
 
 class App extends React.Component{
     info = infoLoader;
-    v = visible;
+    aboutUs = aboutUs;
+
     constructor(props){
         super(props);
     }
@@ -37,11 +41,7 @@ class App extends React.Component{
             + rotation + ";to: " + "0 " + an + " 0" + "; loop: true; dur: 80000; delay: 2500; easing: linear;" );
         }
 
-        let menuElement = document.getElementsByClassName("menu");
-        for(let i = 0; i < menuElement.length; i++){
-            menuElement[i].setAttribute("animation", "property: scale; to: 0 0 0; dur: 500;");
-            menuElement[i].setAttribute("visible", "false");
-        }
+
     }
 
     handleMenuClick(){
@@ -51,7 +51,6 @@ class App extends React.Component{
             menuElement[i].setAttribute("visible", "true");
             menuElement[i].setAttribute("animation", "property: scale; to: 1 1 1; dur: 500;");
         }
-        console.log(menuElement[0]);
     }
 
     render() {
@@ -99,14 +98,10 @@ class App extends React.Component{
                 </Entity>
                 </Entity>
 
-                <Menu position="-3 2.5 -2.5" text="COLLECTION" visible={"false"}
-                      />
-                <Menu position="1.5 3 -2.5" text="GALLERY" click={this.handleClick.bind(this)} visible={"false"}
-                     />
-                <Menu position="-1.5 3 -1.5" text="ABOUT US" click={this.v.add("about-us-plane")} visible={"false"}
-                      />
-
-                      <AboutUs />
+                <Menu position="-3 2.5 -2.5" text="COLLECTION" visible={"false"} />
+                <Menu position="1.5 3 -2.5" text="GALLERY" click={this.handleClick.bind(this)} visible={"false"} />
+                <Menu position="-1.5 3 -1.5" text="ABOUT US" visible={"false"} click={this.aboutUs.add} />
+                <AboutUs />
 
                  <Entity bar={"radius: 10;"} position={"-1 -2 0"} animation={"property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 100000;"} scale={"5 5 5"}/>
 

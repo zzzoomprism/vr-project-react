@@ -7,7 +7,6 @@ import './../button';
 
 class Menu extends React.Component{
     render() {
-        console.log(this.props.click);
         return(
             <Entity button className={"menu"} scale="0 0 0" position={this.props.position}
                     events={{'click': this.props.click}} rotation={(this.props.rotation) ? this.props.rotation : "" }
