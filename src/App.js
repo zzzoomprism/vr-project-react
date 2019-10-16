@@ -14,19 +14,21 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import obj from "./media/globe.obj";
 
 import aboutUs from "./components/AboutUs/functions";
-import menuFunction from "./components/Menu/functions";
 
-import img3 from './media/images/3.jpg';
 
 class App extends React.Component{
     info = infoLoader;
     aboutUs = aboutUs;
+    state={
+        active: "false"
+    };
 
     constructor(props){
         super(props);
+        this.methodAboutUsState = this.methodAboutUsState.bind(this);
     }
 
-    handleClick(props){
+    handleClick(){
         let gallery = document.getElementsByClassName("curve-gallery-images");
         let angle = 0;
         let an;
@@ -52,6 +54,11 @@ class App extends React.Component{
             menuElement[i].setAttribute("animation", "property: scale; to: 1 1 1; dur: 500;");
         }
     }
+
+        methodAboutUsState(){
+            aboutUs.add();
+            this.setState({active: "true"});
+        }
 
     render() {
         let angle = 0;
@@ -100,8 +107,8 @@ class App extends React.Component{
 
                 <Menu position="-3 2.5 -2.5" text="COLLECTION" visible={"false"} />
                 <Menu position="1.5 3 -2.5" text="GALLERY" click={this.handleClick.bind(this)} visible={"false"} />
-                <Menu position="-1.5 3 -1.5" text="ABOUT US" visible={"false"} click={this.aboutUs.add} />
-                <AboutUs />
+                <Menu position="-1.5 3 -1.5" text="ABOUT US" visible={"false"} click={this.methodAboutUsState} />
+                <AboutUs active={this.state.active}/>
 
                  <Entity bar={"radius: 10;"} position={"-1 -2 0"} animation={"property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 100000;"} scale={"5 5 5"}/>
 
