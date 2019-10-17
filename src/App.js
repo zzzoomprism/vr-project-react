@@ -3,47 +3,23 @@ import AFRAME from "aframe";
 import {Entity, Box, Cylinder, Sphere, Plane, Sky, Text, Scene, Curvedimage, Camera, Cursor, Image, Ring, Event,Circle} from "react-aframe-ar";
 import {Light, Video, Videosphere} from "react-aframe-ar/src";
 
-import infoLoader from './info';
-
 import './components/stars';
 import './components/button';
-
+import obj from "./media/globe.obj";
 
 import Menu from "./components/Menu/Menu";
 import AboutUs from "./components/AboutUs/AboutUs";
-import obj from "./media/globe.obj";
+import Gallery from "./components/Gallery/Gallery";
 
 import aboutUs from "./components/AboutUs/functions";
-
+import gallery from "./components/Gallery/functions";
+import menu from "./components/Menu/functions";
 
 class App extends React.Component{
-    info = infoLoader;
-    aboutUs = aboutUs;
-    state={
-        active: "false"
-    };
-
     constructor(props){
         super(props);
         this.methodAboutUsState = this.methodAboutUsState.bind(this);
-    }
-
-    handleClick(){
-        let gallery = document.getElementsByClassName("curve-gallery-images");
-        let angle = 0;
-        let an;
-        for(let i = 0; i < gallery.length; i++) {
-            gallery[i].setAttribute("visible", 'true');
-            let rotation = "0 " + `${angle+=40}` + " 0" ;
-            gallery[i].setAttribute("animation", "property: rotation; to: " + rotation + " ; dur: 2500;");
-            if(gallery[i].getAttribute("direction") === "right")
-            an = angle + 360;
-            else an = angle - 360;
-            gallery[i].setAttribute("animation__rotation", "property: rotation; from: "
-            + rotation + ";to: " + "0 " + an + " 0" + "; loop: true; dur: 80000; delay: 2500; easing: linear;" );
-        }
-
-
+        this.methodGallery = this.methodGallery.bind(this);
     }
 
     handleMenuClick(){
@@ -56,45 +32,23 @@ class App extends React.Component{
     }
 
         methodAboutUsState(){
+            menu.remove();
             aboutUs.add();
-            this.setState({active: "true"});
+        }
+
+        methodGallery(){
+            menu.remove();
+            aboutUs.remove();
+            gallery.add();
         }
 
     render() {
-        let angle = 0;
-        const informs = this.info.map(info=>
-        <Curvedimage className={"curve-gallery-images"} visible={'true'} src={require('./media/images/' + info.img_src)}
-                     height="5.0" radius="20.0" theta-length="35" id={info.curveImgId}
-                     rotation={"0 0 0" } scale="0.8 0.8 0.8"
-                     position={'0 2.8 0'} material={"wireframe: true; "}
-                     direction={"left"}
-                       />
-        );
-
-        const informs2 = this.info.map(info=>
-            <Curvedimage className={"curve-gallery-images"} visible={'true'} src={require('./media/images/' + info.img_src)}
-                         height="5.0" radius="20.0" theta-length="35" id={info.curveImgId}
-                         rotation={"0 0 0" } scale="0.8 0.8 0.8"
-                         position={'0 7.5 0'} material={"wireframe: true; "}
-                         direction={"right"}
-            />);
-
-        const informs3 = this.info.map(info=>
-            <Curvedimage className={"curve-gallery-images"} visible={'true'} src={require('./media/images/' + info.img_src)}
-                         height="5.0" radius="20.0" theta-length="35" id={info.curveImgId}
-                         rotation={"0 0 0" } scale="0.8 0.8 0.8"
-                         position={'0 -2.3 0'} material={"wireframe: true; "}
-                         direction={"right"}
-            />
-        );
         return(
             <Scene>
             <Sky color={"#222"}>
                 <Entity geometry="primitive: circle; radius: 60;" material="color: #222; transparent: true; opacity: 0.5; depthTest: false; "
                         rotation={'-90 0 0'} position={'0 -2 0'}/>
-                {informs}
-                {informs2}
-                {informs3}
+                <Gallery/>
 
                 <Entity events={{'click': this.handleMenuClick.bind(this)}}>
                 <Entity button position="-1 0 -4" rotation={"-90 0 0"}>
@@ -106,9 +60,9 @@ class App extends React.Component{
                 </Entity>
 
                 <Menu position="-3 2.5 -2.5" text="COLLECTION" visible={"false"} />
-                <Menu position="1.5 3 -2.5" text="GALLERY" click={this.handleClick.bind(this)} visible={"false"} />
+                <Menu position="1.5 3 -2.5" text="GALLERY" click={this.methodGallery} visible={"false"} />
                 <Menu position="-1.5 3 -1.5" text="ABOUT US" visible={"false"} click={this.methodAboutUsState} />
-                <AboutUs active={this.state.active}/>
+                <AboutUs/>
 
                  <Entity bar={"radius: 10;"} position={"-1 -2 0"} animation={"property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 100000;"} scale={"5 5 5"}/>
 
