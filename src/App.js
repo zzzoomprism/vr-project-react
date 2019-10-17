@@ -6,6 +6,7 @@ import {Light, Video, Videosphere} from "react-aframe-ar/src";
 import './components/stars';
 import './components/button';
 import obj from "./media/globe.obj";
+import building from "./media/building.obj";
 
 import Menu from "./components/Menu/Menu";
 import AboutUs from "./components/AboutUs/AboutUs";
@@ -69,6 +70,16 @@ class App extends React.Component{
                 <Menu position="1.5 3 -2.5" text="GALLERY" click={this.methodGallery} visible={"false"} />
                 <Menu position="-1.5 3 -1.5" text="ABOUT US" visible={"false"} click={this.methodAboutUsState} />
                 <AboutUs/>
+                <a-obj-model src={building} scale={'0.007 0.007 0.007'} position={"-1 -10 -2"}
+                             material={"color: #00fffb; transparent: true; opacity: 0.8; emissive: white; emissiveIntensity: 0.3; wireframe: true;"} />
+                <a-obj-model src={building} scale={'0.007 0.007 0.007'} position={"-1 -10 -4.5"}
+                             material={"color: #00fffb; transparent: true; opacity: 0.8; emissive: white; emissiveIntensity: 0.3; wireframe: true;"} />
+                <a-obj-model src={building} scale={'0.007 0.007 0.007'} position={"-1 -10 -7"}
+                             material={"color: #00fffb; transparent: true; opacity: 0.8; emissive: white; emissiveIntensity: 0.3; wireframe: true;"} />
+                <a-obj-model src={building} scale={'0.007 0.007 0.007'} position={"-1 -10 -9.5"}
+                             material={"color: #00fffb; transparent: true; opacity: 0.8; emissive: white; emissiveIntensity: 0.3; wireframe: true;"} />
+                <a-obj-model src={building} scale={'0.007 0.007 0.007'} position={"-1 -10 -13"}
+                             material={"color: #00fffb; transparent: true; opacity: 0.8; emissive: white; emissiveIntensity: 0.3; wireframe: true;"} />
 
                  <Entity bar={"radius: 10;"} position={"-1 -2 0"} animation={"property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 100000;"} scale={"5 5 5"}/>
 
