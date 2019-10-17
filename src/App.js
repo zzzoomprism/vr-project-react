@@ -16,6 +16,11 @@ import gallery from "./components/Gallery/functions";
 import menu from "./components/Menu/functions";
 
 class App extends React.Component{
+    state = {
+        aboutUs: false,
+        gallery: false,
+    };
+
     constructor(props){
         super(props);
         this.methodAboutUsState = this.methodAboutUsState.bind(this);
@@ -33,6 +38,7 @@ class App extends React.Component{
 
         methodAboutUsState(){
             menu.remove();
+            gallery.remove();
             aboutUs.add();
         }
 

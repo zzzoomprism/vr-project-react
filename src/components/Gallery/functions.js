@@ -1,5 +1,3 @@
-
-
 const gallery = {
     add: function(){
     let gallery = document.getElementsByClassName("curve-gallery-images");
@@ -17,7 +15,13 @@ const gallery = {
     }
 },
     remove: function () {
+        let gallery = document.getElementsByClassName("curve-gallery-images");
+        for(let i = 0; i < gallery.length; i++){
+            gallery[i].removeAttribute("animation__rotation");
+            gallery[i].setAttribute("animation", "property: rotation; to: 0; dur: 3000;");
+            setTimeout(()=>{gallery[i].setAttribute("visible", "false")}, 3500);
 
+        }
     }
 };
 
@@ -26,3 +30,6 @@ function galleryLoader(){
 }
 
 export default galleryLoader();
+
+
+

@@ -10,7 +10,7 @@ class Gallery extends React.Component{
             <Curvedimage className={"curve-gallery-images"} visible={'true'} src={require('./../../media/images/' + info.img_src)}
                          height="5.0" radius="20.0" theta-length="35" id={info.curveImgId}
                          rotation={"0 0 0" } scale="0.8 0.8 0.8"
-                         position={'0 2.8 0'} material={"wireframe: true; "}
+                         position={'0 2.8 0'} material={"wireframe: true; transparent: true; opacity: 1.0;"}
                          direction={"left"}
             />
         );
@@ -18,7 +18,7 @@ class Gallery extends React.Component{
             <Curvedimage className={"curve-gallery-images"} visible={'true'} src={require('./../../media/images/' + info.img_src)}
                          height="5.0" radius="20.0" theta-length="35" id={info.curveImgId}
                          rotation={"0 0 0" } scale="0.8 0.8 0.8"
-                         position={'0 7.5 0'} material={"wireframe: true; "}
+                         position={'0 7.5 0'} material={"wireframe: true; transparent: true; opacity: 1.0;"}
                          direction={"right"}
             />);
 
@@ -26,7 +26,7 @@ class Gallery extends React.Component{
             <Curvedimage className={"curve-gallery-images"} visible={'true'} src={require('./../../media/images/' + info.img_src)}
                          height="5.0" radius="20.0" theta-length="35" id={info.curveImgId}
                          rotation={"0 0 0" } scale="0.8 0.8 0.8"
-                         position={'0 -2.3 0'} material={"wireframe: true; "}
+                         position={'0 -2.3 0'} material={"wireframe: true; transparent: true; opacity: 1.0;"}
                          direction={"right"}
             />
         );
