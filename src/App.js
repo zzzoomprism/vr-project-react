@@ -5,12 +5,16 @@ import {Light, Video, Videosphere} from "react-aframe-ar/src";
 
 import './components/stars';
 import './components/button';
+
+
 import obj from "./media/globe.obj";
 import building from "./media/building.obj";
 
 import Menu from "./components/Menu/Menu";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Gallery from "./components/Gallery/Gallery";
+import Link from "./components/Link/Link";
+
 
 import aboutUs from "./components/AboutUs/functions";
 import gallery from "./components/Gallery/functions";
@@ -66,6 +70,7 @@ class App extends React.Component{
                 </Entity>
                 </Entity>
 
+
                 <Menu position="-3 2.5 -2.5" text="COLLECTION" visible={"false"} />
                 <Menu position="1.5 3 -2.5" text="GALLERY" click={this.methodGallery} visible={"false"} />
                 <Menu position="-1.5 3 -1.5" text="ABOUT US" visible={"false"} click={this.methodAboutUsState} />
@@ -81,7 +86,10 @@ class App extends React.Component{
                 <a-obj-model src={building} scale={'0.007 0.007 0.007'} position={"-1 -10 -13"}
                              material={"color: #00fffb; transparent: true; opacity: 0.8; emissive: white; emissiveIntensity: 0.3; wireframe: true;"} />
 
-                 <Entity bar={"radius: 10;"} position={"-1 -2 0"} animation={"property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 100000;"} scale={"5 5 5"}/>
+
+
+
+                 <Entity bar={"radius: 10"} position={"-1 -2 0"} animation={"property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 100000;"} scale={"5 5 5"}/>
 
             </Sky>
         <Camera position="1 2 0">
