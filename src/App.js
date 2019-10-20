@@ -14,6 +14,7 @@ import Menu from "./components/Menu/Menu";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Gallery from "./components/Gallery/Gallery";
 import Link from "./components/Link/Link";
+import Contacts from "./components/Contacts/Contacts";
 
 
 import aboutUs from "./components/AboutUs/functions";
@@ -71,10 +72,11 @@ class App extends React.Component{
                 </Entity>
 
 
-                <Menu position="-3 2.5 -2.5" text="COLLECTION" visible={"false"} />
+                <Menu position="-3 2.5 -2.5" text="CONTACT" visible={"false"} />
                 <Menu position="1.5 3 -2.5" text="GALLERY" click={this.methodGallery} visible={"false"} />
                 <Menu position="-1.5 3 -1.5" text="ABOUT US" visible={"false"} click={this.methodAboutUsState} />
                 <AboutUs/>
+                <Contacts/>
                 <a-obj-model src={building} scale={'0.007 0.007 0.007'} position={"-1 -10 -2"}
                              material={"color: #00fffb; transparent: true; opacity: 0.8; emissive: white; emissiveIntensity: 0.3; wireframe: true;"} />
                 <a-obj-model src={building} scale={'0.007 0.007 0.007'} position={"-1 -10 -4.5"}

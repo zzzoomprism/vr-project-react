@@ -15,10 +15,10 @@ class AboutUs extends React.Component{
         const plane = this.descr.map(info=>
             <Plane className={"about-us-plane-wireframe"} key={info.id} width={2} height={3.2} position={info.position} rotation={info.rotation}
                    scale={"1 0 0"} segments-height={0} segments-width={0}
-                   material={"transparent: true; opacity: 0.4; color: #00fffb; side: double; wireframe: true; emissive: #00fffb;"} visible={true}>
+                   material={"transparent: true; opacity: 0.4; color: #00fffb; side: double; wireframe: true; emissive: #00fffb;"} visible={false}>
                 <Plane className={"about-us-plane"} key={info.id} width={2} height={3.2}
                        scale={"1 0 1"}
-                       material={"transparent: true; opacity: 0.4; color: #00fffb; side: double;"} visible={true} >
+                       material={"transparent: true; opacity: 0.4; color: #00fffb; side: double;"} visible={false} >
                 <Text className={"about-us-plane-text"} value={info.title} side={"double"} z-offset={-0.01} align={"center"} font={"dejavu"}
                       width={2} height={3.2} position={"0 1.3 0"} letter-spacing={"5"} wrap-count={"25"}
                       visible={true} scale={"1 1 1"} opacity={"0.0"} alpha-test={5.5}
