@@ -22,13 +22,13 @@ const cont = {
         let contactDescription = document.getElementsByClassName("contacts-description");
         for(let i = 0; i < contactsPlane.length; i++){
             contactsPlane[i].setAttribute("visible", "false");
-            contactsPlane[i].setAttribute("scale", "1 0 1");
-            contactsPlane[i].setAttribute("segments-height", "0");
-            contactsPlane[i].setAttribute("segments-width", "0");
-            contactsPlane[i].setAttribute("opacity", "1");
-            contactsSecondPlane[i].setAttribute("scale","1 0 1");
-            contactsImages[i].setAttribute("opacity", "0");
-            contactsImages[i].setAttribute("color", "#00fffb");
+            contactsPlane[i].setAttribute("animation__scale", "property: scale; to: 1 0 1;");
+            contactsPlane[i].setAttribute("animation__segmentsH", "property: segments-height; to: 0; easing: linear;");
+            contactsPlane[i].setAttribute("animation__segmentsW", "property: segments-width; to: 0; easing: linear; ");
+            contactsPlane[i].setAttribute("animation__opacity", "property: material.opacity; to: 1; dur: 100; easing: linear;");
+            contactsSecondPlane[i].setAttribute("animation__scale", "property: scale; to: 1 0 1; dur: 100;");
+            contactsImages[i].setAttribute("animation__opacity", "property: material.opacity; to: 0; dur: 100;");
+            contactsImages[i].setAttribute("animation__color", "property: material.color; to: #00fffb; dur: 100;");
         }
     },
 };
