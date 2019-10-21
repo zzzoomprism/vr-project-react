@@ -9,13 +9,15 @@ class Contacts extends React.Component{
         return(
             <Entity>
                 <Plane className={"contacts-plane"} width={4.5} height={3} position={"-1 3 -3"} rotation={"-15 180 0"}
-                       scale={"1 1 1"} segments-height={0} segments-width={0}
-                       material={"transparent: true; opacity: 0.0; color: #00fffb; side: double; wireframe: true; emissive: #00fffb;"} visible={true}>
+                       scale={"1 0 1"} segments-height={0} segments-width={0}
+                       material={"transparent: true; opacity: 0.4; color: #00fffb; side: double; wireframe: true; emissive: #00fffb;"} visible={false}>
                     <Plane className={"contacts-second-plane"} width={4.5} height={3}
-                           scale={"1 1 1"}
-                           material={"transparent: true; opacity: 0.4; color: #00fffb; side: double;"} visible={true} >
-                        <Image src={"https://images.pexels.com/photos/2120114/pexels-photo-2120114.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"}
-                        width={"1.7"} height={"2.2"} geometry={"segments-height: 30; segments-width: 30;"} wireframe={"true"} position={"-1.2 0 0"}/>
+                           scale={"1 0 1"}
+                           material={"transparent: true; opacity: 0.0; color: #00fffb; side: double;"} visible={true} >
+                        <Image className="contact-us-images" src={"https://images.pexels.com/photos/2120114/pexels-photo-2120114.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"}
+                        width={"1.7"} height={"2.2"} geometry={"segments-height: 40; segments-width: 40;"} wireframe={"true"}
+                               position={"-1.2 0 0"} material={"color: #00fffb; transparent: true; opacity: 0.0;"}
+                                scale={"1 1 1"} visible={"true"}/>
 
                         <Text className={"contacts-title"} value={"FRONT_END DEVELOPMENT"} side={"double"} z-offset={-0.01} font={"dejavu"}
                               width={3.2} height={2} position={"0 1. 0"} letter-spacing={"5"} wrap-count={"25"}

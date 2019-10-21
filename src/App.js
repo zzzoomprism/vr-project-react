@@ -20,17 +20,20 @@ import Contacts from "./components/Contacts/Contacts";
 import aboutUs from "./components/AboutUs/functions";
 import gallery from "./components/Gallery/functions";
 import menu from "./components/Menu/functions";
+import contact from "./components/Contacts/functions";
 
 class App extends React.Component{
     state = {
         aboutUs: false,
         gallery: false,
+        contact: false,
     };
 
     constructor(props){
         super(props);
         this.methodAboutUsState = this.methodAboutUsState.bind(this);
         this.methodGallery = this.methodGallery.bind(this);
+        this.methodContacts = this.methodContacts.bind(this);
     }
 
     handleMenuClick(){
@@ -50,8 +53,16 @@ class App extends React.Component{
 
         methodGallery(){
             menu.remove();
+            contact.remove();
             aboutUs.remove();
             gallery.add();
+        }
+
+        methodContacts(){
+        menu.remove();
+        aboutUs.remove();
+        gallery.remove();
+        contact.add();
         }
 
     render() {
@@ -72,7 +83,7 @@ class App extends React.Component{
                 </Entity>
 
 
-                <Menu position="-3 2.5 -2.5" text="CONTACT" visible={"false"} />
+                <Menu position="-3 2.5 -2.5" text="CONTACT" visible={"false"} click={this.methodContacts} />
                 <Menu position="1.5 3 -2.5" text="GALLERY" click={this.methodGallery} visible={"false"} />
                 <Menu position="-1.5 3 -1.5" text="ABOUT US" visible={"false"} click={this.methodAboutUsState} />
                 <AboutUs/>
