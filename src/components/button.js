@@ -13,6 +13,12 @@ AFRAME.registerComponent('button', {
         let el = this.el;
         let material = new THREE.MeshBasicMaterial({color: '#fff', side: THREE.DoubleSide, transparent: true, opacity: 0.6});
 
+        let circle = new THREE.CircleGeometry(0.65, 40,40);
+        let circleMtl = new THREE.MeshPhongMaterial({color: "#fff", transparent: true, opacity: 0.1});
+        let circleMesh = new THREE.Mesh(circle, circleMtl);
+        circleMesh.position.z = -0.56;
+        group.add(circleMesh);
+
         //the biggest ring
         let segment = 0;
         for(let i = 0; i < 2; i++){
@@ -78,30 +84,29 @@ AFRAME.registerComponent('button', {
 
     animation(group){
         requestAnimationFrame(this.animation.bind(this, group));
-        for(let i = 0; i < 2; i++){
+        for(let i = 1; i < 3; i++){
             group.children[i].geometry.verticesNeedUpdate = true;
-            let circle = group.children[i].geometry.parameters;
-                    group.children[i].rotation.z += Math.cos(Math.random())/10;
+            group.children[i].rotation.z += Math.cos(Math.random())/10;
         }
 
-        for(let i = 2; i < 4; i++){
+        for(let i = 3; i < 5; i++){
             group.children[i].geometry.verticesNeedUpdate = true;
             group.children[i].rotation.z -= 0.02;
 
         }
 
-        for(let i = 4; i < 7; i++){
+        for(let i = 5; i < 8; i++){
             group.children[i].geometry.verticesNeedUpdate = true;
                 group.children[i].rotation.z -= 0.03;
         }
 
-        for(let i = 7; i <= 27; i++){
+        for(let i = 8; i <= 28; i++){
             group.children[i].geometry.verticesNeedUpdate = true;
             for(let t = 0;  t < 100; t+=0.03){
                 group.children[i].rotation.z += Math.sin(t);
             }
         }
-        group.children[29].rotation.z -= Math.sin(Math.random())/10;
+        group.children[30].rotation.z -= Math.sin(Math.random())/10;
 
     }
 });

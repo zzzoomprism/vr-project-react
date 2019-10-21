@@ -48,13 +48,14 @@ class App extends React.Component{
         methodAboutUsState(){
             menu.remove();
             gallery.remove();
+            contact.remove();
             aboutUs.add();
         }
 
         methodGallery(){
             menu.remove();
-            contact.remove();
             aboutUs.remove();
+            contact.remove();
             gallery.add();
         }
 
