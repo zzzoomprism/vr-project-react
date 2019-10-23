@@ -8,12 +8,20 @@ class AboutUs extends React.Component{
     descr = descriptionLoader;
     constructor(props){
         super(props);
+        this.aboutUsPlaneWireframe = React.createRef();
+        this.add = this.add.bind(this);
+    }
 
+    add(){
+       // this.aboutUsPlaneWireframe.current.props.visible = true;
+        this.aboutUsPlaneWireframe.current.props.animation__scale = {property: "scale", to: "1 1 1", dur: 500, easing: "linear"};
+        console.log(this.aboutUsPlaneWireframe.current.props.animation__scale);
     }
 
     render() {
         const plane = this.descr.map(info=>
-            <Plane className={"about-us-plane-wireframe"} key={info.id} width={2} height={3.2} position={info.position} rotation={info.rotation}
+            <Plane className={"about-us-plane-wireframe"} ref={this.aboutUsPlaneWireframe} key={info.id} width={2} height={3.2}
+                   position={info.position} rotation={info.rotation}
                    scale={"1 0 0"} segments-height={0} segments-width={0}
                    material={"transparent: true; opacity: 0.4; color: #00fffb; side: double; wireframe: true; emissive: #00fffb;"} visible={false}>
                 <Plane className={"about-us-plane"} key={info.id} width={2} height={3.2}
@@ -31,6 +39,13 @@ class AboutUs extends React.Component{
                 </Plane>
             </Plane>
         );
+
+        if(this.props.visible){
+            console.log("VISIBLE");
+            this.add();
+        }
+        else
+            console.log("NOT VISIBLE");
 
         return(
             <Entity id={"about-us"}>
