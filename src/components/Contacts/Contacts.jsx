@@ -5,19 +5,42 @@ import {Entity, Box, Cylinder, Sphere, Plane, Sky, Text, Scene, Curvedimage, Cam
 import {Light, Video, Videosphere} from "react-aframe-ar/src";
 
 class Contacts extends React.Component{
+    state={
+        firstPlane: {
+            animation__scale: "property: scale; to: 1 1 1; dur: 1000; easing: linear;",
+            animation__segmentsH: "property: segments-height; to: 40; easing: linear; delay: 300;",
+            animation__segmentsW: "property: segments-width; to: 40; easing: linear; delay: 300;",
+            animation__opacity: "property: material.opacity; to: 0; dur: 2000; easing: linear; delay: 2000;"
+        },
+        secondPlane: {
+            animation__scale: "property: scale; to: 1 1 1; dur: 2000; delay: 2000;",
+        },
+        image: {
+            animation__opacity: "property: material.opacity; to: 1; dur: 1000; delay: 3500;",
+            animation__color: "property: material.color; to: #fff; dur: 1000; delay: 4100;"
+        }
+    };
     render() {
         return(
             <Entity>
                 <Plane className={"contacts-plane"} width={4.5} height={3} position={"-1 3 -3"} rotation={"-15 180 0"}
                        scale={"1 0 1"} segments-height={0} segments-width={0}
-                       material={"transparent: true; opacity: 0.4; color: #00fffb; side: double; wireframe: true; emissive: #00fffb;"} visible={false}>
+                       material={"transparent: true; opacity: 0.4; color: #00fffb; side: double; wireframe: true; emissive: #00fffb;"}
+                       visible={this.props.visible}
+                       animation__scale={(this.props.visible) ? this.state.firstPlane.animation__scale : " "}
+                       animation__segmentsH={(this.props.visible) ? this.state.firstPlane.animation__segmentsH : " "}
+                       animation__segmentsW={(this.props.visible) ? this.state.firstPlane.animation__segmentsW : " "}
+                       animation__opacity={(this.props.visible) ? this.state.firstPlane.animation__opacity : " "} >
                     <Plane className={"contacts-second-plane"} width={4.5} height={3}
                            scale={"1 0 1"}
-                           material={"transparent: true; opacity: 0.0; color: #00fffb; side: double;"} visible={true} >
+                           material={"transparent: true; opacity: 0.0; color: #00fffb; side: double;"} visible={true}
+                    animation__scale={(this.props.visible) ? this.state.secondPlane.animation__scale : " "}>
                         <Image className="contact-us-images" src={"https://images.pexels.com/photos/2120114/pexels-photo-2120114.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"}
                         width={"1.7"} height={"2.2"} geometry={"segments-height: 40; segments-width: 40;"} wireframe={"true"}
                                position={"-1.2 0 0"} material={"color: #00fffb; transparent: true; opacity: 0.0;"}
-                                scale={"1 1 1"} visible={"true"}/>
+                                scale={"1 1 1"} visible={"true"}
+                        animation__opacity={(this.props.visible) ? this.state.image.animation__opacity : " "}
+                        animation__color={(this.props.visible) ? this.state.image.animation__color : " "}/>
 
                         <Text className={"contacts-title"} value={"FRONT_END DEVELOPMENT"} side={"double"} z-offset={-0.01} font={"dejavu"}
                               width={3.2} height={2} position={"0 1. 0"} letter-spacing={"5"} wrap-count={"25"}

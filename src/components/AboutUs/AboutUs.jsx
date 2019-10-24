@@ -13,13 +13,16 @@ class AboutUs extends React.Component{
 
     state={
         wireframe:{
-            visible: false,
             animation_scale: "property: scale; to: 1 1 1; dur: 500; easing: linear;",
             animation_segmentsHeight: "property: segments-height; to: 60; dur: 1500;",
             animation_segmentsWidth: "property: segments-width; to: 60; dur: 1500;",
             animation_opacity: "property: material.opacity; to: 0; dur: 1500; delay: 2000;", },
-
-
+        plane:{
+            animation_scale: "property: scale; to: 1 1 1; dur: 1500; easing: linear; delay: 2000;"
+        },
+        text: {
+            animation_opacity: "property: opacity; to: 0.7; dur: 1500; delay: 3500;"
+        }
     };
 
     render() {
@@ -37,17 +40,17 @@ class AboutUs extends React.Component{
                        scale={"1 0 1"}
                        material={"transparent: true; opacity: 0.4; color: #00fffb; side: double;"}
                        visible={this.props.visible}
-                        animation__scale={(this.props.visible) ? "property: scale; to: 1 1 1; dur: 1500; easing: linear; delay: 2000;" : " "}>
+                        animation__scale={(this.props.visible) ? this.state.plane.animation_scale : " "}>
                 <Text className={"about-us-plane-text"} value={info.title} side={"double"} z-offset={-0.01} align={"center"} font={"dejavu"}
                       width={2} height={3.2} position={"0 1.3 0"} letter-spacing={"5"} wrap-count={"25"}
                       visible={true} scale={"1 1 1"} opacity={"0.0"} alpha-test={5.5}
-                      animation__opacity={(this.props.visible) ? "property: opacity; to: 0.7; dur: 1500; delay: 3500;" : " "}
+                      animation__opacity={(this.props.visible) ? this.state.text.animation_opacity : " "}
                 />
                 <Text className={"about-us-plane-text"} value={info.description}
                       side={"double"} z-offset={-0.01} align={"center"} font={"dejavu"}
                       width={1.8} height={3.2} alpha-test={5.5}
                       visible={true} scale={"1 1 1"} opacity={"0.0"}
-                      animation__opacity={(this.props.visible) ? "property: opacity; to: 0.7; dur: 1500; delay: 3500;" : " "}
+                      animation__opacity={(this.props.visible) ? this.state.text.animation_opacity : " "}
                 />
                 </Plane>
             </Plane>

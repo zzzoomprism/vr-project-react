@@ -46,11 +46,14 @@ class VRContent extends React.Component{
     }
 
     methodAboutUsState(){
-        this.setState({aboutUs: true});
+        if(!this.state.aboutUs){
+            this.setState({contact: false});
+            this.setState({aboutUs: true});
+            this.setState({gallery: false});
+        }
         menu.remove();
         gallery.remove();
         contact.remove();
-      //  aboutUs.add();
     }
 
     methodGallery(){
@@ -61,10 +64,14 @@ class VRContent extends React.Component{
     }
 
     methodContacts(){
+        if(!this.state.contact) {
+            this.setState({contact: true});
+            this.setState({aboutUs: false});
+            this.setState({gallery: false});
+        }
         menu.remove();
         aboutUs.remove();
         gallery.remove();
-        contact.add();
     }
 
 
@@ -75,8 +82,6 @@ class VRContent extends React.Component{
                 <Sky color={"#222"}>
                     <Entity geometry="primitive: circle; radius: 60;" material="color: #222; transparent: true; opacity: 0.5; depthTest: false; "
                             rotation={'-90 0 0'} position={'0 -2 0'}/>
-
-
                     <Entity events={{'click': this.handleMenuClick.bind(this)}}>
                         <Entity button position="-1 0 -4" rotation={"-90 0 0"}>
                             <a-obj-model src={obj} scale={'0.007 0.007 0.007'} position={"-0.03 0.150 0.3"}
@@ -91,9 +96,9 @@ class VRContent extends React.Component{
                     <Menu position="1.5 3 -2.5" text="GALLERY" click={this.methodGallery} visible={"false"} />
                     <Menu position="-1.5 3 -1.5" text="ABOUT US" visible={"false"} click={this.methodAboutUsState} />
 
-                    <Gallery/>
+                    <Gallery visible={this.state.gallery}/>
                     <AboutUs visible={this.state.aboutUs}/>
-                    <Contacts/>
+                    <Contacts visible={this.state.contact}/>
 
                     <Entity bar={"radius: 10"} position={"-1 -2 0"} animation={"property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 100000;"} scale={"5 5 5"}/>
 
