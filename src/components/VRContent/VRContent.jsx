@@ -15,12 +15,8 @@ import AboutUs from "./../AboutUs/AboutUs";
 import Gallery from "./../Gallery/Gallery";
 import Contacts from "./../Contacts/Contacts";
 
-
-import aboutUs from "./../AboutUs/functions";
-import gallery from "./../Gallery/functions";
 import menu from "./../Menu/functions";
-import contact from "./../Contacts/functions";
-import style from "../Loader/Loader.module.css";
+
 
 class VRContent extends React.Component{
     state = {
@@ -52,15 +48,15 @@ class VRContent extends React.Component{
             this.setState({gallery: false});
         }
         menu.remove();
-        gallery.remove();
-        contact.remove();
     }
 
     methodGallery(){
+        if(!this.state.gallery){
+            this.setState({contact: false});
+            this.setState({aboutUs: false});
+            this.setState({gallery: true});
+        }
         menu.remove();
-        aboutUs.remove();
-        contact.remove();
-        gallery.add();
     }
 
     methodContacts(){
@@ -70,11 +66,8 @@ class VRContent extends React.Component{
             this.setState({gallery: false});
         }
         menu.remove();
-        aboutUs.remove();
-        gallery.remove();
+
     }
-
-
 
     render() {
         return(

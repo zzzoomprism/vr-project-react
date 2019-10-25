@@ -6,28 +6,32 @@ import {Light, Video, Videosphere} from "react-aframe-ar/src";
 class Gallery extends React.Component{
     info = infoLoader;
     render() {
+        let angle = 0;
         const informs = this.info.map(info=>
-            <Curvedimage className={"curve-gallery-images"} visible={'true'} src={require('./../../media/images/' + info.img_src)}
+            <Curvedimage visible={this.props.visible} src={require('./../../media/images/' + info.img_src)}
                          height="5.0" radius="20.0" theta-length="35" id={info.curveImgId}
                          rotation={"0 0 0" } scale="0.8 0.8 0.8"
                          position={'0 2.8 0'} material={"wireframe: true; transparent: true; opacity: 1.0;"}
-                         direction={"left"}
+                         animation__rotation={(this.props.visible) ? "property: rotation; to: 0 " + `${angle+=40}` + " 0; dur: 2000; easing: linear;" : "property: rotation; to: 0 0 0; dur: 2000; easing: linear;"}
+                         animation__smoth = {(this.props.visible) ? "property: rotation; from: " + "0 " + `${angle}` + " 0; to: 0 " + `${angle+360}` + " 0; loop: true; dur: 80000; delay: 2000; easing: linear;" : "property: rotation; to: 0 0 0; dur: 2000; easing: linear;"}
             />
         );
         const informs2 = this.info.map(info=>
-            <Curvedimage className={"curve-gallery-images"} visible={'true'} src={require('./../../media/images/' + info.img_src)}
+            <Curvedimage visible={this.props.visible} src={require('./../../media/images/' + info.img_src)}
                          height="5.0" radius="20.0" theta-length="35" id={info.curveImgId}
                          rotation={"0 0 0" } scale="0.8 0.8 0.8"
                          position={'0 7.5 0'} material={"wireframe: true; transparent: true; opacity: 1.0;"}
-                         direction={"right"}
+                         animation__rotation={(this.props.visible) ? "property: rotation; to: 0 " + `${angle+=40}` + " 0; dur: 2000; easing: linear;" : "property: rotation; to: 0 0 0; dur: 2000; easing: linear;"}
+                         animation__smoth = {(this.props.visible) ? "property: rotation; from: " + "0 " + `${angle}` + " 0; to: 0 " + `${angle-360}` + " 0; loop: true; dur: 80000; delay: 2000; easing: linear;" : "property: rotation; to: 0 0 0; dur: 2000; easing: linear;"}
             />);
 
         const informs3 = this.info.map(info=>
-            <Curvedimage className={"curve-gallery-images"} visible={'true'} src={require('./../../media/images/' + info.img_src)}
+            <Curvedimage visible={this.props.visible} src={require('./../../media/images/' + info.img_src)}
                          height="5.0" radius="20.0" theta-length="35" id={info.curveImgId}
                          rotation={"0 0 0" } scale="0.8 0.8 0.8"
                          position={'0 -2.3 0'} material={"wireframe: true; transparent: true; opacity: 1.0;"}
-                         direction={"right"}
+                         animation__rotation={(this.props.visible) ? "property: rotation; to: 0 " + `${angle+=40}` + " 0; dur: 2000; easing: linear;" : "property: rotation; to: 0 0 0; dur: 2000; easing: linear;"}
+                         animation__smoth = {(this.props.visible) ? "property: rotation; from: " + "0 " + `${angle}` + " 0; to: 0 " + `${angle-360}` + " 0; loop: true; dur: 80000; delay: 2000; easing: linear;" : "property: rotation; to: 0 0 0; dur: 2000; easing: linear;"}
             />
         );
         return(
