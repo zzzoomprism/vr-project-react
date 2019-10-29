@@ -14,8 +14,6 @@ render() {
         <div>
             <Route path={'/home'} component={HomeContent}/>
             <Route path={'/vr'} component={VRContent}/>
-
-            {/*<VRContent/>*/}
         </div>
         </BrowserRouter>
 

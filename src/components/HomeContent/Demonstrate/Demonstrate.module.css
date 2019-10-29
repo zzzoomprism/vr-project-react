@@ -1,0 +1,7 @@
+.videoPlay{
+    width: 100%;
+    height: 100%;
+}
+.videoPlay video{
+    opacity: 0.5;
+}

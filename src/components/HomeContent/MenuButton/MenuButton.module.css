@@ -1,0 +1,12 @@
+.menuButton{
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    color: #fff;
+    font-size: 30px;
+    text-align: right;
+   right: 20px;
+    top: 20px;
+    cursor: pointer;
+    z-index: 10;
+}
