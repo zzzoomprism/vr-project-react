@@ -1,31 +1,23 @@
 import React from 'react';
 import VRContent from "./components/VRContent/VRContent";
+import HomeContent from "./components/HomeContent/HomeContent";
 import Loader from "./components/Loader/Loader";
-import style from "./components/Loader/Loader.module.css";
-
+import {BrowserRouter, Route} from "react-router-dom";
 
 class App extends React.Component{
-    state={
-        visible: true,
-    };
-    constructor(props){
-        super(props);
-       this.handleHide = this.handleHide.bind(this);
-    }
-    componentDidMount(){
-        setTimeout(this.handleHide, 8000);
-    }
 
-    handleHide(){
-        this.setState({visible: false});
-    }
+
 
 render() {
     return(
+        <BrowserRouter>
         <div>
-            <Loader visible={this.state.visible}/>
-            <VRContent/>
+            <Route path={'/home'} component={HomeContent}/>
+            <Route path={'/vr'} component={VRContent}/>
+
+            {/*<VRContent/>*/}
         </div>
+        </BrowserRouter>
 
 
     )

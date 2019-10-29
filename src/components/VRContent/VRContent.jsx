@@ -1,14 +1,11 @@
 import React from 'react';
-import AFRAME from "aframe";
 import {Entity, Box, Cylinder, Sphere, Plane, Sky, Text, Scene, Curvedimage, Camera, Cursor, Image, Ring, Event,Circle} from "react-aframe-ar";
-import {Light, Video, Videosphere} from "react-aframe-ar/src";
 
 import './../stars';
 import './../button';
 
 
 import obj from "./../../media/globe.obj";
-import building from "./../../media/building.obj";
 
 import Menu from "./../Menu/Menu";
 import AboutUs from "./../AboutUs/AboutUs";
@@ -16,6 +13,7 @@ import Gallery from "./../Gallery/Gallery";
 import Contacts from "./../Contacts/Contacts";
 
 import menu from "./../Menu/functions";
+import Loader from "../Loader/Loader";
 
 
 class VRContent extends React.Component{
@@ -23,6 +21,7 @@ class VRContent extends React.Component{
         aboutUs: false,
         gallery: false,
         contact: false,
+        time: true,
     };
 
     constructor(props){
@@ -30,6 +29,7 @@ class VRContent extends React.Component{
         this.methodAboutUsState = this.methodAboutUsState.bind(this);
         this.methodGallery = this.methodGallery.bind(this);
         this.methodContacts = this.methodContacts.bind(this);
+        this.handleHide = this.handleHide.bind(this);
     }
 
     handleMenuClick(){
@@ -69,8 +69,18 @@ class VRContent extends React.Component{
 
     }
 
+    componentDidMount(){
+        setTimeout(this.handleHide, 8000);
+    }
+
+    handleHide(){
+        this.setState({time: false});
+    }
+
     render() {
         return(
+            <div>
+                <Loader visible={this.state.time}/>
             <Scene>
                 <Sky color={"#222"}>
                     <Entity geometry="primitive: circle; radius: 60;" material="color: #222; transparent: true; opacity: 0.5; depthTest: false; "
@@ -100,6 +110,7 @@ class VRContent extends React.Component{
                     <Cursor color="white"/>
                 </Camera>
             </Scene>
+            </div>
         );
     }
 
