@@ -1,12 +1,49 @@
-.menuButton{
+.menuContainerClose{
     position: absolute;
-    width: 100%;
-    height: 80px;
+    left: calc(100% - 120px);
+    width: 80px;
+    height: 50px;
     color: #fff;
     font-size: 30px;
-    text-align: right;
-   right: 20px;
-    top: 20px;
-    cursor: pointer;
     z-index: 10;
+    padding-top: 20px;
+    overflow: hidden;
+}
+
+.menuContainerOpen{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 30px;
+    z-index: 10;
+    padding-top: 20px;
+    animation-name: openMenu;
+    animation-duration: 2000ms;
+}
+
+.iconMenuButton{
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+@keyframes openMenu {
+    from{
+        width: 80px;
+        height: 50px;
+        left: calc(100% - 120px);
+    }
+
+    50%{
+        background-color: #00fffb;
+        opacity: 1;
+    }
+
+    to{
+        width: 100%;
+        height: 100%;
+        background-color: #00fffb;
+        opacity: 0.4;
+        left: 0;
+    }
 }

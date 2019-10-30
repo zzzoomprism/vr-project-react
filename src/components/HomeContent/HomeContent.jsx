@@ -11,7 +11,6 @@ class HomeContent extends React.Component{
         return(
             <div className={style.home}>
                     <MenuButton/>
-                   {/*<MenuObject/>*/}
                     <Demonstrate/>
             </div>
         )
