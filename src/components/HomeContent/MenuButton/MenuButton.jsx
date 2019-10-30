@@ -12,13 +12,15 @@ class MenuButton extends React.Component{
     }
 
     handleOnClick(){
-        this.setState({open: true});
+        this.setState({open: !this.state.open});
     }
     render() {
         return (
             <div className={(this.state.open) ? style.menuContainerOpen : style.menuContainerClose}>
-                <a className={style.iconMenuButton} onClick={this.handleOnClick}><i className="fas fa-align-justify"></i></a>
-                <MenuObjects/>
+                <div>
+                <a className={style.iconMenuButton} onClick={this.handleOnClick}><i className= {(this.state.open) ? "fas fa-times" : "fas fa-grip-lines"}></i></a>
+                </div>
+                <MenuObjects open={this.state.open}/>
             </div>
         );
     }

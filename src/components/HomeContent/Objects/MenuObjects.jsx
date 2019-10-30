@@ -7,7 +7,7 @@ class MenuObjects extends React.Component{
     }
     render() {
         return(<div>
-            <div className={style.menuVisible}>
+            <div className={(this.props.open)? style.menuVisible : style.menuNoneVisible} >
                 <ul>
                     <li>MAIN_MENU</li>
                     <li><a href={"/about-us"}>ABOUT_US</a></li>

@@ -10,6 +10,9 @@
     z-index: 10;
 }
 
+.menuNoneVisible{
+    display: none;
+}
 
 .menuVisible ul{
     list-style: none;
