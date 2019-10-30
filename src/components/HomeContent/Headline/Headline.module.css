@@ -8,11 +8,14 @@
     text-align: left;
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 20px;
     color: white;
     z-index: 100;
     height: 200px;
     border: 2px solid white;
     background-color: rgba(0,0,0,0.5);
+    animation-name: headlineBlock;
+    animation-duration: 2000ms;
 }
 
 .headline h1{
@@ -27,6 +30,13 @@
     opacity: 0.7;
 }
 
+.description{
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: lowercase;
+}
+
 .cursor{
     padding-left: 2px;
     padding-right: 2px;
@@ -34,4 +44,15 @@
     color: #00fffb;
     opacity: 0.5;
     margin-left: 5px;
+}
+
+@keyframes headlineBlock {
+    from{
+        top: 450px;
+        opacity: 0;
+    }
+    to{
+        top: 300px;
+        opacity: 1;
+    }
 }

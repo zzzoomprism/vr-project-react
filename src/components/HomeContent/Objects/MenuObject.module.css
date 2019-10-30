@@ -7,7 +7,8 @@
     color: white;
     justify-items: center;
     align-items: center;
-    z-index: 10;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
 }
 
 .menuNoneVisible{
@@ -25,15 +26,9 @@
 @keyframes openMenu {
     from{
         width: 0;
-        opacity: 0;
-    }
-
-    50%{
-        background-color: #00fffb;
     }
 
     to{
         width: 100%;
-        opacity: 1;
     }
 }

@@ -7,14 +7,30 @@ class Headline extends React.Component{
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad, aliquid architecto culpa dolore esse et exercitationem fugit harum, id illo illum iste labore laboriosam magnam nesciunt quae quis repellendus?",
         displayH: "",
         displayD: "",
+        colorD: ""
     };
 
     constructor(props) {
         super(props);
         this.changeHeadline = this.changeHeadline.bind(this);
         this.changeText = this.changeText.bind(this);
-        setInterval(this.changeHeadline, 3000 );
-        setInterval(this.changeText, 8000 );
+        this.getRandomColor = this.getRandomColor.bind(this);
+        this.handleLoad = this.handleLoad.bind(this);
+
+    }
+
+    componentDidMount() {
+        window.addEventListener('load', this.handleLoad);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerH);
+        clearInterval(this.timerD);
+    }
+
+    handleLoad(){
+        this.timerH = setInterval(this.changeHeadline, 3000 );
+        this.timerD = setInterval(this.changeText, 8000 );
     }
 
     changeHeadline(){
@@ -28,21 +44,30 @@ class Headline extends React.Component{
         }
     }
 
+    getRandomColor(min, max){
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+
     changeText(){
         let timer = 0;
-        let text = this.state.description;
+        let text = this.state.description.split(" ");
         this.setState({displayD: ""});
         for(let i = 0; i < text.length; i++){
-            setTimeout(()=>{this.setState({displayD: this.state.displayD + text[i]});
-            }, timer);
             timer+=50;
+            let color = "rgb(" + this.getRandomColor(0, 255) + " " + this.getRandomColor(0,255) + " " + this.getRandomColor(0, 255) + ")";
+            this.setState({colorD: color});
+            setTimeout(()=>{this.setState({displayD: this.state.displayD + " " +  text[i]});
+            }, timer);
         }
     }
     render() {
         return (
             <div className={style.headline}>
                 <h1><span className={style.rootColor}>$root: </span>{this.state.displayH}<span className={style.cursor}>|</span></h1>
-                {/*<p>{this.state.displayD}<span className={style.cursor}>|</span></p>*/}
+                <p style={{color: this.state.colorD}} className={style.description}>{this.state.displayD}<span className={style.cursor}>|</span></p>
             </div>
         );
     }
