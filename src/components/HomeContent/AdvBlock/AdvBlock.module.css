@@ -11,6 +11,7 @@
 }
 
 .backgroundImg{
+    position: relative;
     width: 100%;
     height: 900px;
     -o-object-fit: cover;
@@ -20,7 +21,7 @@
     -o-animation-name: backgroundImageAnimate;
     animation-name: backgroundImageAnimate;
     animation-iteration-count: infinite;
-    animation-duration: 5000ms;
+    animation-duration: 8000ms;
     animation-direction: alternate;
 }
 
@@ -31,6 +32,37 @@
     left: 0;
     width: 100%;
     height: 400px;
+    background-color: rgba(0,0,0,.7);
+}
+
+.textUpToAnimImage{
+    position: absolute;
+    text-align: center;
+    font-size: 40px;
+    top: 100px;
+    z-index: 10;
+    width: 100%;
+}
+
+.textUpToAnimImage h3{
+    font-family: 'Mitr', sans-serif;
+    color: #fff;
+    font-size: 50px;
+    letter-spacing: 3px;
+}
+
+.textUpToAnimImage a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 70px;
+    padding-left: 40px;
+    padding-right: 40px;
+    transition: 500ms;
+    border: 4px solid white;
+}
+
+.textUpToAnimImage a:hover{
+    color: #00fffb;
     background-color: rgba(0,0,0,.6);
 }
 
