@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Mitr:200,300,400,500,600,700&display=swap');
+
+.backgroundBlock{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    font-family: 'Mitr', sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+.backgroundImg{
+    width: 100%;
+    height: 900px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -webkit-animation-name: backgroundImageAnimate;
+    -moz-animation-name: backgroundImageAnimate;
+    -o-animation-name: backgroundImageAnimate;
+    animation-name: backgroundImageAnimate;
+    animation-iteration-count: infinite;
+    animation-duration: 5000ms;
+    animation-direction: alternate;
+}
+
+.backgroundBlock::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background-color: rgba(0,0,0,.6);
+}
+
+@keyframes backgroundImageAnimate {
+    from{
+        height: 400px;
+    }
+    to{
+        height: 900px;
+    }
+}

@@ -4,6 +4,7 @@ import MenuObject from "./Objects/MenuObjects";
 import Demonstrate from "./Demonstrate/Demonstrate";
 import MenuButton from "./MenuButton/MenuButton";
 import Block from "./Block/Block";
+import AdvBlock from "./AdvBlock/AdvBlock";
 
 
 class HomeContent extends React.Component{
@@ -14,6 +15,7 @@ class HomeContent extends React.Component{
                     <MenuButton/>
                     <Demonstrate/>
                     <Block/>
+                    <AdvBlock/>
             </div>
         )
     }

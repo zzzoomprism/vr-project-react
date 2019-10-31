@@ -27,7 +27,6 @@
 
 .rootColor{
     color: #00fffb;
-    opacity: 0.7;
 }
 
 .description{
@@ -42,7 +41,6 @@
     padding-right: 2px;
     background-color: #00fffb;
     color: #00fffb;
-    opacity: 0.5;
     margin-left: 5px;
 }
 
@@ -54,5 +52,14 @@
     to{
         top: 300px;
         opacity: 1;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .headline h1{
+        font-size: 20px;
+    }
+    .description{
+        font-size: 12px;
     }
 }

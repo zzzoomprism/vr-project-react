@@ -7,9 +7,10 @@
     font-size: 30px;
     z-index: 10;
     padding-top: 20px;
+    background-color: rgba(0,0,0,0);
     overflow: hidden;
     animation-name: closeMenu;
-    animation-duration: 2000ms;
+    animation-duration: 700ms;
 }
 
 .menuContainerOpen{
@@ -20,9 +21,10 @@
     font-size: 30px;
     z-index: 1000;
     padding-top: 40px;
-    background-color: rgba(0,0,0,.9);
+    overflow: hidden;
+    background-color: rgba(0,0,0,1);
     animation-name: openMenu;
-    animation-duration: 2000ms;
+    animation-duration: 1000ms;
 }
 
 .iconMenuButton{
@@ -57,11 +59,12 @@
         width: 100%;
         height: 100%;
         left: 0;
+        background-color: rgba(0,0,0,.9);
     }
     to{
         width: 80px;
         height: 50px;
         left: calc(100% - 120px);
-
+        background-color: rgba(0,0,0,0);
     }
 }
