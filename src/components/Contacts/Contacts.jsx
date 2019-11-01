@@ -4,7 +4,7 @@ import Assets from "aframe-react-assets";
 import {Entity, Box, Cylinder, Sphere, Plane, Sky, Text, Scene, Curvedimage, Camera, Cursor, Image, Ring, Event,Circle} from "react-aframe-ar";
 import {Light, Video, Videosphere} from "react-aframe-ar/src";
 import manipulation from "./functions";
-import info from "./contacts_info";
+import info from "./../contacts_info";
 
 class Contacts extends React.Component{
     manip = manipulation;
