@@ -8,6 +8,8 @@ import AdvBlock from "./AdvBlock/AdvBlock";
 import Employees from "./Employees/Employees";
 import Gallery from "./Gallery/Gallery";
 import employees from "./../contacts_info";
+import WorkingWith from "./WorkingWith/WorkingWith";
+import Footer from "./Footer/Footer";
 
 
 class HomeContent extends React.Component{
@@ -48,8 +50,11 @@ class HomeContent extends React.Component{
             this.setState({step: 100});
             this.setState({fullWidth: true});
         }
-        else
-            this.setState({step: 50})
+        else {
+            this.setState({leftPosition: 0});
+            this.setState({step: 50});
+            this.setState({fullWidth: false});
+        }
     }
 
     onPrevHandleClick(){
@@ -77,6 +82,9 @@ class HomeContent extends React.Component{
                     <Demonstrate/>
                     <Block/>
                     <AdvBlock/>
+                <div className={style.employeeHeadline}>
+                    <h3>OUR TEAM</h3>
+                </div>
                 <div className={style.mainEmpContainer}>
                     {this.employeesInformation}
                 </div>
@@ -85,6 +93,8 @@ class HomeContent extends React.Component{
                     <a onClick={this.onNextHandleClick}>next <i className="fas fa-long-arrow-alt-right"></i></a>
                 </div>
                 <Gallery/>
+                <WorkingWith/>
+                <Footer/>
             </div>
         )
     }

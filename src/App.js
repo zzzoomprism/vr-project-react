@@ -3,22 +3,27 @@ import VRContent from "./components/VRContent/VRContent";
 import HomeContent from "./components/HomeContent/HomeContent";
 import Loader from "./components/Loader/Loader";
 import "./App.css";
-import {BrowserRouter, Route} from "react-router-dom";
+import {HashRouter, Route, Switch} from "react-router-dom";
 
 class App extends React.Component{
 
 
 
 render() {
-    return(
-        <BrowserRouter>
+    const App = () => (
         <div>
-            <Route path={'/home'} component={HomeContent}/>
-            <Route path={'/vr'} component={VRContent}/>
+            <Switch>
+                <Route exact path='/' component={HomeContent}/>
+                <Route path='/vr' component={VRContent}/>
+            </Switch>
         </div>
-        </BrowserRouter>
-
-
+    );
+    return(
+        <HashRouter>
+        <Switch>
+            <App/>
+        </Switch>
+        </HashRouter>
     )
     }
 }
