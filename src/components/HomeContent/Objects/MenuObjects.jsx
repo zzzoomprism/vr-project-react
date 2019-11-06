@@ -44,10 +44,6 @@ class MenuObjects extends React.Component{
                            onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}
                            href={"/about-us"}>OUR_TEAM <span>
                         <i className="fas fa-long-arrow-alt-left"></i></span></a></li>
-                    <li> <a style={{color: this.getColor()}} href={"/about-us"} id={"contact_us_component"}
-                            className={(this.state.mouseEnter===true && this.state.target==="contact_us_component") ? style.showArrow : style.noneArrow}
-                            onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>CONTACT_US <span>
-                        <i className="fas fa-long-arrow-alt-left"></i></span></a></li>
                     <li><Link  id={"vr_component"} to={"/vr"}
                                className={(this.state.mouseEnter===true && this.state.target==="vr_component") ? style.showArrow : style.noneArrow}
                                onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>PLAY_IN_VR <span>

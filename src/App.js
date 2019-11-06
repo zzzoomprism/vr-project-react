@@ -11,12 +11,10 @@ class App extends React.Component{
 
 render() {
     const App = () => (
-        <div>
             <Switch>
                 <Route exact path='/' component={HomeContent}/>
                 <Route path='/vr' component={VRContent}/>
             </Switch>
-        </div>
     );
     return(
         <HashRouter>

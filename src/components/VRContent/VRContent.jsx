@@ -6,13 +6,13 @@ import './../button';
 
 
 import obj from "./../../media/globe.obj";
+import video from "./../../media/Video/1.mp4";
 
 import Menu from "./../Menu/Menu";
 import AboutUs from "./../AboutUs/AboutUs";
 import Gallery from "./../Gallery/Gallery";
 import Contacts from "./../Contacts/Contacts";
 
-import menu from "./../Menu/functions";
 import Loader from "../Loader/Loader";
 
 
@@ -21,7 +21,9 @@ class VRContent extends React.Component{
         aboutUs: false,
         gallery: false,
         contact: false,
+        video: false,
         time: true,
+        menuOpen: false,
     };
 
     constructor(props){
@@ -29,15 +31,14 @@ class VRContent extends React.Component{
         this.methodAboutUsState = this.methodAboutUsState.bind(this);
         this.methodGallery = this.methodGallery.bind(this);
         this.methodContacts = this.methodContacts.bind(this);
+        this.methodVideoState = this.methodVideoState.bind(this);
         this.handleHide = this.handleHide.bind(this);
+        this.handleMenuClick = this.handleMenuClick.bind(this);
     }
 
     handleMenuClick(){
-        let menuElement = document.getElementsByClassName("menu");
-        let angle = 0;
-        for(let i = 0; i < menuElement.length; i++){
-            menuElement[i].setAttribute("visible", "true");
-            menuElement[i].setAttribute("animation", "property: scale; to: 1 1 1; dur: 500;");
+        if(!this.state.menuOpen){
+            this.setState({menuOpen: true});
         }
     }
 
@@ -46,8 +47,21 @@ class VRContent extends React.Component{
             this.setState({contact: false});
             this.setState({aboutUs: true});
             this.setState({gallery: false});
+            this.setState({video: false});
         }
-        menu.remove();
+
+        this.setState({menuOpen: false,});
+    }
+
+    methodVideoState(){
+        if(!this.state.aboutUs){
+            this.setState({contact: false});
+            this.setState({aboutUs: false});
+            this.setState({gallery: false});
+            this.setState({video: true});
+        }
+
+        this.setState({menuOpen: false,});
     }
 
     methodGallery(){
@@ -55,8 +69,10 @@ class VRContent extends React.Component{
             this.setState({contact: false});
             this.setState({aboutUs: false});
             this.setState({gallery: true});
+            this.setState({video: false});
         }
-        menu.remove();
+
+        this.setState({menuOpen: false,});
     }
 
     methodContacts(){
@@ -64,9 +80,10 @@ class VRContent extends React.Component{
             this.setState({contact: true});
             this.setState({aboutUs: false});
             this.setState({gallery: false});
+            this.setState({video: false});
         }
-        menu.remove();
 
+        this.setState({menuOpen: false,});
     }
 
     componentDidMount(){
@@ -79,13 +96,12 @@ class VRContent extends React.Component{
 
     render() {
         return(
-            <div>
-                <Loader visible={this.state.time}/>
             <Scene>
-                <Sky color={"#222"}>
-                    <Entity geometry="primitive: circle; radius: 60;" material="color: #222; transparent: true; opacity: 0.5; depthTest: false; "
-                            rotation={'-90 0 0'} position={'0 -2 0'}/>
-                    <Entity events={{'click': this.handleMenuClick.bind(this)}}>
+                <Loader visible={this.state.time}/>
+                <Sky color={(this.state.video) ? "" : "#000"} src={(this.state.video) ? video : ""}>
+                    {(this.state.video) ? "" :  <Entity geometry="primitive: circle; radius: 60;" material="color: #222; transparent: true; opacity: 0.5; depthTest: false; "
+                                                         rotation={'-90 0 0'} position={'0 -5 0'}/>}
+                    <Entity events={{'click': this.handleMenuClick}}>
                         <Entity button position="-1 0 -4" rotation={"-90 0 0"}>
                             <a-obj-model src={obj} scale={'0.007 0.007 0.007'} position={"-0.03 0.150 0.3"}
                                          material={"color: #00fffb; transparent: true; opacity: 0.8; emissive: #00fffb; side: double;"}
@@ -95,22 +111,24 @@ class VRContent extends React.Component{
                     </Entity>
 
 
-                    <Menu position="-3 2.5 -2.5" text="CONTACT" visible={"false"} click={this.methodContacts} />
-                    <Menu position="1.5 3 -2.5" text="GALLERY" click={this.methodGallery} visible={"false"} />
-                    <Menu position="-1.5 3 -1.5" text="ABOUT US" visible={"false"} click={this.methodAboutUsState} />
+                    <Menu position="-3 2.5 -2.5" text="CONTACT" visible={this.state.menuOpen} click={this.methodContacts} />
+                    <Menu position="1.5 3 -2.5" text="GALLERY" visible={this.state.menuOpen} click={this.methodGallery} />
+                    <Menu position="-1.5 3 -1.5" text="ABOUT US" visible={this.state.menuOpen} click={this.methodAboutUsState} />
+                    <Menu position="0.1 2 -2" text="VIDEO" visible={this.state.menuOpen} click={this.methodVideoState} />
 
                     <Gallery visible={this.state.gallery}/>
                     <AboutUs visible={this.state.aboutUs}/>
                     <Contacts visible={this.state.contact}/>
 
-                    <Entity bar={"radius: 10"} position={"-1 -2 0"} animation={"property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 100000;"} scale={"5 5 5"}/>
+
+                    {(this.state.video) ? " " : <Entity bar={"radius: 10"} position={"-1 -2 0"}
+                                                        animation={"property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 100000;"} scale={"5 5 5"}/>}
 
                 </Sky>
                 <Camera position="1 2 0">
                     <Cursor color="white"/>
                 </Camera>
             </Scene>
-            </div>
         );
     }
 
