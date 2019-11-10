@@ -38,8 +38,8 @@ class Terminal extends React.Component{
     }
 
     handleLoad(){
-        this.timerH = setInterval(this.changeHeadline, 3000 );
-        this.timerD = setInterval(this.changeText, 8000 );
+        this.timerH = setTimeout(this.changeHeadline, 2200 );
+        this.timerD = setTimeout(this.changeText, 3500 );
     }
 
     changeHeadline(){
@@ -79,15 +79,15 @@ class Terminal extends React.Component{
     render() {
         return (
             <Entity>
-                <Plane position={"-1 2.5 -2.5"} material={"color: white; emissive: white;"}
-                       width={3} height={2} scale={"1 0 0"} visible={this.props.visible}
-                       animation={(this.props.visible) ? "property: scale; to: 1 1 1; dur: 2000;" : " "}>
-                    <Plane width={2.9} height={1.9} material={"color: black; emissive: black;"} position={"0 0 0.01"}>
+                <Plane position={"-1 2.5 -6"} material={"color: white; emissive: white;"}
+                       width={6} height={4} visible={this.props.visible} scale={(this.props.visible && this.props.close) ? "1 1 1" : "1 0 0"}
+                       animation={(this.props.visible && this.props.close) ? "property: scale; from: 1 0 0; to: 1 1 1; dur: 2000;" : " "}>
+                    <Plane width={5.9} height={3.9} material={"color: black; emissive: black;"} position={"0 0 0.01"}>
                         <Text value={"$root: " +  this.state.displayH  + "|"} rotation={"0 -180 0"} side={"double"} z-offset={"-0.04"}
-                        anchor={"center"} baseline={"center"} width={2.9} height={1.9} x-offset={"0.2"} position={"0 0.7 0"} font={"dejavu"}
+                        anchor={"center"} baseline={"center"} width={5.9} height={3.9} x-offset={"0.2"} position={"0 1.4 0"} font={"dejavu"}
                         color={this.state.colorH} alpha-test={30}/>
                         <Text value={this.state.displayD} rotation={"0 -180 0"} side={"double"}  z-offset={"-0.04"}
-                              anchor={"center"} baseline={"center"} width={2.5} height={1.5} position={"0 0.1 0"} font={"dejavu"}
+                              anchor={"center"} baseline={"center"} width={5.5} height={3.5} position={"0 0.1 0"} font={"dejavu"}
                         wrap-count={60}  color={this.state.colorD} />
                     </Plane>
                 </Plane>

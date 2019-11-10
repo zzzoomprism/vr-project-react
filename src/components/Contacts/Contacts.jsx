@@ -20,6 +20,7 @@ class Contacts extends React.Component{
     handleClick(event){
         this.setState({infoTitle: event.target.title});
         this.setState({infoDesc: event.target.getAttribute("information")});
+        this.setState({visible: true});
     }
 
 
@@ -44,7 +45,7 @@ class Contacts extends React.Component{
         return(
             <Entity>
                 {contact_info}
-                <Terminal title={this.state.infoTitle} description={this.state.infoDesc} visible={this.state.visible}/>
+                <Terminal title={this.state.infoTitle} description={this.state.infoDesc} visible={this.state.visible} close={this.props.visible}/>
             </Entity>
         )
     }

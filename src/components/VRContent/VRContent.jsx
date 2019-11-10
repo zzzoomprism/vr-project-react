@@ -99,8 +99,7 @@ class VRContent extends React.Component{
             <Scene>
                 <Loader visible={this.state.time}/>
                 <Sky color={(this.state.video) ? "" : "#000"} src={(this.state.video) ? video : ""}>
-                    {(this.state.video) ? "" :  <Entity geometry="primitive: circle; radius: 60;" material="color: #222; transparent: true; opacity: 0.5; depthTest: false; "
-                                                         rotation={'-90 0 0'} position={'0 -5 0'}/>}
+                     <Entity geometry="primitive: circle; radius: 60;" material="color: #222; transparent: true; opacity: 0.5; depthTest: false; "  rotation={'-90 0 0'} position={'0 -5 0'} visible={(this.state.video) ? "false" : "true" }/>
                     <Entity events={{'click': this.handleMenuClick}}>
                         <Entity button position="-1 0 -4" rotation={"-90 0 0"}>
                             <a-obj-model src={obj} scale={'0.007 0.007 0.007'} position={"-0.03 0.150 0.3"}
