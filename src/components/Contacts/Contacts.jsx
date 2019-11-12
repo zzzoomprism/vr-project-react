@@ -32,7 +32,7 @@ class Contacts extends React.Component{
                      height="14" radius="13" theta-length="40"
                      rotation={"0 0 0" } scale="0.8 0.8 0.8"
                      geometry={"segmentsRadial: 50; segmentsHeight: 120;"}
-                     position={'-1 3.0 0'} material={"transparent: true; opacity: 0.7; wireframe: true; color: #00fffb"}
+                     position={'-1 3.0 0'} material={"transparent: true; opacity: 0.7; wireframe: true; "}
                      animation__rotation={(this.props.visible) ? "property: rotation; to:" + "0 " + `${angle+=50}`+ " 0" + "; dur: 2000; easing: linear;" : "property: rotation; to: 0 0 0; dur: 2000;"}
                      animation__smoth = {(this.props.visible) ? "property: rotation; from: " + "0 " + `${angle}` + " 0; to: 0 " + `${angle+360}` + " 0; loop: true; dur: 80000; delay: 2000; easing: linear;" : "property: rotation; to: 0 0 0; dur: 2000; easing: linear;"}
                      events={{'click': this.handleClick}}

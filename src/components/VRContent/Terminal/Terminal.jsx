@@ -7,8 +7,6 @@ class Terminal extends React.Component{
         desc: "",
         displayH: "",
         displayD: "",
-        colorH: "#00ff00",
-        colorD: "#00ff00"
     };
 
     constructor(props){
@@ -16,12 +14,11 @@ class Terminal extends React.Component{
         this.handleLoad = this.handleLoad.bind(this);
         this.changeHeadline = this.changeHeadline.bind(this);
         this.changeText = this.changeText.bind(this);
-        this.getRandomColor = this.getRandomColor.bind(this);
 
     }
 
     componentDidUpdate(prevProps) {
-        if(this.props.title !== prevProps.title){
+        if(this.props.title !== prevProps.title || this.props.description !== prevProps.description){
             clearInterval(this.timerH);
             clearInterval(this.timerD);
             this.setState({headline: ""});
@@ -46,8 +43,6 @@ class Terminal extends React.Component{
         this.setState({headline: this.props.title});
         let timer = 0;
         let headline = this.state.headline;
-        let color = "rgb(" + this.getRandomColor(0, 255) + "," + this.getRandomColor(0,255) + "," + this.getRandomColor(50, 255) + ")";
-        this.setState({colorH: color});
         this.setState({displayH: ""});
         for(let i = 0; i < headline.length; i++){
             setTimeout(()=>{this.setState({displayH: this.state.displayH + headline[i]});
@@ -61,19 +56,11 @@ class Terminal extends React.Component{
         this.setState({description: this.props.description});
         let text = this.state.description.split(" ");
         this.setState({displayD: ""});
-        let color = "rgb(" + this.getRandomColor(0, 255) + "," + this.getRandomColor(0,255) + "," + this.getRandomColor(50, 255) + ")";
-        this.setState({colorD: color});
         for(let i = 0; i < text.length; i++){
             timer+=50;
             setTimeout(()=>{this.setState({displayD: this.state.displayD + " " +  text[i]});
             }, timer);
         }
-    }
-
-    getRandomColor(min, max){
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min)) + min;
     }
 
     render() {
@@ -85,10 +72,10 @@ class Terminal extends React.Component{
                     <Plane width={5.9} height={3.9} material={"color: black; emissive: black;"} position={"0 0 0.01"}>
                         <Text value={"$root: " +  this.state.displayH  + "|"} rotation={"0 -180 0"} side={"double"} z-offset={"-0.04"}
                         anchor={"center"} baseline={"center"} width={5.9} height={3.9} x-offset={"0.2"} position={"0 1.4 0"} font={"dejavu"}
-                        color={this.state.colorH} alpha-test={30}/>
+                        color={"#00ff00"} alpha-test={30}/>
                         <Text value={this.state.displayD} rotation={"0 -180 0"} side={"double"}  z-offset={"-0.04"}
                               anchor={"center"} baseline={"center"} width={5.5} height={3.5} position={"0 0.1 0"} font={"dejavu"}
-                        wrap-count={60}  color={this.state.colorD} />
+                        wrap-count={60}  color={"#00ff00"} />
                     </Plane>
                 </Plane>
             </Entity>

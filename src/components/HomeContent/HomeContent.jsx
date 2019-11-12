@@ -8,7 +8,6 @@ import AdvBlock from "./AdvBlock/AdvBlock";
 import Employees from "./Employees/Employees";
 import Gallery from "./Gallery/Gallery";
 import employees from "./../contacts_info";
-import WorkingWith from "./WorkingWith/WorkingWith";
 import Footer from "./Footer/Footer";
 
 
@@ -93,7 +92,6 @@ class HomeContent extends React.Component{
                     <a onClick={this.onNextHandleClick}>next <i className="fas fa-long-arrow-alt-right"></i></a>
                 </div>
                 <Gallery/>
-                <WorkingWith/>
                 <Footer/>
             </div>
         )

@@ -6,7 +6,7 @@ import './../button';
 
 
 import obj from "./../../media/globe.obj";
-import video from "./../../media/Video/1.mp4";
+
 
 import Menu from "./../Menu/Menu";
 import AboutUs from "./../AboutUs/AboutUs";
@@ -34,11 +34,19 @@ class VRContent extends React.Component{
         this.methodVideoState = this.methodVideoState.bind(this);
         this.handleHide = this.handleHide.bind(this);
         this.handleMenuClick = this.handleMenuClick.bind(this);
+
+        this.skyVideo = React.createRef();
     }
 
     handleMenuClick(){
         if(!this.state.menuOpen){
             this.setState({menuOpen: true});
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(this.state.video){
+            window.location.href="#/video";
         }
     }
 
@@ -49,8 +57,8 @@ class VRContent extends React.Component{
             this.setState({gallery: false});
             this.setState({video: false});
         }
-
         this.setState({menuOpen: false,});
+        console.log(this.skyVideo.current);
     }
 
     methodVideoState(){
@@ -60,8 +68,9 @@ class VRContent extends React.Component{
             this.setState({gallery: false});
             this.setState({video: true});
         }
-
         this.setState({menuOpen: false,});
+
+        console.log(this.skyVideo.current);
     }
 
     methodGallery(){
@@ -71,8 +80,8 @@ class VRContent extends React.Component{
             this.setState({gallery: true});
             this.setState({video: false});
         }
-
         this.setState({menuOpen: false,});
+        console.log(this.skyVideo.current);
     }
 
     methodContacts(){
@@ -82,8 +91,8 @@ class VRContent extends React.Component{
             this.setState({gallery: false});
             this.setState({video: false});
         }
-
         this.setState({menuOpen: false,});
+        console.log(this.skyVideo.current);
     }
 
     componentDidMount(){
@@ -98,7 +107,7 @@ class VRContent extends React.Component{
         return(
             <Scene>
                 <Loader visible={this.state.time}/>
-                <Sky color={(this.state.video) ? "" : "#000"} src={(this.state.video) ? video : ""}>
+                <Sky color="#000">
                      <Entity geometry="primitive: circle; radius: 60;" material="color: #222; transparent: true; opacity: 0.5; depthTest: false; "  rotation={'-90 0 0'} position={'0 -5 0'} visible={(this.state.video) ? "false" : "true" }/>
                     <Entity events={{'click': this.handleMenuClick}}>
                         <Entity button position="-1 0 -4" rotation={"-90 0 0"}>
@@ -113,7 +122,7 @@ class VRContent extends React.Component{
                     <Menu position="-3 2.5 -2.5" text="CONTACT" visible={this.state.menuOpen} click={this.methodContacts} />
                     <Menu position="1.5 3 -2.5" text="GALLERY" visible={this.state.menuOpen} click={this.methodGallery} />
                     <Menu position="-1.5 3 -1.5" text="ABOUT US" visible={this.state.menuOpen} click={this.methodAboutUsState} />
-                    <Menu position="0.1 2 -2" text="VIDEO" visible={this.state.menuOpen} click={this.methodVideoState} />
+                    <Menu position="0.1 2 -2" text="OUR OFFICE" visible={this.state.menuOpen} click={this.methodVideoState} />
 
                     <Gallery visible={this.state.gallery}/>
                     <AboutUs visible={this.state.aboutUs}/>

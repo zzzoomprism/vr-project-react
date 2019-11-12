@@ -47,5 +47,31 @@
         margin-left: 50px;
         margin-right: 50px;
     }
+
+    .innerBlockImageFilter img{
+        height: 250px;
+    }
+
+    .innerBlockImageFilter::after{
+        height: 250px;
+        background-color: #111;
+        opacity: 0.2;
+    }
+
+    .innerBlockEmpTitle p{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .innerEmpBlock{
+        display:grid;
+        width: 80%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 150px 150px;
+    }
+    .innerBlockImageFilter img{
+        height: 150px;
+    }
 }
 
