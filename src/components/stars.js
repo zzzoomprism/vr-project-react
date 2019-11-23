@@ -3,14 +3,14 @@ import * as THREE from 'three';
 
 AFRAME.registerComponent('bar', {
     schema: {
-        color: {default: '#FFF'},
+        color: {default: '#FFD700'},
         radius: {type: "int", default: 10},
         size: {type: 'int', default: 5}
     },
     update: function(){
         let el = this.el;
         var starsGeometry = new THREE.Geometry();
-        var starsMaterial = new THREE.PointsMaterial({size: 1, sizeAttenuation: false});
+        var starsMaterial = new THREE.PointsMaterial({size: 1, sizeAttenuation: false, color: "#FFD700"});
         var angle = 0;
         let radius = this.data.radius;
         for(var i = 0; i<10000; i++){

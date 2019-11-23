@@ -2,7 +2,7 @@ import React from 'react';
 import VRContent from "./components/VRContent/VRContent";
 import HomeContent from "./components/HomeContent/HomeContent";
 import VideoContent from "./components/VRContent/VideoContent/VideoContent";
-import Loader from "./components/Loader/Loader";
+import Loader from "./components/VRContent/Loader/Loader";
 import "./App.css";
 import {HashRouter, Route, Switch, withRouter} from "react-router-dom";
 

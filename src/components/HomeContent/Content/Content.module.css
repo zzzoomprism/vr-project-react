@@ -1,0 +1,54 @@
+.mainContentWrapper{
+    width: calc(100% - 100px);
+    float: right;
+    height: 100vh;
+    z-index: 1;
+    background-image: url("https://images.pexels.com/photos/1405773/pexels-photo-1405773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    position: relative;
+}
+
+.infoBlock{
+    position:absolute;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-bottom: 30px;
+    grid-template-rows:repeat(auto-fit, minmax(20px, 50px));
+    width: 45%;
+    float: right;
+    background-color: white;
+    color: black;
+    top: calc(100% - 300px);
+    left: 55%;
+    z-index: 110;
+}
+.infoBlock p{
+    padding: 10px 50px 0 50px;
+}
+.infoBlock p span{
+    color: coral;
+    margin-right: 10px;
+}
+
+.infoBlock h3{
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.infoBlock div{
+    position: relative;
+}
+
+.infoBlock div a{
+    position: absolute;
+    left: 50px;
+    top:-10px;
+    padding: 5px 20px 5px 20px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+

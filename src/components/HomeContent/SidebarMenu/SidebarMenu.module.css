@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+.mainMenuDiv{
+    position: fixed;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 100px minmax(150px, 500px);
+    grid-template-rows: 100vh;
+    z-index: 100;
+}
+
+.mainMenuDivNoneActive{
+    position: fixed;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 100px minmax(150px, 500px);
+    grid-template-rows: 100vh;
+    width: 100px;
+    z-index: 100;
+}
+
+.sidebarDiv{
+    margin: 0;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 100px;
+    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.menuLogo h1{
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+}
+
+.menuButton{
+    font-family: 'Staatliches', cursive;
+    font-size: 25px;
+    display: grid;
+    grid-template-rows: 50px 80px;
+}
+
+.menuButton a{
+    cursor: pointer;
+}
+
+.socialLink ul{
+    padding: 0;
+    list-style: none;
+    font-size: 20px;
+    color: #333;
+    font-weight: 200;
+}
+
+
+.sidebarContentActive{
+    background-color: rgba(0,0,0,.8);
+    display: grid;
+    grid-template-columns: 1fr;
+    color: white;
+    align-items: center;
+    justify-items: center;
+    animation: slowMotionToOpenMenu;
+    animation-duration: 1500ms;
+}
+
+.sidebarContentActive ul{
+    font-family: 'Raleway', sans-serif;
+    list-style: none;
+    font-size: 30px;
+    padding: 0;
+}
+
+.sidebarContentActive ul li{
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.sidebarContentActive ul li:hover{
+    color: coral;
+}
+
+.sidebarContentActive ul li span{
+    margin-left: 100px;
+}
+
+.sidebarContentNoneActive{
+    width: 0;
+    overflow: hidden;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+@keyframes slowMotionToOpenMenu {
+    from {
+        width:0;
+        opacity: 0;
+     }
+    50%{
+        width:100%;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes slowMotionToCloseMenu {
+    from {
+        width:100%;
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+        width: 0;
+    }
+}
+
