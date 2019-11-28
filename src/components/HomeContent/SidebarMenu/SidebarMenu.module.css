@@ -70,7 +70,6 @@
 }
 
 .sidebarContentActive ul{
-    font-family: 'Raleway', sans-serif;
     list-style: none;
     font-size: 30px;
     padding: 0;
@@ -80,8 +79,15 @@
     margin-top: 30px;
     cursor: pointer;
 }
+.sidebarContentActive ul li a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Raleway', sans-serif;
 
-.sidebarContentActive ul li:hover{
+}
+
+
+.sidebarContentActive ul li a:hover{
     color: coral;
 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./SidebarMenu.module.css";
+import {Link} from "react-router-dom";
 
 const SidebarMenu = (props) => {
     return (
@@ -23,10 +24,10 @@ const SidebarMenu = (props) => {
                 </div>
                 <div className={(props.open) ? style.sidebarContentActive : style.sidebarContentNoneActive}>
                     <ul>
-                        <li>Home <span><i className='fas fa-chevron-right'></i></span></li>
-                        <li>VR <span><i className='fas fa-chevron-right'></i></span></li>
-                        <li>Collection <span><i className='fas fa-chevron-right'></i></span></li>
-                        <li>About Us <span><i className='fas fa-chevron-right'></i></span></li>
+                        <li><a href="">Home </a><span><i className='fas fa-chevron-right'></i></span></li>
+                        <li><Link to={"/vr"}>VR</Link><span><i className='fas fa-chevron-right'></i></span></li>
+                        <li><a href="">Collection</a> <span><i className='fas fa-chevron-right'></i></span></li>
+                        <li><a href="">About Us </a><span><i className='fas fa-chevron-right'></i></span></li>
                     </ul>
                 </div>
         </div>

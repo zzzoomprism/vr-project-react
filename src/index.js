@@ -7,10 +7,12 @@ import {Provider} from "react-redux";
 import {createStore, combineReducers} from "redux";
 import sidebarMenu from "./store/reducer/sidebarmenuReducer";
 import furnitureBlocksReducer from "./store/reducer/furnitureBlocksReducer";
+import vrContentReducer from "./store/reducer/vrReducer";
 
 const rootReducer = combineReducers({
    sidebar:  sidebarMenu,
-   furnitureBlock: furnitureBlocksReducer
+   furnitureBlock: furnitureBlocksReducer,
+   vrReducer: vrContentReducer
 });
 const store = createStore(rootReducer);
 
