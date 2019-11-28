@@ -16,3 +16,67 @@ h2, h3, h4{
 a,p{
     font-family: 'Staatliches', cursive;
 }
+
+button{
+    border-style: none;
+    border: 5px solid coral;
+    background-color: white;
+    padding: 10px 20px 10px 20px;
+    font-family: 'Staatliches', cursive;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 500ms;
+    overflow: hidden;
+    position: relative;
+    width: 130px;
+    height: 50px;
+}
+
+
+button .btnFlow{
+    width: 250px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+
+}
+
+button:hover{
+    background-color: coral;
+}
+
+.btnFlow i{
+    margin-right: 100px;
+}
+
+.btnLeftSlowMotion .btnFlow{
+    animation: replaceIconToText;
+    animation-duration: 500ms;
+    left: -130px;
+}
+
+.btnCloseSlowMotion .btnFlow{
+    animation: replaceTextToIcon;
+    animation-duration: 500ms;
+    left: 20px;
+}
+
+@keyframes replaceIconToText {
+    from{
+        left: 20px;
+        background-color: white;
+    }
+    to{
+        left: -130px;
+        background-color: coral;
+    }
+}
+
+@keyframes replaceTextToIcon {
+    from{
+        left: -130px;
+    }
+    to{
+        left: 20px;
+    }
+}

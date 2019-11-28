@@ -1,0 +1,10 @@
+.topMenuMainBlock{
+    width: calc(100% - 100px);
+    height: 100px;
+    color: black;
+    float: right;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 100px;
+    text-align: center;
+}
