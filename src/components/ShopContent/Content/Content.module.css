@@ -1,6 +1,6 @@
 .mainFurnitureBlock{
     width: calc(100% - 120px);
-    height: 100vh;
+    height: 100%;
     float: right;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -13,6 +13,7 @@
 .furnitureSection{
     box-shadow: 10px 9px 4px -6px rgba(0,0,0,.5);
     padding-bottom: 30px;
+    position: relative;
 }
 
 .funitureInformationContent{
@@ -22,6 +23,17 @@
 
 .funitureImageContent img{
     width: 100%;
+    height: 300px;
     object-fit: cover;
     -o-object-fit: cover;
+}
+.furniturePrice {
+    width: 150px;
+    height: 60px;
+    background-color: coral;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: calc(100% - 150px);
+    text-align: center;
 }

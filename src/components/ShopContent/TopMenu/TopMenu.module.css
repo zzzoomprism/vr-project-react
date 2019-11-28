@@ -1,10 +1,62 @@
 .topMenuMainBlock{
     width: calc(100% - 100px);
-    height: 100px;
+    height: 80px;
     color: black;
     float: right;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 15fr 1fr 1fr;
     grid-template-rows: 100px;
+    justify-items: center;
+    align-items: center;
+}
+
+hr{
+    width: calc(100% - 100px);
+    float: right;
+    border-style: none;
+    background-color: coral;
+    color: coral;
     text-align: center;
+    height: 3px;
+}
+.filterBlock{
+    list-style: none;
+    height: 100%;
+}
+
+.filterBlock li{
+    display: inline-block;
+    margin-right: 30px;
+    cursor: pointer;
+    font-family: 'Staatliches', cursive;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.filterBlock li i{
+    margin-right: 10px;
+    color: coral;
+}
+
+.filterBlock li:hover{
+    color: coral;
+}
+
+@media screen and (max-width: 640px) {
+    .filterBlock{
+        list-style: none;
+        width: 200px;
+        background-color: white;
+        height: 200px;
+        overflow: hidden;
+        position: absolute;
+        left: 130px;
+        z-index: 10;
+        top: 20px;
+    }
+
+    .filterBlock li:not(:first-child){
+        display: block;
+        margin-top: 20px;
+    }
 }
