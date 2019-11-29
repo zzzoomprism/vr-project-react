@@ -21,7 +21,6 @@ hr{
 }
 .filterBlock{
     list-style: none;
-    height: 100%;
 }
 
 .filterBlock li{
@@ -42,17 +41,17 @@ hr{
     color: coral;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 940px) {
     .filterBlock{
         list-style: none;
         width: 200px;
         background-color: white;
-        height: 200px;
         overflow: hidden;
         position: absolute;
         left: 130px;
         z-index: 10;
         top: 20px;
+        transition: 500ms;
     }
 
     .filterBlock li:not(:first-child){

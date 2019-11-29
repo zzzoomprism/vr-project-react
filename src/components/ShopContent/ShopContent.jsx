@@ -1,7 +1,7 @@
 import React from "react";
 import SidebarMenu from "./../../container/HomeContent/SidebarMenu";
-import Content from "./Content/Content";
-import TopMenu from "./TopMenu/TopMenu";
+import Content from "./../../container/ShopContent/Content";
+import TopMenu from "./../../container/ShopContent/TopMenu";
 
 const ShopContent = (props) =>{
     return(

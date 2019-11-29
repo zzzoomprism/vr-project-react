@@ -8,11 +8,15 @@ import {createStore, combineReducers} from "redux";
 import sidebarMenu from "./store/reducer/sidebarmenuReducer";
 import furnitureBlocksReducer from "./store/reducer/furnitureBlocksReducer";
 import vrContentReducer from "./store/reducer/vrReducer";
+import topMenuReducer from "./store/reducer/topMenuReducer";
+import shopContentReducer from "./store/reducer/shopContentReducer";
 
 const rootReducer = combineReducers({
    sidebar:  sidebarMenu,
    furnitureBlock: furnitureBlocksReducer,
-   vrReducer: vrContentReducer
+   vrReducer: vrContentReducer,
+   topMenuRed: topMenuReducer,
+   shopReducer: shopContentReducer,
 });
 const store = createStore(rootReducer);
 

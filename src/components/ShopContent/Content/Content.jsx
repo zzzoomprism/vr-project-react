@@ -3,9 +3,7 @@ import style from "./Content.module.css";
 import info from "./../../../info";
 import Button from "./../Button/Button";
 
-class Content extends React.Component{
-
-    render() {
+const Content = (props) => {
         const furnitureInfo = info.map((el) => {
             return  <div className={style.furnitureSection} key={el.id}>
                 <div className={style.funitureImageContent}>
@@ -30,7 +28,6 @@ class Content extends React.Component{
         return <div className={style.mainFurnitureBlock}>
             {furnitureInfo}
         </div>
-    }
-}
+};
 
 export default Content;

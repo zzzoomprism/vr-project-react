@@ -38,7 +38,7 @@ class VRContent extends React.Component{
                 <Camera position="1 6 0" >
                     <Cursor color="white" ref={this.cameraRef}/>
                 </Camera>
-
+                <RoomContent/>
             </Scene>
         );
     }
