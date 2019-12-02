@@ -8,7 +8,6 @@ class Button extends React.Component{
     };
     handleMouseEnterButton(event){
         this.setState({button: event.target.id, active: true});
-        console.log({button: event.target.id, active: true});
     }
     handleMouseLeaveButton(event){
         this.setState({button: "", active: false});
@@ -17,6 +16,7 @@ class Button extends React.Component{
         return (
                 <button id={this.props.btnId} onMouseEnter={this.handleMouseEnterButton.bind(this)}
                         className={(this.state.button === this.props.btnId && this.state.active === true) ? "btnLeftSlowMotion" : "btnCloseSlowMotion"}
+                        onClick={this.props.click}
                         onMouseLeave={this.handleMouseLeaveButton.bind(this)}>
                             <span className={"btnFlow"}>
                             <i className={this.props.icon}></i>{this.props.content}</span>

@@ -4,13 +4,14 @@ import {connect} from "react-redux";
 const mapStoreToProps = (store) => {
     return {
         isReady: store.shopReducer.isReady,
-        items: store.shopReducer.items
+        items: store.shopReducer.items,
+        sort: store.topMenuRed.sort,
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setItems: (items) => dispatch({type: 'SET_ITEMS', payload: items})
+        setItems: (items, sort) => dispatch({type: 'SET_ITEMS', info: items, sort: sort}),
     }
 };
 

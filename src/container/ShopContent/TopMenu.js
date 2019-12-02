@@ -5,12 +5,16 @@ import {connect} from "react-redux";
 const mapStoreToProps = (store) => {
     return {
         open : store.topMenuRed.open,
+        sort: store.topMenuRed.sort,
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        sortByClick: ()=>dispatch({type: 'SORT_BY_CLICK'})
+        sortByClick: ()=>dispatch({type: 'SORT_BY_CLICK'}),
+        sortPriceUp: ()=>dispatch({type: 'PRICE_UP'}),
+        sortPriceDown: ()=>dispatch({type: 'PRICE_DOWN'}),
+        sortTop: ()=>dispatch({type: 'TOP'}),
     }
 };
 

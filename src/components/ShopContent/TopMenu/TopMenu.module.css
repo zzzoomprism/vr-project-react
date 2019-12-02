@@ -41,6 +41,11 @@ hr{
     color: coral;
 }
 
+.listActive{
+    color: coral;
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 940px) {
     .filterBlock{
         list-style: none;
