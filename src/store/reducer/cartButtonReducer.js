@@ -2,7 +2,7 @@ const initialState = {
     buttonId: "",
     active: false,
     count: 0,
-    itemsId: [],
+    cartItems: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -10,12 +10,16 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'UPDATE_CART_COUNT':
             newState.count++;
-            console.log(newState);
+            newState.cartItems.push(action.item);
+            console.log(newState.cartItems);
             break;
         case 'MOUSE_ENTER_CART_BUTTON':
             newState.buttonId = action.id;
             newState.active = true;
-            console.log(newState.button + " ??????? " + newState.active);
+            break;
+        case 'MOUSE_LEAVE_CART_BUTTON':
+            newState.buttonId = "";
+            newState.active = false;
             break;
 
     }

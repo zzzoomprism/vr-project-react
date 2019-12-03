@@ -22,7 +22,7 @@ class Content extends React.Component{
                     <p><span>{el.description}</span>
                     </p>
                     <div>
-                        <CartButton btnId={el.id} />
+                        <CartButton btnId={el.id} item={el}/>
                         <Button icon={"fas fa-vr-cardboard"} btnId={el.id} content={"Look at VR"}/>
                     </div>
                 </div>
