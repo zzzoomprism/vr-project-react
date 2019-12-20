@@ -16,3 +16,12 @@ h2, h3, h4{
 a,p{
     font-family: 'Staatliches', cursive;
 }
+
+
+table{
+    border: 2px solid rgba(0,0,0,.6);
+}
+
+table thead td{
+    padding: 20px;
+}

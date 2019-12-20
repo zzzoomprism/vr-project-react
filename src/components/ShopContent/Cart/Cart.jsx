@@ -13,7 +13,7 @@ const Cart = (props) => {
 );
            const stylish = {
                height: "300px",
-               boxShadow: "0 0 40px 600px rgba(0,0,0,0.6)"
+               boxShadow: "0 0px 100px 600px rgba(0,0,0,0.6)"
            };
     return(
         <div className={style.mainCartBlock}>

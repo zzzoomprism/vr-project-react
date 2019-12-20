@@ -6,7 +6,8 @@ const models = [
     {
         id: "1enckj342lk",
         name: "Sofa Caroline",
-        description: "lorem Impsum ...",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci blanditiis consequatur consequuntur magni? Est\n" +
+            "    hic illum numquam odit quidem quo repellendus suscipit voluptate. Aut corporis nobis quidem sit ullam? Vero.",
         price: 2000,
         buy_count: 1000,
         image: "https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
