@@ -1,13 +1,15 @@
 .topMenuMainBlock{
     width: calc(100% - 100px);
     height: 80px;
-    color: black;
     float: right;
     display: grid;
     grid-template-columns: 15fr 1fr 1fr;
     grid-template-rows: 100px;
     justify-items: center;
     align-items: center;
+    background-color: black;
+    color: white;
+    box-shadow: 2px 8px 4px -6px rgba(0,0,0,.5);
 }
 
 hr{
@@ -50,7 +52,8 @@ hr{
     .filterBlock{
         list-style: none;
         width: 200px;
-        background-color: white;
+        background-color: black;
+        color: white;
         overflow: hidden;
         position: absolute;
         left: 130px;

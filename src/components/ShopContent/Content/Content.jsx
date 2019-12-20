@@ -2,6 +2,7 @@ import React from "react";
 import style from "./Content.module.css";
 import info from "./../../../info";
 import CartButton from "./../../../container/ShopContent/CartButton";
+import {Link} from "react-router-dom";
 import Button from "./../Button/Button";
 
 class Content extends React.Component{
@@ -18,7 +19,7 @@ class Content extends React.Component{
                     </div>
                 </div>
                 <div className={style.funitureInformationContent}>
-                    <h3>{el.name}</h3>
+                   <Link to={`/shop/${el.id}`}><h3>{el.name}</h3></Link>
                     <p><span>{el.description}</span>
                     </p>
                     <div>

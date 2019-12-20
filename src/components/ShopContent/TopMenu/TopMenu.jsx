@@ -16,11 +16,9 @@ const TopMenu = (props) => {
                 <div>
                         <Cart/>
                 </div>
-                <div>
-                    <h3><i className="fas fa-user-circle"></i></h3>
-                </div>
+
             </div>
-            <hr/>
+            {/*<hr/>*/}
         </div>
 };
 

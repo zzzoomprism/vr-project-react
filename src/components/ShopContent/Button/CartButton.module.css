@@ -1,7 +1,6 @@
-button{
-    border-style: none;
+.cartButton{
     border: 5px solid coral;
-    background-color: white;
+    background-color: coral;
     padding: 10px 20px 10px 20px;
     font-family: 'Staatliches', cursive;
     font-size: 20px;
@@ -14,20 +13,21 @@ button{
 }
 
 
-button .btnFlow{
+.cartButton span{
     width: 250px;
     position: absolute;
     top: 10px;
     left: 20px;
-
+    background-color: coral;
 }
 
-button:hover{
+.cartButton:hover{
     background-color: coral;
 }
 
 .btnFlow i{
     margin-right: 100px;
+    background-color: coral;
 }
 
 .btnLeftSlowMotion .btnFlow{
@@ -42,16 +42,21 @@ button:hover{
     left: 20px;
 }
 
+.cartButton[disabled]{
+    background-color: coral;
+    color: white;
+}
 
+.cartButton[disabled] .btnFlow{
+    left: -130px;
+}
 
 @keyframes replaceIconToText {
     from{
         left: 20px;
-        background-color: white;
     }
     to{
         left: -130px;
-        background-color: coral;
     }
 }
 

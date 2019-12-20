@@ -2,6 +2,7 @@
     cursor: pointer;
     transition: 300ms;
     position: relative;
+    z-index: 30;
 }
 
 .mainCartBlock h3:hover{
@@ -18,18 +19,21 @@
     position: absolute;
     left: 15px;
     top: -5px;
+    z-index: 30;
 }
 
 .cartList{
-    width: 60%;
+    width: calc(65% - 100px);
+    float: right;
     overflow: auto;
     list-style: none;
-    background-color: whitesmoke;
+    background-color: black;
     position: absolute;
     top: 60px; right: 30px;
     z-index: 20;
     padding-right: 30px;
     transition: 500ms;
+
 }
 
 .cartList li{
