@@ -3,12 +3,19 @@ import {Box, Cylinder, Sphere, Plane, Sky, Text, Curvedimage, Camera, Cursor, Im
 import {Entity, Scene} from "aframe-react";
 import info from "./../../info";
 import RoomContent from "./../../container/VRContent/RoomContent";
+import {HashRouter, Route, Switch} from "react-router-dom";
+import Content from "../../container/ShopContent/Content";
+import Furniture from "../ShopContent/Furniture/Furniture";
+import MenuContent from "./MenuContent";
 class VRContent extends React.Component{
-    constructor(props){
-        super(props);
-        this.cameraRef = React.createRef();
-    }
     render() {
+        const VRContent = () => (
+            <Switch>
+                <Route exact path={'/vr'} component={MenuContent}/>
+                <Route path={'/vr/vr-room'} component={RoomContent}/>
+            </Switch>
+        );
+
         const models = info.map((el) =>
             <a-asset-item
                 key={el.id + "asset-item"}
@@ -20,7 +27,7 @@ class VRContent extends React.Component{
             <Entity key={el.id}
                       gltf-model={"#" + el.id}
                       position={el.position} scale={el.scale} visible={el.visible}
-                      animation={"property: position; to: " + this.props.position.x + " 0 " + this.props.position.z + "; dur: 2000; " }
+                      //animation={"property: position; to: " + this.props.position.x + " 0 " + this.props.position.z + "; dur: 2000; " }
                       events={{
                           'click': () => {
                               console.log("HELO");
@@ -36,9 +43,13 @@ class VRContent extends React.Component{
                 </a-assets>
                 {viewsModel}
                 <Camera position="1 6 0" >
-                    <Cursor color="white" ref={this.cameraRef}/>
+                    <a-cursor color="white" />
                 </Camera>
-                <RoomContent/>
+                <HashRouter>
+                    <Switch>
+                        <VRContent />
+                    </Switch>
+                </HashRouter>
             </Scene>
         );
     }

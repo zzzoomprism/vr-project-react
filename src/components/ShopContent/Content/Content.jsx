@@ -20,7 +20,7 @@ class Content extends React.Component{
                 </div>
                 <div className={style.funitureInformationContent}>
                    <Link to={`/shop/${el.id}`}><h3>{el.name}</h3></Link>
-                    <p><span>{el.description}</span>
+                    <p><span>{el.short_description}</span>
                     </p>
                     <div>
                         <CartButton btnId={el.id} item={el}/>

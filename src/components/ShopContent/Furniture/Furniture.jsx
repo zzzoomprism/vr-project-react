@@ -17,18 +17,7 @@ const Furniture = (props) => {
                     <p>{info.description}</p>
                 </div>
                 <div>
-                <table >
-                    <thead>
-                        <td>name</td>
-                        <td>value</td>
-                        <td>quality</td>
-                    </thead>
-                    <tbody>
-                        <td>width</td>
-                        <td>2000</td>
-                        <td>mm</td>
-                    </tbody>
-                </table>
+
                 </div>
             </div>
          </div>

@@ -6,7 +6,11 @@ const models = [
     {
         id: "1enckj342lk",
         name: "Sofa Caroline",
+        short_description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci blanditiis consequatur consequuntur magni? Est\n" +
+            "    hic illum numquam odit quidem quo repellendus suscipit voluptate. Aut corporis nobis quidem sit ullam? Vero.",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci blanditiis consequatur consequuntur magni? Est\n" +
+            "    hic illum numquam odit quidem quo repellendus suscipit voluptate. Aut corporis nobis quidem sit ullam? Vero.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci blanditiis consequatur consequuntur magni? Est\n" +
+            "    hic illum numquam odit quidem quo repellendus suscipit voluptate. Aut corporis nobis quidem sit ullam? Vero.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci blanditiis consequatur consequuntur magni? Est\n" +
             "    hic illum numquam odit quidem quo repellendus suscipit voluptate. Aut corporis nobis quidem sit ullam? Vero.",
         price: 2000,
         buy_count: 1000,
@@ -19,6 +23,8 @@ const models = [
     {
         id: "21kjfsoih3k24j",
         name: "Sofa Brutality",
+        short_description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci blanditiis consequatur consequuntur magni? Est\n" +
+            "    hic illum numquam odit quidem quo repellendus suscipit voluptate. Aut corporis nobis quidem sit ullam? Vero.",
         description: "lorem Impsum ...",
         price: 3050,
         buy_count: 20,
@@ -31,6 +37,8 @@ const models = [
     {
         id: "21ewrth3k24j",
         name: "Sofa Brutality",
+        short_description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci blanditiis consequatur consequuntur magni? Est\n" +
+            "    hic illum numquam odit quidem quo repellendus suscipit voluptate. Aut corporis nobis quidem sit ullam? Vero.",
         description: "lorem Impsum ...",
         price: 1050,
         buy_count: 45,

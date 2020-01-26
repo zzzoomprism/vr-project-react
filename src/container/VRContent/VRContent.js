@@ -10,7 +10,8 @@ const mapStoreToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        updatePosition: (position) => dispatch({type: 'UPDATE_POSITION', value: position})
+        updatePosition: (position) => dispatch({type: 'UPDATE_POSITION', value: position}),
+
     }
 };
 
