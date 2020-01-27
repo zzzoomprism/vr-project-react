@@ -1,7 +1,7 @@
 import AFRAME from "aframe";
 import * as THREE from 'three';
 
-AFRAME.registerComponent('bar', {
+AFRAME.registerComponent('stars', {
     schema: {
         color: {default: '#FFD700'},
         radius: {type: "int", default: 10},
@@ -13,7 +13,7 @@ AFRAME.registerComponent('bar', {
         var starsMaterial = new THREE.PointsMaterial({size: 1, sizeAttenuation: false, color: "#FFD700"});
         var angle = 0;
         let radius = this.data.radius;
-        for(var i = 0; i<10000; i++){
+        for(var i = 0; i<1000; i++){
             var vertex = new THREE.Vector3();
             const theta = 2 * Math.PI * Math.random();
             const phi = Math.acos(2 * Math.random() - 1);
@@ -25,6 +25,6 @@ AFRAME.registerComponent('bar', {
         let stars = new THREE.Points(starsGeometry, starsMaterial);
         let obj = new AFRAME.THREE.Object3D();
         obj.add(stars);
-        el.setObject3D('bar', obj);
+        el.setObject3D('stars', obj);
     },
 });

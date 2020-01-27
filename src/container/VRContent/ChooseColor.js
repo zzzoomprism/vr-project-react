@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import ChooseColor from "../../components/RoomContent/ChooseColor/ChooseColor";
+import ChooseColor from "../../components/RoomContent/FloorPart/ChooseColor/ChooseColor";
 
 const mapStoreToProps = (store) => {
     return{

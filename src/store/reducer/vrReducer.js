@@ -20,7 +20,7 @@ const reducer = (state = initialState, action) => {
             break;
         case 'FLOOR_MOUSE_ENTER':
             newState.mouseEnterPosition.visible = true;
-            newState.mouseEnterPosition.clr1_position ={x: action.points.x + 3, y : -10, z: action.points.z};
+            newState.mouseEnterPosition.clr1_position ={x: action.points.x + 2, y : -10, z: action.points.z};
             if(action.points.z > 9)
                 newState.mouseEnterPosition.rotation = "0 0 0";
             else
