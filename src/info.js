@@ -16,7 +16,7 @@ const models = [
         buy_count: 1000,
         image: "https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         model: sofa,
-        position: "0 0 -10",
+        position: "0 -10 -10",
         scale: "0.01 0.01 0.01",
         visible: true,
     },

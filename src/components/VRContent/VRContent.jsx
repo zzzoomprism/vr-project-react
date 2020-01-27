@@ -6,7 +6,7 @@ import RoomContent from "./../../container/VRContent/RoomContent";
 import {HashRouter, Route, Switch} from "react-router-dom";
 import Content from "../../container/ShopContent/Content";
 import Furniture from "../ShopContent/Furniture/Furniture";
-import MenuContent from "./MenuContent";
+import MenuContent from "./../../container/VRContent/MenuContent";
 class VRContent extends React.Component{
     render() {
         const VRContent = () => (
@@ -16,34 +16,12 @@ class VRContent extends React.Component{
             </Switch>
         );
 
-        const models = info.map((el) =>
-            <a-asset-item
-                key={el.id + "asset-item"}
-                id={el.id}
-                src={el.model}>
-            </a-asset-item>
-        );
-        const viewsModel = info.map((el) =>
-            <Entity key={el.id}
-                      gltf-model={"#" + el.id}
-                      position={el.position} scale={el.scale} visible={el.visible}
-                      //animation={"property: position; to: " + this.props.position.x + " 0 " + this.props.position.z + "; dur: 2000; " }
-                      events={{
-                          'click': () => {
-                              console.log("HELO");
-                          }
-                      }}
-                      >
-            </Entity>
-        );
+
         return (
             <Scene>
-                <a-assets>
-                    {models}
-                </a-assets>
-                {viewsModel}
+
                 <Camera position="1 6 0" >
-                    <a-cursor color="white" />
+                    <a-cursor color="white" material={"opacity: 1;"}/>
                 </Camera>
                 <HashRouter>
                     <Switch>

@@ -12,6 +12,7 @@ import topMenuReducer from "./store/reducer/topMenuReducer";
 import shopContentReducer from "./store/reducer/shopContentReducer";
 import cartReducer from "./store/reducer/cartReducer";
 import cartButtonReducer from "./store/reducer/cartButtonReducer";
+import vrMenuReducer from "./store/reducer/vrMenuReducer";
 
 const rootReducer = combineReducers({
    sidebar:  sidebarMenu,
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
    shopReducer: shopContentReducer,
    cartReducer: cartReducer,
    cartButtonReducer: cartButtonReducer,
+   vrMenuReducer: vrMenuReducer,
 });
 const store = createStore(rootReducer);
 

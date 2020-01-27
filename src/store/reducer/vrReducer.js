@@ -8,7 +8,7 @@ const initialState = {
         rotation: "90",
         visible: false,
         color: "",
-    }
+    },
 };
 
 const reducer = (state = initialState, action) => {
