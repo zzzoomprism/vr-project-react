@@ -11,7 +11,7 @@ const reducer = (state = initialState, action) => {
         case 'UPDATE_CART_COUNT':
             newState.count++;
             newState.cartItems.push(action.item);
-            console.log(newState.cartItems);
+            console.log(action.item);
             break;
         case 'MOUSE_ENTER_CART_BUTTON':
             newState.buttonId = action.id;

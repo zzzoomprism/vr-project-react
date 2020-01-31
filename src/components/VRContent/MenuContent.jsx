@@ -6,7 +6,7 @@ const MenuContent = (props) => {
         return (
           <Plane width={14} height={10} rotation="0 0 0" position={"1 6 -6"} material={"color: black; side: double"}>
               <Entity line="start: -3.5, -3.5, 0.01; end: -3.5 3.5 0.01; color: white"/>
-                <Text value={"caroline"} rotation={"0 0 90"} wrap-count={10} position={"-4.3 -1.5 0.01"} />
+                <Text value={"caroline."} rotation={"0 0 90"} wrap-count={10} position={"-4.3 -1.5 0.01"} />
                 <Text value={"enter to the room"} wrap-count={15} negate={"false"} width={7}  height={2} position={"-2.5 2.0 0.02"} letter-spacing={15}
                       color={(props.menuId === "room") ? "coral" : "white"}
                       events={{
@@ -32,6 +32,7 @@ const MenuContent = (props) => {
                               props.menuMouseLeave();
                           }
                       }}/>
+                      <a-light type={"point"} intensity={"0.2"}/>
                       </Plane>
         );
 };
