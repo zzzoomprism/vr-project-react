@@ -36,6 +36,23 @@
     -moz-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
+    color: black;
+    overflow: hidden;
+}
+
+.menuLogo h1::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 36px;
+    border-bottom: 4px solid black;
+    left: 0;
+    animation: carolineLink;
+    animation-duration: 2000ms;
+}
+
+.menuLogo a{
+    text-decoration: none;
 }
 
 .menuButton{
@@ -125,6 +142,15 @@
     to{
         opacity: 0;
         width: 0;
+    }
+}
+
+@keyframes carolineLink {
+    from {
+        left: -150px;
+    }
+    to{
+       left: 0;
     }
 }
 

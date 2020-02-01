@@ -4,7 +4,10 @@ import "./index.css";
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from "react-redux";
-import {createStore, combineReducers} from "redux";
+import {createStore, combineReducers, applyMiddleware} from "redux";
+import createSagaMiddleware from "redux-saga";
+import { watch } from "./saga/test";
+
 import sidebarMenu from "./store/reducer/sidebarmenuReducer";
 import furnitureBlocksReducer from "./store/reducer/furnitureBlocksReducer";
 import vrContentReducer from "./store/reducer/vrReducer";
@@ -24,8 +27,12 @@ const rootReducer = combineReducers({
    cartButtonReducer: cartButtonReducer,
    vrMenuReducer: vrMenuReducer,
 });
-const store = createStore(rootReducer);
 
+const sagaMiddleware = createSagaMiddleware();
+
+
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+sagaMiddleware.run(watch);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 

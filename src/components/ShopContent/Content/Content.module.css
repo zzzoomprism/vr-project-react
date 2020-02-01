@@ -8,6 +8,10 @@
     grid-template-rows: repeat(auto-fit, 1fr);
     grid-row-gap: 20px;
     padding: 10px;
+    margin-top: 80px;
+    opacity: 1;
+    animation: slowOpacity;
+    animation-duration: 3000ms;
 }
 
 .furnitureSection{
@@ -37,3 +41,13 @@
     left: calc(100% - 150px);
     text-align: center;
 }
+
+ @keyframes slowOpacity {
+     from{
+         opacity: 0;
+     }
+     to{
+         opacity: 1;
+     }
+
+ }

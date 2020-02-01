@@ -6,6 +6,9 @@
     background-image: url("https://images.pexels.com/photos/1405773/pexels-photo-1405773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-size: cover;
     position: relative;
+    opacity: 1;
+    animation: slowHomeOpacity;
+    animation-duration: 3000ms;
 }
 
 .infoBlock{
@@ -49,6 +52,16 @@
     background-color: black;
     color: white;
     cursor: pointer;
+}
+
+@keyframes slowHomeOpacity {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+
 }
 
 

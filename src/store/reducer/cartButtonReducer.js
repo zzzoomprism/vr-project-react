@@ -8,10 +8,9 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     const newState = {...state};
     switch (action.type) {
-        case 'UPDATE_CART_COUNT':
+        case 'UPDATE_CART_COUNT_ASYNC':
             newState.count++;
             newState.cartItems.push(action.item);
-            console.log(action.item);
             break;
         case 'MOUSE_ENTER_CART_BUTTON':
             newState.buttonId = action.id;

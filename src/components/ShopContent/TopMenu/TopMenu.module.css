@@ -1,7 +1,9 @@
 .topMenuMainBlock{
     width: calc(100% - 100px);
+    position: fixed;
+    z-index: 3;
     height: 80px;
-    float: right;
+    left: 100px;
     display: grid;
     grid-template-columns: 15fr 1fr 1fr;
     grid-template-rows: 100px;

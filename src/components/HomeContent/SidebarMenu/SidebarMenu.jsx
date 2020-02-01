@@ -7,7 +7,7 @@ const SidebarMenu = (props) => {
         <div className={(props.open) ? style.mainMenuDiv : style.mainMenuDivNoneActive}>
                 <div className={style.sidebarDiv}>
                     <div className={style.menuLogo}>
-                        <h1>caroline.</h1>
+                        <Link to={"/"}><h1>caroline.</h1></Link>
                     </div>
                     <div className={style.menuButton}>
                         <span>Menu</span>
