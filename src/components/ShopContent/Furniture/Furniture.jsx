@@ -1,9 +1,10 @@
 import React from "react";
-import furniture from "./../../../info";
+import {modelLoading} from "./../../../info";
 import style from "./Furniture.module.css";
 
 
 const Furniture = (props) => {
+    const furniture = modelLoading();
     const info = furniture.find(item => item.id === props.match.params.id);
     console.log(info);
     return (

@@ -12,7 +12,7 @@ const Cart = (props) => {
            }
 );
            const stylish = {
-               height: "300px",
+               height: "400px",
                boxShadow: "0 0px 100px 600px rgba(0,0,0,0.6)"
            };
     return(

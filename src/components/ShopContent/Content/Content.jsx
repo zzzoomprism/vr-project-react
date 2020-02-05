@@ -1,12 +1,21 @@
 import React from "react";
 import style from "./Content.module.css";
-import info from "./../../../info";
+import {modelLoading} from "./../../../info";
 import CartButton from "./../../../container/ShopContent/CartButton";
 import {Link} from "react-router-dom";
 import Button from "./../Button/Button";
+import ModalFilter from "./../../../container/ShopContent/ModalFilter";
+import TopMenu from "./../../../container/ShopContent/TopMenu";
 
 class Content extends React.Component{
     render() {
+        const style_open = {
+            width: "calc(100% - 460px)",
+        };
+        const style_close = {
+            width: "calc(100% - 90px)"
+        };
+        const info = modelLoading();
         this.props.setItems(info, this.props.sort);
         const furnitureInfo = this.props.items.map((el) => {
             return  <div className={style.furnitureSection} key={el.id}>
@@ -29,8 +38,12 @@ class Content extends React.Component{
                 </div>
             </div>
         });
-        return <div className={style.mainFurnitureBlock}>
+        return <div >
+            <TopMenu/>
+            <div className={style.mainFurnitureBlock} style={(this.props.filter_open) ? style_open : style_close}>
             {(this.props.isReady) ? furnitureInfo : "Загружаем..."}
+            </div>
+            <ModalFilter/>
         </div>
     }
 }

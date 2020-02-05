@@ -1,6 +1,7 @@
 const initialState = {
     menuId: "",
     cartId: "",
+    modelId: "",
 };
 
 const reducer = (state = initialState, action) => {
@@ -22,6 +23,14 @@ const reducer = (state = initialState, action) => {
             break;
         case "VR_CART_MOUSE_LEAVE":
             newState.cartId = "";
+            break;
+
+        case "MODEL_MOUSE_ENTER":
+            newState.modelId = action.item;
+            break;
+
+        case "MODEL_MOUSE_LEAVE":
+            newState.modelId = "";
             break;
 
 

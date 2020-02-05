@@ -1,17 +1,17 @@
 .mainFurnitureBlock{
-    width: calc(100% - 120px);
     height: 100%;
     float: right;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-column-gap: 40px;
     grid-template-rows: repeat(auto-fit, 1fr);
     grid-row-gap: 20px;
     padding: 10px;
-    margin-top: 80px;
     opacity: 1;
     animation: slowOpacity;
     animation-duration: 3000ms;
+    margin-top: 100px;
+    transition: 1s;
 }
 
 .furnitureSection{
@@ -48,6 +48,15 @@
      }
      to{
          opacity: 1;
+     }
+ }
+
+ @keyframes moveContentToRight {
+     from{
+         width: calc(100% - 90px);
+     }
+     to{
+         width: calc(100% - 460px);
      }
 
  }

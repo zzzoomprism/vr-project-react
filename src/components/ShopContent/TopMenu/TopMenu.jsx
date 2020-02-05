@@ -5,6 +5,9 @@ import Cart from "./../../../container/ShopContent/Cart";
 const TopMenu = (props) => {
         return <div>
             <div className={style.topMenuMainBlock}>
+                <div className={style.searchFilter} >
+                    <p onClick={props.filterButtonToggle}><i className="fas fa-filter"></i></p>
+                </div>
                 <div>
                     <ul className={style.filterBlock} style={{height: (props.open) ? "200px" : "40px"}}>
                         <li onClick={props.sortByClick}><i className="fas fa-sun"></i>Sort By:</li>

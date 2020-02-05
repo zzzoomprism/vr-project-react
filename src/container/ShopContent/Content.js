@@ -6,6 +6,7 @@ const mapStoreToProps = (store) => {
         isReady: store.shopReducer.isReady,
         items: store.shopReducer.items,
         sort: store.topMenuRed.sort,
+        filter_open: store.topMenuRed.filter_open
     }
 };
 

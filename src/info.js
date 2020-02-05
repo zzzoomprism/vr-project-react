@@ -1,5 +1,6 @@
 import sofa from "./media/models/out.glb";
 import sofa2 from "./media/models/out2.glb";
+import chair from "./media/models/chair.glb";
 
 
 const models = [
@@ -20,7 +21,7 @@ const models = [
         position_x: -10,
         position_y: 2.3,
         position_z: 2 ,
-        rotation: "0 90 0",
+        rotation: 90,
         text_rotation: "0 90 0",
         cylinder_position: "-10 2 2",
         scale: "0.006 0.006 0.006",
@@ -41,7 +42,7 @@ const models = [
         position_x: 11,
         position_y: 2.3,
         position_z: 2,
-        rotation: "0 -90 0",
+        rotation: -90,
         model_src: sofa,
         text_rotation: "0 -90 0",
         scale: "0.03 0.03 0.03",
@@ -62,7 +63,7 @@ const models = [
         position_x: -5,
         position_y: 2.3,
         position_z: 10,
-        rotation: "0 150 0",
+        rotation: 150,
         model_src: sofa,
         text_rotation: "0 150 0",
         scale: "0.03 0.03 0.03",
@@ -86,7 +87,7 @@ const models = [
         position_x: 6,
         position_y: 2.3,
         position_z: 10,
-        rotation: "0 -150 0",
+        rotation: -150,
         model_src: sofa,
         text_rotation: "0 -150 0",
         scale: "0.006 0.006 0.006",
@@ -95,7 +96,7 @@ const models = [
     },
     {
         id: "1efsdfc3453j342lk",
-        name: "Sofa Caroline",
+        name: "Sofa Loochy",
         short_description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci blanditiis consequatur consequuntur magni? Est\n" +
             "    hic illum numquam odit quidem quo repellendus suscipit voluptate. Aut corporis nobis quidem sit ullam? Vero.",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci blanditiis consequatur consequuntur magni? Est\n" +
@@ -110,7 +111,7 @@ const models = [
         position_x: 6,
         position_y: 2.3,
         position_z: 10,
-        rotation: "0 -150 0",
+        rotation: -150,
         model_src: sofa,
         text_rotation: "0 -150 0",
         scale: "0.006 0.006 0.006",
@@ -119,8 +120,10 @@ const models = [
     },
     ];
 
-function modelLoading(){
+export function modelLoading(){
     return models;
 }
 
-export default modelLoading();
+export function countOfAll(){
+    return models.length;
+}

@@ -1,6 +1,5 @@
 .mainFurnitureDescriptionBlock{
     position: absolute;
-    top: 90px;
     left: 100px;
     width: calc(100% - 100px);
     text-align: center;

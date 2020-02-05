@@ -30,6 +30,9 @@ const MenuContent = (props) => {
                           },
                           'mouseleave': () => {
                               props.menuMouseLeave();
+                          },
+                          'click': () => {
+                              props.menuClick("#/vr/vr-collection");
                           }
                       }}/>
                       <a-light type={"point"} intensity={"0.2"}/>

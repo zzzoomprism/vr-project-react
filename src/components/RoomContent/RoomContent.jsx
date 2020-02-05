@@ -2,10 +2,11 @@ import React from "react";
 import {Box, Plane, Sphere} from "react-aframe-ar";
 import {Entity, Scene} from "aframe-react";
 import ChooseColor from "./../../container/VRContent/ChooseColor";
-import info from "./../../info";
+import {modelLoading} from "./../../info";
 import Floor from "./../../container/VRContent/Floor";
 
 const RoomContent = (props) => {
+    const info = modelLoading();
       const viewsModel = info.map((el) =>
         <Entity key={el.id}
                 gltf-model={el.model}

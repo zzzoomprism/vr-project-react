@@ -17,7 +17,7 @@ const ShopContent = (props) =>{
     return(
         <div>
             <SidebarMenu/>
-            <TopMenu/>
+
             <HashRouter>
                 <Switch>
                     <ShopContent/>

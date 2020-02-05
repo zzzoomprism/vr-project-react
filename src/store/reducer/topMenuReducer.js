@@ -1,6 +1,7 @@
 const initialState = {
     open: false,
     sort: "top",
+    filter_open: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -22,6 +23,11 @@ const reducer = (state = initialState, action) => {
             newState.open = false;
             newState.sort = "top";
             break;
+        case 'FILTER_BUTTON_TOGGLE':
+            newState.filter_open = !state.filter_open;
+            console.log(newState.filter_open);
+            break;
+
     }
 
     return newState;

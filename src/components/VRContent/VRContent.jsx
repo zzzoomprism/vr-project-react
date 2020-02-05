@@ -1,10 +1,10 @@
 import React from 'react';
 import {Box, Cylinder, Sphere, Plane, Sky, Text, Curvedimage, Camera, Cursor, Image, Ring, Event,Circle} from "react-aframe-ar";
-import {Entity, Scene} from "aframe-react";
+import {Scene} from "aframe-react";
 import RoomContent from "./../../container/VRContent/RoomContent";
 import {HashRouter, Route, Switch} from "react-router-dom";
 import VRMenu from "./../../container/VRContent/VRMenu";
-import VRCollection from "./VRCollection";
+import VRCollection from "./../../container/VRContent/VRCollection";
 
 class VRContent extends React.Component{
     render() {

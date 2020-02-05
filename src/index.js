@@ -16,6 +16,7 @@ import shopContentReducer from "./store/reducer/shopContentReducer";
 import cartReducer from "./store/reducer/cartReducer";
 import cartButtonReducer from "./store/reducer/cartButtonReducer";
 import vrMenuReducer from "./store/reducer/vrMenuReducer";
+import vrCollectionReducer from "./store/reducer/vrCollectionReducer";
 
 const rootReducer = combineReducers({
    sidebar:  sidebarMenu,
@@ -26,6 +27,7 @@ const rootReducer = combineReducers({
    cartReducer: cartReducer,
    cartButtonReducer: cartButtonReducer,
    vrMenuReducer: vrMenuReducer,
+   vrCollectionReducer: vrCollectionReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();
@@ -36,7 +38,4 @@ sagaMiddleware.run(watch);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
