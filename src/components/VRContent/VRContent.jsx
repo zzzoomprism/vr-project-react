@@ -5,6 +5,7 @@ import RoomContent from "./../../container/VRContent/RoomContent";
 import {HashRouter, Route, Switch} from "react-router-dom";
 import VRMenu from "./../../container/VRContent/VRMenu";
 import VRCollection from "./../../container/VRContent/VRCollection";
+import AnimationDesktop from "./AnimationDesktop/AnimationDesktop";
 
 class VRContent extends React.Component{
     render() {
@@ -13,11 +14,12 @@ class VRContent extends React.Component{
                 <Route exact path={'/vr'} component={VRMenu}/>
                 <Route path={'/vr/vr-room'} component={RoomContent}/>
                 <Route path={'/vr/vr-collection'} component={VRCollection}/>
+                <Route path={'/vr/animation'} component={AnimationDesktop}/>
             </Switch>
         );
         return (
             <Scene>
-                <Camera position="1 6 0" >
+                <Camera position="1 6 0" far={"500"}>
                     <a-cursor color="white" material={"opacity: 1;"}/>
                 </Camera>
                 <HashRouter>
