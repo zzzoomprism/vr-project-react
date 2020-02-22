@@ -17,6 +17,7 @@ import cartReducer from "./store/reducer/cartReducer";
 import cartButtonReducer from "./store/reducer/cartButtonReducer";
 import vrMenuReducer from "./store/reducer/vrMenuReducer";
 import vrCollectionReducer from "./store/reducer/vrCollectionReducer";
+import vrAnimationDesktopReducer from "./store/reducer/vrAnimationDesktopReducer";
 
 const rootReducer = combineReducers({
    sidebar:  sidebarMenu,
@@ -28,6 +29,7 @@ const rootReducer = combineReducers({
    cartButtonReducer: cartButtonReducer,
    vrMenuReducer: vrMenuReducer,
    vrCollectionReducer: vrCollectionReducer,
+   vrAnimationDesktop: vrAnimationDesktopReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();

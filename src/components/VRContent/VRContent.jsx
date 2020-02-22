@@ -5,7 +5,8 @@ import RoomContent from "./../../container/VRContent/RoomContent";
 import {HashRouter, Route, Switch} from "react-router-dom";
 import VRMenu from "./../../container/VRContent/VRMenu";
 import VRCollection from "./../../container/VRContent/VRCollection";
-import AnimationDesktop from "./AnimationDesktop/AnimationDesktop";
+import AnimationDesktop from "./../../container/VRContent/AnimationDesktop";
+import sound from "./../../media/betterday.mp3";
 
 class VRContent extends React.Component{
     render() {
@@ -19,7 +20,11 @@ class VRContent extends React.Component{
         );
         return (
             <Scene>
-                <Camera position="1 6 0" far={"500"}>
+                    <a-assets>
+                        <audio id="soundEffect" src={sound} preload="auto"/>
+                    </a-assets>
+                    <a-entity sound="src: #soundEffect; autoplay: true; loop: true; volume: 8;"/>
+                <Camera position="1 6 0">
                     <a-cursor color="white" material={"opacity: 1;"}/>
                 </Camera>
                 <HashRouter>
