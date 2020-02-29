@@ -11,7 +11,7 @@ const SidebarMenu = (props) => {
                     </div>
                     <div className={style.menuButton}>
                         <span>Menu</span>
-                        <a onClick={props.updateMessage}><i className="fas fa-bars"></i></a>
+                        <a onClick={props.updateMessage}><i className={(props.open) ? "fas fa-times" :"fas fa-bars"}></i></a>
                     </div>
                     <div className={style.socialLink}>
                         <ul>
