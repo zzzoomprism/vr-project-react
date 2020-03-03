@@ -1,21 +1,24 @@
 import React from "react";
 import style from "./CartButton.module.css";
 
-const CartButton = (props) => {
-    let button = props.cartItems.includes(props.item);
-    let btnClassName = "";
-    if(props.buttonId === props.btnId && props.active === true)
-       btnClassName = style.cartButton + " " +style.btnLeftSlowMotion;
-    else btnClassName = style.cartButton + " " +style.btnCloseSlowMotion;
+class CartButton extends React.Component{
+    state = {
+        disable: false,
+    };
+    handleClick(){
+        this.setState({disable: true});
+        this.props.updateCartCount(this.props.item);
+    }
+    render() {
+        let buttonActive = this.props.cartItems.includes(this.props.item);
         return (
-            <button onMouseEnter={(!button) ? () => props.mouseEnterButton(props.btnId) : " "}
-                    className={btnClassName }
-                    onMouseLeave={(!button) ? props.mouseLeaveButton : " "}
-                    onClick={()=>props.updateCartCount(props.item)} disabled={button}>
+            <button className={style.cartButton}
+                    onClick={this.handleClick.bind(this)} disabled={this.state.disable}>
                     <span className={style.btnFlow}>
-                            <i className="fas fa-shopping-cart"></i>{(button) ? "ALREADY ADDED" : "ADD TO CART"}</span>
+                            <i className={(this.state.disable) ? "fas fa-check" : "fas fa-shopping-cart"}></i></span>
             </button>
         );
+    }
 };
 
 export default CartButton;

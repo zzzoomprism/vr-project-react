@@ -13,12 +13,13 @@ class Content extends React.Component{
             width: "calc(100% - 460px)",
         };
         const style_close = {
-            width: "calc(100% - 90px)"
+            width: "calc(100% - 140px)"
         };
         const info = modelLoading();
         this.props.setItems(info, this.props.sort);
         const furnitureInfo = this.props.items.map((el) => {
             return  <div className={style.furnitureSection} key={el.id}>
+                <Link to={`/shop/${el.id}`}>
                 <div className={style.funitureImageContent}>
                     <img
                         src={el.image}
@@ -27,6 +28,7 @@ class Content extends React.Component{
                         <h3>{el.price}$</h3>
                     </div>
                 </div>
+                </Link>
                 <div className={style.funitureInformationContent}>
                    <Link to={`/shop/${el.id}`}><h3>{el.name}</h3></Link>
                     <p><span>{el.short_description}</span>
@@ -37,6 +39,7 @@ class Content extends React.Component{
                     </div>
                 </div>
             </div>
+
         });
         return <div >
             <TopMenu/>
@@ -45,6 +48,7 @@ class Content extends React.Component{
             </div>
             <ModalFilter/>
         </div>
+
     }
 }
 

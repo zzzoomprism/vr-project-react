@@ -17,7 +17,7 @@ const Cart = (props) => {
            };
     return(
         <div className={style.mainCartBlock}>
-            <h3 onClick={props.cartToggle}><i className="fas fa-cart-plus"></i><span className={style.numberOfItems}>{props.cartCountItems}</span></h3>
+            <h3 onClick={props.cartToggle} title={"There are 3 items in your cart!"}><i className="fas fa-cart-plus"></i><span className={style.numberOfItems}>{props.cartCountItems}</span></h3>
             <ul className={style.cartList} style={{height: (props.isOpen) ? stylish.height : "0px", boxShadow: (props.isOpen) ? stylish.boxShadow : ""}}>
                 {(props.cartItems.length !== 0) ? item : "There are no products in your cart!"}
                 <div>

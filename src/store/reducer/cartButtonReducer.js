@@ -1,26 +1,32 @@
 const initialState = {
-    buttonId: "",
-    active: false,
     count: 0,
     cartItems: [],
+    done: false,
+    onLoad: false,
 };
 
 const reducer = (state = initialState, action) => {
     const newState = {...state};
     switch (action.type) {
+
+        case 'FETCH_SUCCEEDED':
+            newState.count++;
+            newState.cartItems.push(action.value);
+            break;
+        case 'FETCH_ERROR':
+            console.log(action.error);
+            break;
+        case 'CART_LOAD':
+            newState.done = false;
+            console.log("CART_LOAD");
+            break;
         case 'UPDATE_CART_COUNT_ASYNC':
             newState.count++;
             newState.cartItems.push(action.item);
             break;
-        case 'MOUSE_ENTER_CART_BUTTON':
-            newState.buttonId = action.id;
-            newState.active = true;
+        case 'CART_DONE':
+            newState.done = true;
             break;
-        case 'MOUSE_LEAVE_CART_BUTTON':
-            newState.buttonId = "";
-            newState.active = false;
-            break;
-
     }
     return newState;
 };
