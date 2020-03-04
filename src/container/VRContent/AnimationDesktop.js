@@ -6,7 +6,8 @@ const mapStoreToProps = (store) => {
     return{
         stepTextAnimation: store.vrAnimationDesktop.textStepAnimation,
         menu_open: store.vrAnimationDesktop.menu_open,
-        animation_step: store.vrAnimationDesktop.animation_step
+        animation_step: store.vrAnimationDesktop.animation_step,
+        animation_run: store.vrAnimationDesktop.animation_run,
     }
 };
 

@@ -1,6 +1,8 @@
 import React from "react";
 import {Box, Cylinder, Sphere, Plane, Sky, Text, Curvedimage, Camera, Cursor, Image, Ring, Event,Circle} from "react-aframe-ar";
 import {Entity} from "aframe-react";
+import backImg from "./../../../media/2.jpg";
+import homeBlock from "./../../../media/home_blocks.jpeg";
 
 function timeOutReturn(value, mseconds){
     setTimeout(()=>value, mseconds);
@@ -31,8 +33,17 @@ const DesktopMenu = (props) =>{
         {/*          animation={(props.open) ? "property: opacity; from: 0; to: 0.6; dur: 3500; delay: 1000;" : " "}/>*/}
         {/*</Plane>*/}
 
-        {/*<Curvedimage src={"https://images.pexels.com/photos/279618/pexels-photo-279618.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"} theta-length={30} height={3.5} position={"0 6.5 0"} radius={5} material={"wireframe: true;"}/>*/}
-        {/*<Curvedimage src={"https://images.pexels.com/photos/1005644/pexels-photo-1005644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"} theta-length={30} height={3.5} position={"0 6.5 0"} radius={5} material={"wireframe: true;"} theta-start={-35}/>*/}
+
+        {/*<Curvedimage src={backImg} theta-length={30} height={3.5} position={"1 6.5 0"} radius={5} material={"wireframe: true;"}/>*/}
+        {/*<Curvedimage src={homeBlock} theta-length={30} height={3.5} position={"1 6.5 0"} radius={5} material={"wireframe: true;"} theta-start={-35}/>*/}
+        {/*<Curvedimage src={backImg} theta-length={30} height={3.5} position={"1 6.5 0"} radius={5} material={"wireframe: true;"} theta-start={-75}/>*/}
+        {/*<Curvedimage src={homeBlock} theta-length={30} height={3.5} position={"1 6.5 0"} radius={5} material={"wireframe: true;"} theta-start={-110}/>*/}
+        {/*<Curvedimage src={backImg} theta-length={30} height={3.5} position={"1 6.5 0"} radius={5} material={"wireframe: true;"} theta-start={-145}/>*/}
+        {/*<Curvedimage src={homeBlock} theta-length={30} height={3.5} position={"1 6.5 0"} radius={5} material={"wireframe: true;"} theta-start={-180}/>*/}
+        {/*<Curvedimage src={backImg} theta-length={30} height={3.5} position={"1 6.5 0"} radius={5} material={"wireframe: true;"} theta-start={-215}/>*/}
+        {/*<Curvedimage src={homeBlock} theta-length={30} height={3.5} position={"1 6.5 0"} radius={5} material={"wireframe: true;"} theta-start={-250}/>*/}
+        {/*<Curvedimage src={backImg} theta-length={30} height={3.5} position={"1 6.5 0"} radius={5} material={"wireframe: true;"} theta-start={-290}/>*/}
+        {/*<Curvedimage src={backImg} theta-length={30} height={3.5} position={"1 6.5 0"} radius={5} material={"wireframe: true;"} theta-start={-325}/>*/}
     </Entity>
 };
 

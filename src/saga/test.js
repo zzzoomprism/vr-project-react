@@ -7,16 +7,17 @@ function* updateCartAsync(value){
 }
 
 export function* fetchData(action) {
-
     try {
-        yield put({type: "FETCH_SUCCEEDED", value: action.item})
+        yield put ({type: "CART_ADD_ONLOAD"});
+        yield delay(1000);
+        yield put({type: "UPDATE_CART_COUNT", value: action.item})
     } catch (error) {
         yield put({type: "FETCH_FAILED", error})
     }
 }
 
 export function* watch() {
-    yield takeLatest('FETCH_REQUESTED', fetchData)
+    yield takeLatest('UPDATE_CART_COUNT_CHECK', fetchData)
 }
 // export function* watch(){
 //

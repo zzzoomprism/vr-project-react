@@ -4,7 +4,8 @@ const initialState = {
         step: 0,
     },
     menu_open: false,
-    animation_step: 0
+    animation_step: {},
+    animation_run: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -20,7 +21,7 @@ const reducer = (state = initialState, action) => {
             break;
         case "NEXT_STEP_ANIMATION":
             newState.animation_step = action.value;
-            console.log(newState.animation_step);
+            newState.animation_run = true;
             break;
     }
 
