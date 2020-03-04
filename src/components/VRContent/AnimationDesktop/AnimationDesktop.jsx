@@ -36,14 +36,21 @@ let animationStepGenerator = animationSteps();
 const AnimationDesktop = (props) => {
         for(let val of step){
             setTimeout(()=>{props.updateText(val)}, seconds+=10100);
-        };
+        }
         let stars;
-        if(props.animation_run)
+        if(props.animation_run) {
             stars = <Entity stars={"radius: 5"} position={"-1 -2 0"}
                             animation={"property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 100000;"}
-                            animation__scale={"property: scale; from: 0 0 0; to: 5 5 5; dur: 5000; easing: linear;"} scale={"5 5 5"}/>;
+                            animation__scale={"property: scale; from: 0 0 0; to: 5 5 5; dur: 5000; easing: linear;"}
+                            scale={"5 5 5"}/>;
+            for(let val of animationStepGenerator) {
+                setTimeout(() => props.nextStep(val), val.timer);
+                console.log(val);
+                }
+            }
         else
             stars = "";
+
         return <Sphere  radius={40} material={"color: black; side: double;"}>
            {stars}
             <Entity nothing={"power: 50;"} position={"1 6 -2"} animation={"property: nothing.power; from: 500; to: 50; easing: easeOutQuad; dur: 10000;"}
@@ -65,16 +72,16 @@ const AnimationDesktop = (props) => {
                 {/*END NEXT BUTTON*/}
 
 
-                {/*MENU BUTTON*/}
-            <Plane width={1} height={0.3} position={"0 5 -1"} material={"color: white; opacity: 0.1"}
-            events={{
-                "click": ()=>props.menuToggle()
-            }}>
-                <Text value={"menu"} color={"white"} width={1.5} height={0.3} align={"center"} wrap-count={20}
-                      alphaTest={20}
-                />
-            </Plane>
-                {/*END MENU BUTTON*/}
+            {/*    /!*MENU BUTTON*!/*/}
+            {/*<Plane width={1} height={0.3} position={"0 5 -1"} material={"color: white; opacity: 0.1"}*/}
+            {/*events={{*/}
+            {/*    "click": ()=>props.menuToggle()*/}
+            {/*}}>*/}
+            {/*    <Text value={"menu"} color={"white"} width={1.5} height={0.3} align={"center"} wrap-count={20}*/}
+            {/*          alphaTest={20}*/}
+            {/*    />*/}
+            {/*</Plane>*/}
+            {/*    /!*END MENU BUTTON*!/*/}
 
 
              {/*ANIMATION STEPS*/}
