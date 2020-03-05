@@ -1,19 +1,20 @@
 import React from "react";
 import style from "./CartButton.module.css";
 
-const CartButton = (props) => {
-    let button = props.cartItems.includes(props.item);
-    let btnClassName = "";
-    if(props.buttonId === props.btnId && props.active === true)
-       btnClassName = style.cartButton + " " +style.btnLeftSlowMotion;
-    else btnClassName = style.cartButton + " " +style.btnCloseSlowMotion;
+const CartButton = (props) =>{
+        let buttonActive = props.cartItems.includes(props.item);
+        let cart_icon = <i className="fas fa-cart-plus"></i>;
+        if(props.onLoad && !buttonActive)
+            cart_icon = <div className={style.loader}></div>
+        else if(buttonActive)
+            cart_icon = <i className="fas fa-check"></i>
         return (
-            <button onMouseEnter={(!button) ? () => props.mouseEnterButton(props.btnId) : " "}
-                    className={btnClassName }
-                    onMouseLeave={(!button) ? props.mouseLeaveButton : " "}
-                    onClick={()=>props.updateCartCount(props.item)} disabled={button}>
+            <button className={style.cartButton}
+                    onClick={()=>props.updateCartCount(props.item)} disabled={buttonActive}>
                     <span className={style.btnFlow}>
-                            <i className="fas fa-shopping-cart"></i>{(button) ? "ALREADY ADDED" : "ADD TO CART"}</span>
+                        {cart_icon}
+
+                    </span>
             </button>
         );
 };

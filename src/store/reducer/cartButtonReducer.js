@@ -1,26 +1,23 @@
 const initialState = {
-    buttonId: "",
-    active: false,
     count: 0,
     cartItems: [],
+    onLoad: false,
 };
 
 const reducer = (state = initialState, action) => {
     const newState = {...state};
     switch (action.type) {
-        case 'UPDATE_CART_COUNT_ASYNC':
+        case 'CART_ADD_ONLOAD':
+            newState.onLoad = true;
+            break;
+        case 'UPDATE_CART_COUNT':
             newState.count++;
-            newState.cartItems.push(action.item);
+            newState.cartItems.push(action.value);
+            newState.onLoad = false;
             break;
-        case 'MOUSE_ENTER_CART_BUTTON':
-            newState.buttonId = action.id;
-            newState.active = true;
+        case 'FETCH_ERROR':
+            console.log(action.error);
             break;
-        case 'MOUSE_LEAVE_CART_BUTTON':
-            newState.buttonId = "";
-            newState.active = false;
-            break;
-
     }
     return newState;
 };

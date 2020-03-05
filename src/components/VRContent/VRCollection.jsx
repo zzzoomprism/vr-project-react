@@ -4,9 +4,11 @@ import {Entity, Scene} from "aframe-react";
 import sofa from "./../../media/models/out.glb";
 import {modelLoading} from "./../../info";
 import "aframe-particle-system-component";
+import "./button";
 
 const VRCollection = (props) => {
     const info = modelLoading();
+
     return(
         <Sphere radius={100} material={"color: #333; side: double;" }>
             {/*<a-entity position="0 2.25 -15" particle-system="preset: dust; particleCount: 1000"/>*/}

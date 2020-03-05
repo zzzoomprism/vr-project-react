@@ -4,7 +4,7 @@ import "./index.css";
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from "react-redux";
-import {createStore, combineReducers, applyMiddleware} from "redux";
+import {createStore, combineReducers, applyMiddleware, compose} from "redux";
 import createSagaMiddleware from "redux-saga";
 import { watch } from "./saga/test";
 
@@ -17,6 +17,7 @@ import cartReducer from "./store/reducer/cartReducer";
 import cartButtonReducer from "./store/reducer/cartButtonReducer";
 import vrMenuReducer from "./store/reducer/vrMenuReducer";
 import vrCollectionReducer from "./store/reducer/vrCollectionReducer";
+import vrAnimationDesktopReducer from "./store/reducer/vrAnimationDesktopReducer";
 
 const rootReducer = combineReducers({
    sidebar:  sidebarMenu,
@@ -28,12 +29,17 @@ const rootReducer = combineReducers({
    cartButtonReducer: cartButtonReducer,
    vrMenuReducer: vrMenuReducer,
    vrCollectionReducer: vrCollectionReducer,
+   vrAnimationDesktop: vrAnimationDesktopReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();
 
+const store = createStore(rootReducer,
+    compose(
+        applyMiddleware(sagaMiddleware),
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()),
+    );
 
-const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(watch);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));

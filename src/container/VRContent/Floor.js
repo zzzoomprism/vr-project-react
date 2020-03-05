@@ -11,7 +11,7 @@ const mapStoreToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        floorMouseEnter: (value) => dispatch({type: 'FLOOR_MOUSE_ENTER', points: value}),
+        floorMouseEnter: () => dispatch({type: 'FLOOR_MOUSE_ENTER'}),
         floorMouseLeave: () => dispatch({type: 'FLOOR_MOUSE_LEAVE'}),
     }
 };

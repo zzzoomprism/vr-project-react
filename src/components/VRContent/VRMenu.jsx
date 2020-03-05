@@ -8,7 +8,7 @@ const VRMenu = (props) => {
     const products = modelLoading();
     const best_products = products.map((el) => {
         if(el.key_word === "top")
-        return <Entity><Cylinder material={"color: black;"}
+        return <Entity key={el.id + "helloworld"}><Cylinder material={"color: black;"}
                       position={el.position_x + " " + `${el.position_y - 0.3}` + " " + el.position_z} radius={4}
                          animation={(props.modelId === el.id) ? "property: position; to: 0 0 4; dur: 2000; " : "property: position; to: " + el.position_x + " " + `${el.position_y - 0.3}` + " " + el.position_z + "; dur: 2000;"}
                          animation__rotation={(props.modelId === el.id) ? "property: rotation; to: 0 " + `${(el.rotation > 0) ? 180 - el.rotation : -180 - el.rotation}` + " 0; dur: 2000; " : "property: rotation; to: 0 0 0; dur: 2000;"}

@@ -6,13 +6,15 @@
 }
 
 .mainCartBlock h3:hover{
-    color: coral;
+    //color: aqua;
+    text-shadow: 1px 1px 4px white;
 }
 
 .numberOfItems{
     display: inline-block;
     font-size: 10px;
-    background-color: coral;
+    background-color: black;
+    border: 2px solid white;
     color: white;
     padding: 0 5px 0 5px;
     border-radius: 50%;
