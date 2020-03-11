@@ -18,6 +18,15 @@ class VRContent extends React.Component{
                 <Route path={'/vr/animation'} component={AnimationDesktop}/>
             </Switch>
         );
+
+
+            let entity = document.querySelector('[sound]');
+            console.log(entity);
+            // if(entity !== undefined){
+            //     entity.then(()=>{
+            //         entity.components.sound.playSound();
+            //     });
+            // }
         return (
             <Scene>
                     <a-assets>

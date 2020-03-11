@@ -47,16 +47,15 @@ hr{
 
 .filterBlock{
     list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(40px, 150px));
 }
 
 .filterBlock li{
-    display: inline-block;
-    margin-right: 30px;
     cursor: pointer;
     font-family: 'Staatliches', cursive;
     font-size: 20px;
     font-weight: bold;
-    padding: 10px 5px 10px 5px;
 }
 
 .filterBlock li i{
@@ -73,17 +72,28 @@ hr{
 }
 
 @media screen and (max-width: 940px) {
+    /*.filterBlock{*/
+    /*    list-style: none;*/
+    /*    width: 200px;*/
+    /*    background-color: black;*/
+    /*    color: white;*/
+    /*    overflow: hidden;*/
+    /*    position: absolute;*/
+    /*    left: 130px;*/
+    /*    z-index: 10;*/
+    /*    top: 20px;*/
+    /*    height: 400px;*/
+    /*    transition: 500ms;*/
+    /*}*/
+
     .filterBlock{
-        list-style: none;
-        width: 200px;
+        display: grid;
+        grid-template-columns: 200px;
+        grid-template-rows: repeat(4, minmax(40px, 70px));
         background-color: black;
-        color: white;
         overflow: hidden;
-        position: absolute;
-        left: 130px;
-        z-index: 10;
-        top: 20px;
-        transition: 500ms;
+        transition:1s;
+        top:0;
     }
 
     .filterBlock li:not(:first-child){
