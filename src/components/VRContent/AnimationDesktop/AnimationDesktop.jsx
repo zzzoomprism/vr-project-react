@@ -5,6 +5,11 @@ import "./../button";
 import DesktopMenu from "./DesktopMenu";
 import {animationSteps} from "./animationGenerator";
 import "./stars";
+import sofa from "../../../media/models/Koltuk.obj";
+import sofa3 from "../../../media/models/sofa.obj";
+import sofaModern from "./../../../media/models/bed.obj";
+import table from "./../../../media/models/table.obj";
+import chairs from "./../../../media/models/DesignChair1.obj";
 
 function* generator(){
     yield {
@@ -54,17 +59,19 @@ const AnimationDesktop = (props) => {
         else
             stars = "";
 
-        return <Sphere  radius={40} material={"color: black; side: double;"}>
+        return <Sphere  radius={80} material={"color: black; side: double;"}>
            {stars}
-            <Entity nothing={"power: 50;"} position={"1 6 -2"} animation={"property: nothing.power; from: 500; to: 50; easing: easeOutQuad; dur: 10000;"}
-            animation__rotation={"property: rotation; to: 0 360 0; dur: 15000; loop: true;"}/>
+            <Entity nothing={"power: 50;"} position={"1 6 -2"}
+                    // animation={"property: nothing.power; from: 500; to: 50; easing: easeOutQuad; dur: 10000;"}
+            animation__rotation={"property: rotation; to: 0 360 0; dur: 15000; loop: true;"}
+            light={"type: point; distance: 80; "}/>
             <Text value={props.stepTextAnimation.text} font={"sourcecodepro"} width={1} height={2} wrap-count={25} color={'white'} position={"1 6 -1"} align={"center"} opacity={0}
-            animation={"property: opacity; to: 1; loop: 9; dur: 5000; dir: alternate; easing: linear; delay: 5000;"}
+            animation={"property: opacity; to: 1; loop: 8; dur: 5000; dir: alternate; easing: linear; delay: 5000;"}
                   animation__position={"property: position; to: 1 6 -0.7; dur: 5000; easing: linear; delay: 5000;"}
                 />
 
                 {/*NEXT BUTTON*/}
-            <Plane width={1} height={0.3} position={"2 5 -1"} material={"color: white; opacity: 0.1"}
+            <Plane width={1} height={0.3} position={"2 5 -1"} material={"color: white; opacity: 0.1; emissive: white;"}
                    events={{
                        "click": ()=>props.nextStep(animationStepGenerator.next().value)
                    }} >
@@ -75,23 +82,78 @@ const AnimationDesktop = (props) => {
                 {/*END NEXT BUTTON*/}
 
 
-            {/*    /!*MENU BUTTON*!/*/}
-            {/*<Plane width={1} height={0.3} position={"0 5 -1"} material={"color: white; opacity: 0.1"}*/}
-            {/*events={{*/}
-            {/*    "click": ()=>props.menuToggle()*/}
-            {/*}}>*/}
-            {/*    <Text value={"menu"} color={"white"} width={1.5} height={0.3} align={"center"} wrap-count={20}*/}
-            {/*          alphaTest={20}*/}
-            {/*    />*/}
-            {/*</Plane>*/}
-            {/*    /!*END MENU BUTTON*!/*/}
+                {/*MENU BUTTON*/}
+            <Plane width={1} height={0.3} position={"0 5 -1"} material={"color: white; opacity: 0.1;emissive: white;"}
+            events={{
+                "click": ()=>props.menuToggle()
+            }}>
+                <Text value={"menu"} color={"white"} width={1.5} height={0.3} align={"center"} wrap-count={20}
+                      alphaTest={20}
+                />
+            </Plane>
+                {/*END MENU BUTTON*/}
 
-
+            <DesktopMenu open={props.menu_open}/>
              {/*ANIMATION STEPS*/}
             {props.animation_step.code}
             {/*END ANIMATION STEPS*/}
 
-           <DesktopMenu open={props.menu_open}/>
+
+
+
+
+            <a-entity obj-model={"obj: url(" + sofa + ");"} material={"color: white; wireframe: true; opacity: 0;"}  rotation={"0 -190 0"}
+                      scale={"4 4 4"} position={"10 14 9"}
+                      animation__step3={"property: material.opacity; from: 0; to: 1; dur: 3000; easing: linear; "}
+                      animation__rotation={"property: rotation; to: 360 360 360; dur: 50000; easing: linear; delay: 4000; loop: true; dir: reverse;"}/>
+            <a-entity obj-model={"obj: url(" + sofa + ");"} material={"color: white; wireframe: true; opacity: 0;"}  rotation={"60 -190 60"}
+                      scale={"6 6 6"} position={"-10 15 15"}
+                      animation__step3={"property: material.opacity; from: 0; to: 1; dur: 3000; easing: linear; delay: 4000;"}
+                      animation__rotation={"property: rotation; to: 360 360 360; dur: 50000; easing: linear; delay: 4000; loop: true; dir: reverse;"}/>
+            <a-entity obj-model={"obj: url(" + sofa3 + ");"} material={"color: white; wireframe: true; opacity: 0; "}  rotation={"20 0 40"}
+                      scale={"0.05 0.05 0.05"} position={"15 20 -9"}
+                      animation__step5={"property: material.opacity; from: 0; to: 1; dur: 3000; easing: linear; delay: 2000;"}
+                      animation__rotation={"property: rotation; to: 360 360 360; dur: 50000; easing: linear; delay: 4000; loop: true; dir: reverse;"}/>
+            <a-entity obj-model={"obj: url(" + sofa + ");"} material={"color: white; wireframe: true; opacity: 0;"}  rotation={"0 -190 0"}
+                      scale={"6 6 6"} position={"-15 11 -10"}
+                      animation__step3={"property: material.opacity; from: 0; to: 1; dur: 3000; easing: linear; delay: 4000;"}
+                      animation__rotation={"property: rotation; to: 360 360 360; dur: 50000; easing: linear; delay: 4000; loop: true; dir: reverse;"}/>
+            <a-entity obj-model={"obj: url(" + sofa3 + ");"} material={"color: white; wireframe: true; opacity: 0; "}  rotation={"20 0 40"}
+                      scale={"0.05 0.05 0.05"} position={"1 20 10"}
+                      animation__step5={"property: material.opacity; from: 0; to: 1; dur: 3000; easing: linear; delay: 2000;"}
+                      animation__rotation={"property: rotation; to: 360 360 360; dur: 50000; easing: linear; delay: 4000; loop: true; dir: reverse;"}/>
+            <a-entity obj-model={"obj: url(" + sofa + ");"} material={"color: white; wireframe: true; opacity: 0;"}  rotation={"0 -190 0"}
+                      scale={"6 6 6"} position={"-3 25 -5"}
+                      animation__step3={"property: material.opacity; from: 0; to: 1; dur: 3000; easing: linear; delay: 4000;"}
+                      animation__rotation={"property: rotation; to: 360 360 360; dur: 50000; easing: linear; delay: 4000; loop: true;dir: reverse;"}/>
+
+
+
+            <a-entity obj-model={"obj: url(" + sofa + ");"} material={"color: white; wireframe: true; opacity: 0;"}  rotation={"0 -190 0"}
+                      scale={"4 4 4"} position={"10 -14 9"}
+                      animation__step3={"property: material.opacity; from: 0; to: 1; dur: 3000; easing: linear; "}
+                      animation__rotation={"property: rotation; to: 360 360 360; dur: 50000; easing: linear; delay: 4000; loop: true; dir: reverse;"}/>
+            <a-entity obj-model={"obj: url(" + table + ");"} material={"color: white; wireframe: true; opacity: 0;"}  rotation={"60 -190 60"}
+                      scale={"6 6 6"} position={"-10 -25 15"}
+                      animation__step3={"property: material.opacity; from: 0; to: 1; dur: 3000; easing: linear; delay: 4000;"}
+                      animation__rotation={"property: rotation; to: 360 360 360; dur: 50000; easing: linear; delay: 4000; loop: true; dir: reverse;"}/>
+            <a-entity obj-model={"obj: url(" + chairs + ");"} material={"color: white; wireframe: true; opacity: 0; "}  rotation={"20 0 40"}
+                      scale={"3 3 3"} position={"15 -20 -9"}
+                      animation__step5={"property: material.opacity; from: 0; to: 1; dur: 3000; easing: linear; delay: 2000;"}
+                      animation__rotation={"property: rotation; to: 360 360 360; dur: 50000; easing: linear; delay: 4000; loop: true; dir: reverse;"}/>
+            <a-entity obj-model={"obj: url(" + sofaModern + ");"} material={"color: white; wireframe: true; opacity: 0;"}  rotation={"0 -190 0"}
+                      scale={"0.05 0.05 0.05"} position={"-15 -18 -10"}
+                      animation__step3={"property: material.opacity; from: 0; to: 1; dur: 3000; easing: linear; delay: 4000;"}
+                      animation__rotation={"property: rotation; to: 360 360 360; dur: 50000; easing: linear; delay: 4000; loop: true; dir: reverse;"}/>
+            <a-entity obj-model={"obj: url(" + sofa3 + ");"} material={"color: white; wireframe: true; opacity: 0; "}  rotation={"20 0 40"}
+                      scale={"0.05 0.05 0.05"} position={"1 -20 10"}
+                      animation__step5={"property: material.opacity; from: 0; to: 1; dur: 3000; easing: linear; delay: 2000;"}
+                      animation__rotation={"property: rotation; to: 360 360 360; dur: 50000; easing: linear; delay: 4000; loop: true; dir: reverse;"}/>
+            <a-entity obj-model={"obj: url(" + sofa + ");"} material={"color: white; wireframe: true; opacity: 0;"}  rotation={"0 -190 0"}
+                      scale={"6 6 6"} position={"-3 -25 -5"}
+                      animation__step3={"property: material.opacity; from: 0; to: 1; dur: 3000; easing: linear; delay: 4000;"}
+                      animation__rotation={"property: rotation; to: 360 360 360; dur: 50000; easing: linear; delay: 4000; loop: true;dir: reverse;"}/>
+
         </Sphere>
 };
 
