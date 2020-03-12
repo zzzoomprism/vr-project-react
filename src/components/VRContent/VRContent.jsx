@@ -18,13 +18,13 @@ class VRContent extends React.Component{
         );
 
 
-            let entity = document.querySelector('[sound]');
-            console.log(entity);
-            // if(entity !== undefined){
-            //     entity.then(()=>{
-            //         entity.components.sound.playSound();
-            //     });
-            // }
+            // let entity = document.querySelector('[sound]');
+            // console.log(entity);
+            // // if(entity !== undefined){
+            // //     entity.then(()=>{
+            // //         entity.components.sound.playSound();
+            // //     });
+            // // }
         return (
             <Scene>
                     <a-assets>

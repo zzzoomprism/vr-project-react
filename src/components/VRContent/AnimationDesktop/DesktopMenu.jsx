@@ -13,7 +13,12 @@ const DesktopMenu = (props) =>{
     return <Entity>
         <Plane width={2.5} height={0.5} position={(props.open) ? timeOutReturn("-0.1 7 -1.8", 3500) : " 1.2 7 -1.8"}
                material={"color: white; opacity: 0.5; emissive: white;"}
-        animation__position={(props.open) ? "property: position; from:1.2 7 -1.8;  to: -0.1 7 -1.8; dur: 3500;" : " "}>
+        animation__position={(props.open) ? "property: position; from:1.2 7 -1.8;  to: -0.1 7 -1.8; dur: 3500;" : " "}
+        events={{
+            "click": ()=>{
+                window.location = "/#/vr-collection";
+            }
+        }}>
             <Text value={"collection"} color={"black"} width={1.5} height={0.4}  wrap-count={20}
                   align={"right"} alphaTest={20} opacity={(props.open) ? timeOutReturn(1, 3500) : 0}
                   animation={(props.open) ? "property: opacity; from: 0; to: 0.6; dur: 3500;" : " "}/>

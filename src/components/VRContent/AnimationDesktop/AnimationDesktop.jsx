@@ -45,22 +45,24 @@ const AnimationDesktop = (props) => {
         for(let val of step){
             setTimeout(()=>{props.updateText(val)}, seconds+=10100);
         }
-        let stars;
+        //let stars;
         if(props.animation_run) {
-            stars = <Entity stars={"radius: 5"} position={"-1 -2 0"}
-                            animation={"property: rotation; to: 360 360 360; loop: true; easing: linear; dur: 100000;"}
-                            animation__scale={"property: scale; from: 0 0 0; to: 5 5 5; dur: 5000; easing: linear;"}
-                            scale={"5 5 5"}/>;
+            // stars = <Entity stars={"radius: 5"} position={"-1 -2 0"}
+            //                 animation={"property: rotation; to: 360 360 360; loop: true; easing: linear; dur: 100000;"}
+            //                 animation__scale={"property: scale; from: 0 0 0; to: 5 5 5; dur: 5000; easing: linear;"}
+            //                 scale={"5 5 5"}/>;
             for(let val of animationStepGenerator) {
                 setTimeout(() => props.nextStep(val), val.timer);
                 console.log(val);
                 }
             }
-        else
-            stars = "";
+        // else
+        //     stars = "";
 
         return <Sphere  radius={80} material={"color: black; side: double;"}>
-           {stars}
+            <Entity stars={"radius: 60"} position={"-1 -2 0"}
+                    animation={"property: rotation; to: 360 360 360; loop: true; easing: linear; dur: 100000;"}
+                    />
             <Entity nothing={"power: 50;"} position={"1 6 -2"}
                     // animation={"property: nothing.power; from: 500; to: 50; easing: easeOutQuad; dur: 10000;"}
             animation__rotation={"property: rotation; to: 0 360 0; dur: 15000; loop: true;"}
