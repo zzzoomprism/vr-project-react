@@ -1,27 +1,39 @@
-import React from "react";
+import React, {useState} from "react";
 import style from "./ModalFilter.module.css";
 
+
 const ModalFilter = (props) => {
+
     const display_none = {display: "none"};
+
     return <div className={(props.filter_open) ? style.modalWindow : style.modalWindowClose}>
                 <div className={ style.modalBody} >
                     <div>
                         <h3>What kind of furniture?</h3>
                         <div className={style.inputFilterBlock}>
                             <label className={style.container}>
-                                <input type="checkbox"/>
+                                <input type="checkbox" value={"chair"} onChange={(event)=>{
+                                          (event.target.checked) ? props.setFilterStock(event.target.value) : props.deleteFilterStock(event.target.value);
+                                }}
+                                />
                                     <p className={style.checkmark}>Chair</p>
                             </label>
                             <label className={style.container}>
-                                <input type="checkbox"/>
+                                <input type="checkbox" value={"sofa"} onChange={(event)=>{
+                                    (event.target.checked) ? props.setFilterStock(event.target.value) : props.deleteFilterStock(event.target.value);
+                                }} />
                                 <p className={style.checkmark}>Sofa</p>
                             </label>
                             <label className={style.container}>
-                                <input type="checkbox"/>
+                                <input type="checkbox" value={"table"} onChange={(event)=>{
+                                    (event.target.checked) ? props.setFilterStock(event.target.value) : props.deleteFilterStock(event.target.value);
+                                }}/>
                                 <p className={style.checkmark}>Table</p>
                             </label>
                             <label className={style.container}>
-                                <input type="checkbox"/>
+                                <input type="checkbox" value={"blocks"} onChange={(event)=>{
+                                    (event.target.checked) ? props.setFilterStock(event.target.value) : props.deleteFilterStock(event.target.value);
+                                }}/>
                                 <p className={style.checkmark}>Blocks</p>
                             </label>
                         </div>

@@ -6,11 +6,12 @@ import {Link} from "react-router-dom";
 import Button from "./../Button/Button";
 import ModalFilter from "./../../../container/ShopContent/ModalFilter";
 import TopMenu from "./../../../container/ShopContent/TopMenu";
+import Alert from "./../../../container/ShopContent/Alert";
 
 class Content extends React.Component{
     render() {
         const style_open = {
-            width: "calc(100% - 460px)",
+            width: "calc(100% - 480px)",
         };
         const style_close = {
             width: "calc(100% - 140px)"
@@ -47,6 +48,7 @@ class Content extends React.Component{
             {(this.props.isReady) ? furnitureInfo : "Загружаем..."}
             </div>
             <ModalFilter/>
+            <Alert/>
         </div>
 
     }

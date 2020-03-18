@@ -12,6 +12,7 @@ const mapStoreToProps = (store) =>{
 const mapDispatchToProps = (dispatch) => {
     return{
         cartToggle: () => dispatch({type: 'CART_TOGGLE'}),
+        deleteItem: (item) => dispatch({type: 'DELETE_ITEM', value: item})
     }
 };
 

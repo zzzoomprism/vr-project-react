@@ -16,7 +16,7 @@ const DesktopMenu = (props) =>{
         animation__position={(props.open) ? "property: position; from:1.2 7 -1.8;  to: -0.1 7 -1.8; dur: 3500;" : " "}
         events={{
             "click": ()=>{
-                window.location = "/#/vr-collection";
+                window.location = "#/vr/vr-collection";
             }
         }}>
             <Text value={"collection"} color={"black"} width={1.5} height={0.4}  wrap-count={20}

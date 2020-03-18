@@ -1,100 +1,40 @@
-/*.btnDefault{*/
-/*    border: 5px solid black;*/
-/*    background-color: black;*/
-/*    padding: 10px 20px 10px 20px;*/
-/*    font-family: 'Staatliches', cursive;*/
-/*    font-size: 20px;*/
-/*    cursor: pointer;*/
-/*    transition: 500ms;*/
-/*    overflow: hidden;*/
-/*    position: relative;*/
-/*    width: 130px;*/
-/*    height: 50px;*/
-/*    color: white;*/
-/*}*/
-
-
-/*.btnDefault span{*/
-/*    width: 250px;*/
-/*    position: absolute;*/
-/*    top: 10px;*/
-/*    left: 20px;*/
-/*}*/
-
-/*.btnDefault:hover{*/
-/*    background-color: black;*/
-/*    color: coral;*/
-/*    border: 5px solid black;*/
-/*    box-shadow: 2px 2px 4px 0 rgba(0,0,0,.5);*/
-/*}*/
-
-/*.btnFlow i{*/
-/*    margin-right: 100px;*/
-/*}*/
-
-/*.btnLeftSlowMotion .btnFlow{*/
-/*    animation: replaceIconToText;*/
-/*    animation-duration: 500ms;*/
-/*    left: -130px;*/
-/*}*/
-
-/*.btnCloseSlowMotion .btnFlow{*/
-/*    animation: replaceTextToIcon;*/
-/*    animation-duration: 500ms;*/
-/*    left: 20px;*/
-/*}*/
-
-/*.btnDefault[disabled]{*/
-/*    background-color: coral;*/
-/*    color: white;*/
-/*}*/
-
-/*.btnDefault[disabled] .btnFlow{*/
-/*    left: -130px;*/
-/*}*/
-
-/*@keyframes replaceIconToText {*/
-/*    from{*/
-/*        left: 20px;*/
-/*    }*/
-/*    to{*/
-/*        left: -130px;*/
-/*    }*/
-/*}*/
-
-/*@keyframes replaceTextToIcon {*/
-/*    from{*/
-/*        left: -130px;*/
-/*    }*/
-/*    to{*/
-/*        left: 20px;*/
-/*    }*/
-/*}*/
-
-
 .vrButton{
     border: 5px solid black;
-    background-color: white;
     padding: 10px 20px 10px 20px;
     font-family: 'Staatliches', cursive;
-    font-size: 20px;
     cursor: pointer;
     transition: 500ms;
     position: relative;
-    width: 150px;
+    width: 200px;
     height: 50px;
-    color: black;
-    text-align: center;
     overflow: hidden;
+    color: black;
 }
 
-.vrButton::after{
+.btnFlow{
+    font-size: 20px;
+    text-align: center;
+}
+
+.btnFlow::after{
     content: 'Look at vr';
-    position: absolute;
-    color: black;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    top: 0;
-    left: 0;
+    margin-left: 20px;
+    left: 100%;
+}
+
+.vrButton:hover{
+    animation: hoverLive;
+    animation-iteration-count: infinite;
+    animation-duration: 500ms;
+}
+
+@keyframes hoverLive {
+    from{
+        background-color: white;
+        color: black;
+    }
+    to{
+        background-color: black;
+        color: white;
+    }
 }

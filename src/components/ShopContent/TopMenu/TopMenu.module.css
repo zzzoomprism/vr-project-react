@@ -11,16 +11,9 @@
     align-items: center;
     background-color: black;
     color: white;
-    box-shadow: 2px 8px 4px -6px rgba(0,0,0,.5);
+
 }
 
-hr{
-    width: calc(100% - 100px);
-    float: right;
-    border-style: none;
-    text-align: center;
-    height: 3px;
-}
 .searchFilter{
     margin-top: 20px;
     margin-left: 20px;
@@ -37,7 +30,6 @@ hr{
 .searchFilter p{
     text-align: center;
     line-height: 40px;
-
 }
 
 .searchFilter:hover{
@@ -72,24 +64,12 @@ hr{
 }
 
 @media screen and (max-width: 940px) {
-    /*.filterBlock{*/
-    /*    list-style: none;*/
-    /*    width: 200px;*/
-    /*    background-color: black;*/
-    /*    color: white;*/
-    /*    overflow: hidden;*/
-    /*    position: absolute;*/
-    /*    left: 130px;*/
-    /*    z-index: 10;*/
-    /*    top: 20px;*/
-    /*    height: 400px;*/
-    /*    transition: 500ms;*/
-    /*}*/
-
     .filterBlock{
         display: grid;
         grid-template-columns: 200px;
-        grid-template-rows: repeat(4, minmax(40px, 70px));
+        position: absolute;
+        right: 50px;
+        margin-top: 40px;
         background-color: black;
         overflow: hidden;
         transition:1s;

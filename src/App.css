@@ -4,6 +4,12 @@ html{
     scroll-behavior: smooth;
 }
 
+body{
+    background-image: url("./media/home_background.jpg");
+    background-attachment: fixed;
+    background-position: center;
+}
+
 h1{
     font-family: 'Abril Fatface', cursive;
     letter-spacing: 2px;

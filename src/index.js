@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from "react-redux";
 import {createStore, combineReducers, applyMiddleware, compose} from "redux";
 import createSagaMiddleware from "redux-saga";
-import { watch } from "./saga/test";
+import rootSaga from "./saga/rootSaga";
 
 import sidebarMenu from "./store/reducer/sidebarmenuReducer";
 import furnitureBlocksReducer from "./store/reducer/furnitureBlocksReducer";
@@ -40,7 +40,8 @@ const store = createStore(rootReducer,
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()),
     );
 
-sagaMiddleware.run(watch);
+
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 

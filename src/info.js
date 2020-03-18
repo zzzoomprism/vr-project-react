@@ -26,7 +26,7 @@ const models = [
         cylinder_position: "-10 2 2",
         scale: "0.006 0.006 0.006",
         visible: true,
-        key_word: "top",
+        key_word: "top sofa",
     },
     {
         id: "21kjfsoih3k24j",
@@ -47,7 +47,7 @@ const models = [
         text_rotation: "0 -90 0",
         scale: "0.03 0.03 0.03",
         visible: false,
-        key_word: "top",
+        key_word: "top chair",
     },
     {
         id: "21ewrth3k24j",
@@ -68,7 +68,7 @@ const models = [
         text_rotation: "0 150 0",
         scale: "0.03 0.03 0.03",
         visible: false,
-        key_word: "top",
+        key_word: "top sofa",
     },
     {
         id: "1enc3453j342lk",
@@ -116,7 +116,7 @@ const models = [
         text_rotation: "0 -150 0",
         scale: "0.006 0.006 0.006",
         visible: true,
-        key_word: "",
+        key_word: "bed",
     },
     ];
 
