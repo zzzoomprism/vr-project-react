@@ -25,7 +25,6 @@ const reducer = (state = initialState, action) => {
             break;
         case 'HIDE_ALERT':
             newState.alert.show = false;
-            newState.alert.message = "";
             break;
         case 'FETCH_ERROR':
             console.log(action.error);

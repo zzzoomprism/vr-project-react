@@ -7,6 +7,7 @@ import Button from "./../Button/Button";
 import ModalFilter from "./../../../container/ShopContent/ModalFilter";
 import TopMenu from "./../../../container/ShopContent/TopMenu";
 import Alert from "./../../../container/ShopContent/Alert";
+import cartBtnStyle from "./../Button/CartButton.module.css";
 
 class Content extends React.Component{
     render() {
@@ -20,7 +21,7 @@ class Content extends React.Component{
         this.props.setItems(info, this.props.sort);
         const furnitureInfo = this.props.items.map((el) => {
             return  <div className={style.furnitureSection} key={el.id}>
-                <Link to={`/shop/${el.id}`}>
+                <Link to={`/shop/${el.id}`} target={"_blank"}>
                 <div className={style.funitureImageContent}>
                     <img
                         src={el.image}
@@ -35,7 +36,7 @@ class Content extends React.Component{
                     <p><span>{el.short_description}</span>
                     </p>
                     <div>
-                        <CartButton btnId={el.id} item={el}/>
+                        <CartButton btnId={el.id} item={el} btnStyle={cartBtnStyle.cartButton}/>
                         <Button icon={"fas fa-vr-cardboard"} btnId={el.id} content={"Look at VR"}/>
                     </div>
                 </div>
@@ -48,7 +49,6 @@ class Content extends React.Component{
             {(this.props.isReady) ? furnitureInfo : "Загружаем..."}
             </div>
             <ModalFilter/>
-            <Alert/>
         </div>
 
     }

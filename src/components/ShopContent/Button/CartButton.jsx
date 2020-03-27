@@ -5,16 +5,13 @@ const CartButton = (props) =>{
         let buttonActive = props.cartItems.includes(props.item);
         let cart_icon = <i className="fas fa-cart-plus"></i>;
         if(props.onLoad && !buttonActive)
-            cart_icon = <div className={style.loader}></div>
+            cart_icon = <div><div className={style.loader}></div><i className="fas fa-cart-plus" style={{opacity: "0"}}></i></div>
         else if(buttonActive)
             cart_icon = <i className="fas fa-check"></i>
         return (
-            <button className={style.cartButton}
+            <button className={props.btnStyle}
                     onClick={()=>props.updateCartCount(props.item)} disabled={buttonActive}>
-                    <span className={style.btnFlow}>
                         {cart_icon}
-
-                    </span>
             </button>
         );
 };

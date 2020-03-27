@@ -90,28 +90,28 @@
     animation-duration: 1500ms;
 }
 
-.sidebarContentActive ul{
+.sidebarContentActive menu{
     list-style: none;
     font-size: 30px;
     padding: 0;
 }
 
-.sidebarContentActive ul li{
+.sidebarContentActive menu li{
     margin-top: 30px;
     cursor: pointer;
 }
-.sidebarContentActive ul li a{
+.sidebarContentActive menu li a{
     text-decoration: none;
     color: white;
     font-family: 'Raleway', sans-serif;
 
 }
 
-.sidebarContentActive ul li a:hover{
+.sidebarContentActive menu li a:hover{
     text-shadow: 1px 1px 5px white, -1px -1px 5px white;
 }
 
-.sidebarContentActive ul li span{
+.sidebarContentActive menu li span{
     margin-left: 100px;
 }
 

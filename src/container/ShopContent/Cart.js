@@ -11,7 +11,7 @@ const mapStoreToProps = (store) =>{
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        cartToggle: () => dispatch({type: 'CART_TOGGLE'}),
+        cartToggle: (ex_value) => dispatch({type: 'CART_TOGGLE', value: ex_value}),
         deleteItem: (item) => dispatch({type: 'DELETE_ITEM', value: item})
     }
 };

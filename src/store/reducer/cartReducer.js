@@ -6,7 +6,10 @@ const reducer = (state = initialState, action) => {
     const newState = {...state};
     switch (action.type) {
         case 'CART_TOGGLE':
-            newState.isOpen = !state.isOpen;
+            if(action.value)
+                newState.isOpen = action.value;
+            else if(action.value === undefined)
+                newState.isOpen = !state.isOpen;
             break;
 
     }

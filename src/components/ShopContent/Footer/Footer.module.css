@@ -1,0 +1,26 @@
+.footerMainBlock{
+    width: calc(100% - 100px);
+    background-color: black;
+    color: white;
+    float: right;
+}
+
+.footerInfo{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: minmax(50px, 1fr);
+    justify-items: center;
+    border-bottom: 1px solid #999;
+
+}
+
+.footerInfo a{
+    color: white;
+    text-decoration: none;
+}
+
+.copyRightRow{
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8rem;
+}

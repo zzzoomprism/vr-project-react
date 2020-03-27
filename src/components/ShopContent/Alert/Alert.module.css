@@ -4,15 +4,14 @@
     background-color: black;
     position: fixed;
     top: 85px;
-    left: calc(100% - 310px);
     color: white;
     border-radius: 5px;
     border: 5px solid white;
     display: grid;
     grid-template-columns: 20px 1fr 20px;
     grid-template-rows: 20px 1fr 20px;
-    animation: flowOn;
-    animation-duration: 500ms;
+    transition: 1s;
+    z-index: 30;
 }
 
 .closeIcon{
@@ -36,10 +35,6 @@
     display: grid;
     justify-content: center;
     align-content: center;
-}
-
-.alertDivHide{
-    display: none;
 }
 
 @keyframes flowOn{

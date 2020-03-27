@@ -27,7 +27,7 @@ const reducer = (state = initialState, action) => {
             break;
 
         case 'SET_FILTER':
-            if(action.sort)
+            if(action.sort && !state.filter_key_words.includes(action.sort))
             newState.filter_key_words.push(action.sort);
             let items = modelLoading();
             if(newState.filter_key_words.length === 0)
@@ -37,6 +37,7 @@ const reducer = (state = initialState, action) => {
                 let words = item.key_word.split(' ');
                 return newState.filter_key_words.find((word)=>words.includes(word));
             });
+            console.log(newState.filter_key_words);
             break;
         case 'DELETE_FILTER':
             let index = state.filter_key_words.indexOf(action.value);

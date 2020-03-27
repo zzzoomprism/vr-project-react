@@ -23,7 +23,7 @@
     color:black;
 }
 
-.cartButton[disabled]{
+.cartButton[disabled] {
     background-color: #111;
 }
 
@@ -31,6 +31,31 @@
     content: "ADDED";
     margin-left: 20px;
 }
+
+
+
+.cartButtonStyle2{
+    width: 150px;
+    height: 50px;
+    box-shadow: 0 0 5px 4px white;
+    color: white;
+    font-size: 1.2rem;
+    background-color: black;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    font-family: 'Staatliches', cursive;
+}
+.cartButtonStyle2:hover{
+        background-color: white;
+        color: black;
+}
+
+.cartButtonStyle2[disabled]:after{
+    content: "ADDED";
+    margin-left: 20px;
+}
+
 
 .loader,
 .loader:before,
@@ -44,6 +69,7 @@
 .loader {
     color: #ffffff;
     position: absolute;
+    content: " ";
     text-align: center;
     top: 15px;
     left: 70px;

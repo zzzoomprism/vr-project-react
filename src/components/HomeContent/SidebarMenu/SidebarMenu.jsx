@@ -23,13 +23,14 @@ const SidebarMenu = (props) => {
                     </div>
                 </div>
                 <div className={(props.open) ? style.sidebarContentActive : style.sidebarContentNoneActive}>
-                    <ul>
+                    <menu id={"menu"}>
                         <li onClick={props.updateMessage}><Link to="/">Home </Link><span><i className='fas fa-chevron-right'></i></span></li>
                         <li onClick={props.updateMessage}><Link to={"/vr"}>VR</Link><span><i className='fas fa-chevron-right'></i></span></li>
                         <li onClick={props.updateMessage}><Link to={"/shop"}>Collection</Link><span><i className='fas fa-chevron-right'></i></span></li>
                         <li onClick={props.updateMessage}><a href="">About Us </a><span><i className='fas fa-chevron-right'></i></span></li>
-                    </ul>
+                    </menu>
                 </div>
+
         </div>
     )
 };
