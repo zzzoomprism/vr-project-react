@@ -21,7 +21,7 @@ class Content extends React.Component{
         this.props.setItems(info, this.props.sort);
         const furnitureInfo = this.props.items.map((el) => {
             return  <div className={style.furnitureSection} key={el.id}>
-                <Link to={`/shop/${el.id}`} target={"_blank"}>
+                <Link to={`/shop/collection/${el.id}`}>
                 <div className={style.funitureImageContent}>
                     <img
                         src={el.image}
@@ -32,7 +32,7 @@ class Content extends React.Component{
                 </div>
                 </Link>
                 <div className={style.funitureInformationContent}>
-                   <Link to={`/shop/${el.id}`}><h3>{el.name}</h3></Link>
+                   <Link to={`/shop/collection/${el.id}`}><h3>{el.name}</h3></Link>
                     <p><span>{el.short_description}</span>
                     </p>
                     <div>

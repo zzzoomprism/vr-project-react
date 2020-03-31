@@ -35,7 +35,7 @@
     z-index: 30;
 }
 .cartListMainDiv{
-    width: calc(65% - 100px);
+    width: 85%;
     float: right;
     overflow: auto;
     list-style: none;
@@ -43,8 +43,8 @@
     top: 60px;
     right: 30px;
     z-index: 20;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
     transition: 500ms;
     display: grid;
     background-color: rgba(255, 255,255,.3);
@@ -52,69 +52,15 @@
 
 
 .cartList{
+    padding: 0;
     list-style: none;
     position: relative;
     display: grid;
-    grid-auto-rows: 150px;
+    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
     grid-row-gap: 20px;
 }
 
-.furnitureInCart{
-    display: grid;
-    grid-template-columns: 150px 1fr 30px 50px;
-    grid-auto-rows: 100px;
-    font-size: 0.8rem;
-}
 
-.furnitureInCart img{
-    width: 150px;
-    height: 148px;
-    -o-object-fit: cover;
-    object-fit: cover;
-    margin-top: 20px;
-}
-
-.cartDescriptionOfItem{
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.cartDescriptionOfItem a{
-    margin: 0;
-    text-decoration: none;
-    color: white;
-
-}
-
-.priceOfProduct{
-    font-size: 1.3rem;
-    font-family: 'Abril Fatface', cursive;
-    color: #d3d3d3;
-}
-
-input{
-    margin-top: 40px;
-    border: none;
-    background-color: white;
-    color: #333;
-    height: 38px;
-    width: 30px;
-    text-align: center;
-}
-
-.btnDelete{
-    margin-top: 40px;
-    width: 40px;
-    height: 40px;
-    border: none;
-    background-color: #999;
-    color: white;
-    cursor: pointer;
-}
-
-.btnDelete:hover{
-    background-color: red;
-}
 
 
 .footerOfCart{
@@ -128,13 +74,14 @@ input{
     background-color: black;
     border: 2px solid white;
     color: white;
+    transition: 500ms;
+    font-family: 'Staatliches', cursive;
+    cursor: pointer;
+    justify-items: right;
+    align-items: center;
 }
 
-@media screen and (max-width: 920px){
-    .furnitureInCart{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        grid-auto-rows: 100px;
-
-    }
+.checkout:hover{
+    background-color: white;
+    color: black;
 }

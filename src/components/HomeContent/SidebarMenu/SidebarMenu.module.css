@@ -29,15 +29,16 @@
     justify-items: center;
     text-align: center;
 }
-
-.menuLogo h1{
+.menuLogo{
     transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
-    color: black;
     overflow: hidden;
+}
+.menuLogo h1{
+    color: black;
 }
 
 .menuLogo h1::before{

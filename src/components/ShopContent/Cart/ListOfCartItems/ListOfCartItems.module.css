@@ -1,0 +1,55 @@
+.furnitureInCart{
+    display: grid;
+    //border: 3px solid white;
+    padding: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+    justify-items: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.furnitureInCart img{
+    width: 150px;
+    height: 148px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+.cartDescriptionOfItem a{
+    margin: 0;
+    text-decoration: none;
+    color: white;
+
+}
+
+.priceOfProduct{
+//font-size: 1.3rem;
+    font-family: 'Abril Fatface', cursive;
+    color: #d3d3d3;
+}
+
+input{
+    margin-top: 40px;
+    border: none;
+    background-color: white;
+    color: #333;
+    height: 38px;
+    width: 30px;
+    text-align: center;
+}
+
+.btnDelete{
+    margin-top: 40px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #999;
+    color: white;
+    cursor: pointer;
+}
+
+.btnDelete:hover{
+    background-color: red;
+}

@@ -1,6 +1,7 @@
 const initialState = {
     count: 0,
     cartItems: [],
+    sum: 0,
     onLoad: false,
     alert: {
         show: false,
@@ -17,6 +18,7 @@ const reducer = (state = initialState, action) => {
         case 'UPDATE_CART_COUNT':
             newState.count++;
             newState.cartItems.push(action.value);
+            newState.sum = state.sum + action.value.price;
             newState.onLoad = false;
             break;
         case 'SHOW_ALERT':
@@ -32,6 +34,7 @@ const reducer = (state = initialState, action) => {
         case 'DELETE_ITEM':
             newState.cartItems = state.cartItems.filter(item => item !== action.value);
             newState.count--;
+            newState.sum = state.sum - action.value.price;
             break;
     }
     return newState;

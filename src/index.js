@@ -18,6 +18,7 @@ import cartButtonReducer from "./store/reducer/cartButtonReducer";
 import vrMenuReducer from "./store/reducer/vrMenuReducer";
 import vrCollectionReducer from "./store/reducer/vrCollectionReducer";
 import vrAnimationDesktopReducer from "./store/reducer/vrAnimationDesktopReducer";
+import {reducer as formReducer} from "redux-form";
 
 const rootReducer = combineReducers({
    sidebar:  sidebarMenu,
@@ -30,6 +31,7 @@ const rootReducer = combineReducers({
    vrMenuReducer: vrMenuReducer,
    vrCollectionReducer: vrCollectionReducer,
    vrAnimationDesktop: vrAnimationDesktopReducer,
+   form: formReducer
 });
 
 const sagaMiddleware = createSagaMiddleware();

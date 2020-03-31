@@ -28,7 +28,7 @@ class Furniture extends React.Component{
         return (
             <div className={style.mainBlockOfDescription}>
                 <div className={style.topFurMenu}>
-                    <Link to={"/shop"} className={style.backBtn}>
+                    <Link to={"/shop/collection"} className={style.backBtn}>
                         <i className="fas fa-long-arrow-alt-left"></i>
                     </Link>
                     <span></span>

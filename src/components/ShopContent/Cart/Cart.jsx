@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import style from "./Cart.module.css";
 import {Link} from "react-router-dom";
 import Button from "../Button/Button";
+import ListOfCartItems from "../../../container/ShopContent/ListOfCartItems";
 
 function useComponentVisible(initialState){
     const [isComponentVisible, setIsComponentVisible] = useState(initialState);
@@ -37,16 +38,7 @@ const Cart = (props) => {
         let sum = 0;
         const item = props.cartItems.map(function(el){
                 sum+=el.price;
-                return <li key={el.id+"cart"} className={style.furnitureInCart}>
-                    <img src={el.image} alt="" />
-                    <div className={style.cartDescriptionOfItem}>
-                        <Link to={`/shop/${el.id}`}><h3>{el.name}</h3></Link>
-                        <p><span>{el.short_description}</span></p>
-                        <p className={style.priceOfProduct}>{el.price + "$"}</p>
-                    </div>
-                    <input type="number" defaultValue={1} />
-                    <button className={style.btnDelete} onClick={()=>props.deleteItem(el)}><i className="fas fa-trash-alt"></i></button>
-                </li>
+                return <ListOfCartItems el={el}/>
             }
         );
         const stylish = {
@@ -64,7 +56,7 @@ const Cart = (props) => {
                     </ul>
                         <div className={style.footerOfCart}>
                             {(props.cartItems.length !== 0) && <h3>TOTAL: <span>{sum}$</span></h3>}
-                            {(props.cartItems.length !== 0) && <button className={style.checkout}>checkout</button>}
+                            {(props.cartItems.length !== 0) && <Link to="/shop/checkout" className={style.checkout}>checkout</Link>}
                         </div>
                     </div>
                 </div>
