@@ -33,3 +33,4 @@ export function* deleteFilter(action){
 export function* watchDeleteFilter(){
     yield takeLatest('DELETE_FILTER_STOCK', deleteFilter);
 }
+

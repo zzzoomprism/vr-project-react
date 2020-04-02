@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
+
 html{
     scroll-behavior: smooth;
     position: relative;
@@ -66,7 +67,7 @@ form{
 .form-row{
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-column-gap: 5px;
     grid-template-rows: repeat(auto-fit, minmax(30px, 1fr));
     grid-row-gap: 20px;
@@ -136,7 +137,7 @@ select{
     color: white;
     display: grid;
     margin: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
 }
 
@@ -155,22 +156,56 @@ textarea{
 
 input[type="radio"]{
    display: none;
-    position: relative;
 }
 
-input[type="radio"], label {
+.radio-btn-position{
+    display: grid;
+    grid-template-columns: 100px;
+    grid-column-gap: 10px;
+}
+
+input[type="radio"] ~ .radioBtn{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    position: relative;
+    transition: 500ms;
+}
+
+input[type="radio"]:checked ~ .radioBtn{
+    background-color: #999;
     color: white;
-    font-family: 'Staatliches', cursive;
-    display: inline-block;
+}
+
+input[type="radio"]:checked ~.radioBtn:after{
+    content: ' ';
+    position: absolute;
+    top: 10px;
+    left: 90px;
     width: 20px;
     height: 20px;
+    background-image: url("./media/tick.png");
+    background-size: 100% 100%;
+
+}
+
+input[type="radio"]:disabled{
+    background: #888;
+    cursor: alias;
+}
+
+.radio-btn-checked{
     cursor: pointer;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: 15px;
 }
-
-input[type="radio"]:checked + label{
-    background-color: lightgreen;
-}
-
 
 hr{
     border:none;
@@ -183,6 +218,10 @@ hr{
     text-align: center;
 }
 
+.frame{
+    border: 2px solid white;
+    padding: 20px;
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -204,4 +243,11 @@ hr{
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #999;
+}
+
+@media screen and (max-width: 920px) {
+    .frame {
+        border: none;
+        padding: 0;
+    }
 }
