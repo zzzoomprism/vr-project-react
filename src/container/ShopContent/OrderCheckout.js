@@ -7,6 +7,7 @@ const mapStoreToProps = (store) => {
         cartItems: store.cartButtonReducer.cartItems,
         sum: store.cartButtonReducer.sum,
         total_sum: store.cartButtonReducer.total_sum,
+        other_cart: store.cartButtonReducer.otherCartItems,
     }
 };
 

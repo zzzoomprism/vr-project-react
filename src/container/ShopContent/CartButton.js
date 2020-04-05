@@ -12,7 +12,7 @@ const mapStoreToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        updateCartCount: (item) => dispatch({type: 'UPDATE_CART_COUNT_CHECK', item: item}),
+        updateCartCount: (item, count) => dispatch({type: 'UPDATE_CART_COUNT_CHECK', item: item, count: count}),
     }
 };
 

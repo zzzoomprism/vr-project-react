@@ -4,12 +4,15 @@ import ListOfCartItems from "../../../container/ShopContent/ListOfCartItems";
 import ContactForm from "./../../../container/ShopContent/Form";
 
 const OrderCheckout = (props) => {
-    let cartItems = props.cartItems.map(el => <ListOfCartItems el={el}/>);
+    let mapobject = Object.keys(props.other_cart).map(info => {
+        const smth = props.other_cart[info];
+        return <ListOfCartItems key={"listcartitems"} data={info} other_info={smth}/>
+    });
 
     return(<div className={"content"}>
-        {(cartItems.length !== 0) &&  <div className={style.listOfOrder}>
+        {(mapobject.length !== 0) &&  <div className={style.listOfOrder}>
             <ul>
-                {cartItems}
+                {mapobject}
             </ul>
         </div>}
 

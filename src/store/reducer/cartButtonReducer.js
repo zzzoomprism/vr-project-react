@@ -1,3 +1,6 @@
+import {get} from "./../../info";
+
+
 const initialState = {
     count: 0,
     cartItems: [],
@@ -22,6 +25,7 @@ const initialState = {
         },
     },
     total_sum: 0,
+    otherCartItems: {},
 };
 
 const reducer = (state = initialState, action) => {
@@ -33,7 +37,18 @@ const reducer = (state = initialState, action) => {
         case 'UPDATE_CART_COUNT':
             newState.count++;
             newState.cartItems.push(action.value);
-            newState.sum = state.sum + action.value.price;
+
+            let count = (!action.count) ? 1 : action.count;
+            let newItems2 = {
+                [action.value.id]: {
+                    count: count,
+                    price: action.value.price
+                },
+            };
+            Object.assign(newState.otherCartItems, state.otherCartItems, newItems2);
+            newState.sum = state.sum + (action.value.price * count);
+            newState.total_sum = newState.sum;
+
             newState.onLoad = false;
             break;
         case 'SHOW_ALERT':
@@ -48,16 +63,37 @@ const reducer = (state = initialState, action) => {
             break;
         case 'DELETE_ITEM':
             newState.cartItems = state.cartItems.filter(item => item !== action.value);
+
+
+            delete state.otherCartItems[action.value.id];
+            newState.otherCartItems = state.otherCartItems;
+            console.log(newState.otherCartItems);
             newState.count--;
             newState.sum = state.sum - action.value.price;
+            newState.total_sum = newState.sum;
             break;
+        case 'UPDATE_COUNT_OF_ITEM':
+            let count2 = (!action.count) ? 1 : action.count;
+            let newItems = {
+                [action.value.id]: {
+                    count: count2,
+                    price: action.value.price
+                },
+            };
+            Object.assign(newState.otherCartItems, state.otherCartItems, newItems);
+            newState.sum = 0;
+            for(let el in newState.otherCartItems){
+                newState.sum += (+newState.otherCartItems[el].count * newState.otherCartItems[el].price);
+            }
+            newState.total_sum = newState.sum;
+            break;
+
         case 'CHANGE_DELIVER':
             newState.total_sum = state.sum;
             newState.services.deliver.need = action.value;
             for(let key in newState.services){
                 if(newState.services[key].need){
                     newState.total_sum = newState.total_sum + state.services[key].price;
-                    console.log(newState.total_sum + " = " + state.sum + " + " + state.services[key].price);
                 }
 
             }
@@ -69,7 +105,6 @@ const reducer = (state = initialState, action) => {
             for(let key in newState.services){
                 if(newState.services[key].need){
                     newState.total_sum = newState.total_sum + state.services[key].price;
-                    console.log(newState.total_sum + " = " + state.sum + " + " + state.services[key].price);
                 }
 
             }
@@ -81,7 +116,6 @@ const reducer = (state = initialState, action) => {
             for(let key in newState.services){
                 if(newState.services[key].need){
                     newState.total_sum = newState.total_sum + state.services[key].price;
-                    console.log(newState.total_sum + " = " + state.sum + " + " + state.services[key].price);
                 }
 
             }

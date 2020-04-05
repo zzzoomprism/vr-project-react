@@ -35,16 +35,15 @@ function useComponentVisible(initialState){
 
 const Cart = (props) => {
     const {ref, isComponentVisible, setIsComponentVisible} = useComponentVisible(false);
-        let sum = 0;
-        const item = props.cartItems.map(function(el){
-                sum+=el.price;
-                return <ListOfCartItems el={el}/>
-            }
-        );
+        // const item = props.cartItems.map((el) => <ListOfCartItems key={"listcartitems" + el.id} el={el}/>);
         const stylish = {
             height: "400px",
             boxShadow: "0 0px 100px 600px rgba(0,0,0,0.6)",
         };
+        let mapobject = Object.keys(props.other_cart).map(info => {
+            const smth = props.other_cart[info];
+            return <ListOfCartItems key={"listcartitems"} data={info} other_info={smth}/>
+        });
         return(
             <div>
                 <div className={style.mainCartBlock} ref={ref}>
@@ -52,10 +51,11 @@ const Cart = (props) => {
                     <div className={style.cartListMainDiv} style={{height: (isComponentVisible) ? stylish.height : "0px"}}>
                         {(props.cartItems.length === 0) && <h4>There are no products in your cart!</h4>}
                     <ul className={style.cartList} >
-                        {item}
+                        {/*{item}*/}
+                        {mapobject}
                     </ul>
                         <div className={style.footerOfCart}>
-                            {(props.cartItems.length !== 0) && <h3>TOTAL: <span>{sum}$</span></h3>}
+                            {(props.cartItems.length !== 0) && <h3>TOTAL: <span>{props.sum}$</span></h3>}
                             {(props.cartItems.length !== 0) && <Link to="/shop/checkout" className={style.checkout}>checkout</Link>}
                         </div>
                     </div>

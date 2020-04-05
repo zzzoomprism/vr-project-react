@@ -37,19 +37,19 @@ const ContactFormFunc = (props) => {
                 <div className={"form-row"}>
                     <Field name={"deliver"} label={"Yes" } value={"yes"} id="radioBtn1" component={renderRadioField} type={"radio"} onChange={()=>{ props.updateDeliver(true)}}/>
                     <Field name={"deliver"} label={"No" } value={"no"} id="radioBtn2" component={renderRadioField} type={"radio"} onChange={()=>{ props.updateDeliver(false)}}/>
-                    <span>{props.deliver && "+20$" }</span>
+                    <span>{props.deliver.need && props.deliver.price + "$" }</span>
                 </div>
                 <p>Would you like up to the floor? </p>
                 <div className={"form-row"}>
                     <Field name={"uptothefloor"} label={"Yes" } value={"yes"} id="uptothefloor1" component={renderRadioField} type={"radio"} onChange={()=>{ props.updateServiceUpToFloor(true)}}/>
                     <Field name={"uptothefloor"} label={"No" } value={"no"} id="uptothefloor2" component={renderRadioField} type={"radio"} onChange={()=>{ props.updateServiceUpToFloor(false)}}/>
-                    <span>+20$</span>
+                    <span>{props.uptofloor.need && props.uptofloor.price + "$"}</span>
                 </div>
                 <p>Would you like to use the furniture assembly service? </p>
                 <div className={"form-row"}>
                     <Field name={"assemblyservice"} label={"Yes" } value={"yes"} id="assemblyservice1" component={renderRadioField} type={"radio"} onChange={()=>{ props.updateServiceFurnitureAss(true)}}/>
                     <Field name={"assemblyservice"} label={"No" } value={"no"} id="assemblyservice2" component={renderRadioField} type={"radio"} onChange={()=>{ props.updateServiceFurnitureAss(false)}}/>
-                    <span>+20$</span>
+                    <span>{props.furnitureassets.need && props.furnitureassets.price + "$"}</span>
                 </div>
             </div>
         </div>

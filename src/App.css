@@ -134,6 +134,8 @@ select{
     color: #888;
 }
 .form-section-col2{
+    justify-content: center;
+    align-content: center;
     color: white;
     display: grid;
     margin: 20px;

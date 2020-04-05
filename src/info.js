@@ -127,3 +127,19 @@ export function modelLoading(){
 export function countOfAll(){
     return models.length;
 }
+
+export function get(id){
+    return new Promise((resolve, reject)=>{
+        let num = models.findIndex(el => el.id === id);
+        if(num !== -1 || null)
+            return resolve(models[num]);
+        else
+            return reject(new Error("smth wrong!"));
+    });
+
+    // let num = models.findIndex(el => el.id === id);
+    // if(num !== -1 || null)
+    //     return models[num];
+    // else
+    //     console.log("smth wrong");
+}

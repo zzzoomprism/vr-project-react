@@ -11,7 +11,8 @@ const mapStoreToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        deleteItem: (item) => dispatch({type: 'DELETE_ITEM', value: item})
+        deleteItem: (item) => dispatch({type: 'DELETE_ITEM', value: item}),
+        updateCountOfItem: (item, count) => dispatch({type: 'UPDATE_COUNT_OF_ITEM', value: item, count: count}),
     }
 };
 
