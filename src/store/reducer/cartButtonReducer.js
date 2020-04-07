@@ -63,13 +63,12 @@ const reducer = (state = initialState, action) => {
             break;
         case 'DELETE_ITEM':
             newState.cartItems = state.cartItems.filter(item => item !== action.value);
-
-
             delete state.otherCartItems[action.value.id];
             newState.otherCartItems = state.otherCartItems;
-            console.log(newState.otherCartItems);
             newState.count--;
-            newState.sum = state.sum - action.value.price;
+            console.log(action.value);
+            newState.sum = state.sum - (action.value.price * action.count);
+            console.log(newState.sum);
             newState.total_sum = newState.sum;
             break;
         case 'UPDATE_COUNT_OF_ITEM':

@@ -8,14 +8,16 @@ const mapStoreToProps = (store) => {
         menu_open: store.vrAnimationDesktop.menu_open,
         animation_step: store.vrAnimationDesktop.animation_step,
         animation_run: store.vrAnimationDesktop.animation_run,
+        cursor_check: store.vrAnimationDesktop.cursor,
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return{
         updateText: (stepValue)=>dispatch({type: "UPDATE_TEXT_STEP", value: stepValue}),
-        menuToggle: ()=>dispatch({type: "VR_MENU_TOGGLE"}),
         nextStep: (step)=>dispatch({type: "NEXT_STEP_ANIMATION", value: step}),
+        nextStepBtn: (val)=>dispatch({type: "MOUSE_ENTER_ANIMATION_SYNC", cursor: val}),
+        changePage: (page, cursor)=>dispatch({type: "CHANGE_VR_PAGE_ASYNC", page: page, cursor: cursor })
     }
 };
 

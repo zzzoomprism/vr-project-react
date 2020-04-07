@@ -24,7 +24,7 @@ const ListOfCartItems = (props) => {
                 </div>
                 <div className={style.btnsArea}>
                     <input type="number" defaultValue={1} value={props.other_info.count} onChange={(event)=>props.updateCountOfItem(item, event.target.value)}/>
-                    <button className={style.btnDelete} onClick={()=>props.deleteItem(item)}><i className="fas fa-trash-alt"></i></button>
+                    <button className={style.btnDelete} onClick={()=>props.deleteItem(item, props.other_info.count)}><i className="fas fa-trash-alt"></i></button>
                 </div>
             </li>
         )

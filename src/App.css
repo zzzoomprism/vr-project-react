@@ -225,6 +225,23 @@ hr{
     padding: 20px;
 }
 
+.vr-loading{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: black;
+    z-index: 100;
+    text-align: center;
+    color: white;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.vr-loading-false{
+    display: none;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;

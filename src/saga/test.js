@@ -34,3 +34,24 @@ export function* watchDeleteFilter(){
     yield takeLatest('DELETE_FILTER_STOCK', deleteFilter);
 }
 
+
+
+export function* cursorWatch(action){
+    try{
+        yield put({type: 'MOUSE_ENTER_ANIMATION', cursor: action.cursor});
+        yield call(myDelay, 2500);
+        if(action.cursor){
+            yield put({type: 'NEXT_STEP_BTN', value: action.value});
+        }
+        yield put({type: 'MOUSE_ENTER_ANIMATION', cursor: false});
+    }
+    catch (e) {
+        console.log(e);
+    }
+}
+
+
+export function* watchCursorFunc(){
+    yield takeLatest('MOUSE_ENTER_ANIMATION_SYNC', cursorWatch);
+}
+

@@ -2,6 +2,7 @@ const initialState = {
     menuId: "",
     cartId: "",
     modelId: "",
+    loaded: false,
 };
 
 const reducer = (state = initialState, action) => {

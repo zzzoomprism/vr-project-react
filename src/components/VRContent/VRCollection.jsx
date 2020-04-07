@@ -1,9 +1,7 @@
 import React from "react";
 import {Box, Cylinder, Sphere, Plane, Sky, Text, Curvedimage, Camera, Cursor, Image, Ring, Event,Circle} from "react-aframe-ar";
 import {Entity, Scene} from "aframe-react";
-import sofa from "./../../media/models/out.glb";
 import {modelLoading} from "./../../info";
-import "aframe-particle-system-component";
 import "./button";
 
 const VRCollection = (props) => {
@@ -11,11 +9,8 @@ const VRCollection = (props) => {
 
     return(
         <Sphere radius={100} material={"color: #333; side: double;" }>
-            {/*<a-entity position="0 2.25 -15" particle-system="preset: dust; particleCount: 1000"/>*/}
             <Cylinder material={"color: black;"}
-                      position={"1 2 -8"} radius={4}
-                //animation={"property: position; to: 1 2 -5; dur: 2000; dir: alternate; loop:true;"}
-            >
+                      position={"1 2 -8"} radius={4}>
                 <Entity gltf-model={info[props.item].model}
                         position="0 0.5 0" scale={info[props.item].scale} rotation={"0 0 0"}
                        />

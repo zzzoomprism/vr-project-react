@@ -1,16 +1,21 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Box, Cylinder, Sphere, Plane, Sky, Text, Curvedimage, Camera, Cursor, Image, Ring, Event,Circle} from "react-aframe-ar";
 import {Entity, Scene} from "aframe-react";
 import MenuContent from "./../../container/VRContent/MenuContent";
 import {modelLoading} from "./../../info";
 
 const VRMenu = (props) => {
-    const products = modelLoading();
-    const best_products = products.map((el) => {
-        if(el.key_word === "top")
+
+    let [models, setModels] = useState({data: [], loaded: false});
+    useEffect(()=>{
+        setModels({data: modelLoading(), loaded: true});
+    },[]);
+    console.log(models);
+    const best_products = models.data.map((el) => {
+        if(el.key_word.split(' ').includes("top"))
         return <Entity key={el.id + "helloworld"}><Cylinder material={"color: black;"}
                       position={el.position_x + " " + `${el.position_y - 0.3}` + " " + el.position_z} radius={4}
-                         animation={(props.modelId === el.id) ? "property: position; to: 0 0 4; dur: 2000; " : "property: position; to: " + el.position_x + " " + `${el.position_y - 0.3}` + " " + el.position_z + "; dur: 2000;"}
+                         animation={(props.modelId === el.id) ? "property: position; to: 0 0 4; dur: 2000; " : "property: position; to: " + el.position_x + " " + `${el.position_y - 5}` + " " + el.position_z + "; dur: 2000;"}
                          animation__rotation={(props.modelId === el.id) ? "property: rotation; to: 0 " + `${(el.rotation > 0) ? 180 - el.rotation : -180 - el.rotation}` + " 0; dur: 2000; " : "property: rotation; to: 0 0 0; dur: 2000;"}
                          >
                 <Entity gltf-model={el.model} rotation={"0 " + el.rotation + " 0"}
@@ -21,16 +26,18 @@ const VRMenu = (props) => {
                             },
 
                         }}/>
-            <a-light type={"spot"} position={"0 25 0"} distance={150} angle={14}
-                     penumbra={1} intensity={5} rotation={"-90 0 0"}/></Cylinder>
+            {/*<a-light type={"spot"} position={"0 16 0"} distance={90} angle={14}*/}
+            {/*         penumbra={1} intensity={6} rotation={"-90 0 0"} groundColor={"black"}/>*/}
+        </Cylinder>
 
-                <Text value={"best product!"} position={el.position_x + " 8 " + el.position_z} rotation={el.text_rotation}
+                <Text value={"best product!"} position={el.position_x + " 2 " + el.position_z} rotation={el.text_rotation}
                       wrap-count={13} negate={"false"} side={"double"} letter-spacing={15}
                       color={"white"} opacity={1}
-                      animation__position={"property: position; to: " + el.position_x + " 8.5 " + el.position_z + "; dur: 2000; loop: true; dir: alternate; delay: " + `${Math.random() * 1000 + " ;"}`}
-                />
+                      animation__position={"property: position; to: " + el.position_x + " 2.5 " + el.position_z + "; dur: 2000; loop: true; dir: alternate; delay: " + `${Math.random() * 1000 + " ;"}`}
+                ><a-light type={"spot"} position={"0 4 0"} distance={90} angle={14}
+                            penumbra={1} intensity={6} rotation={"-90 0 0"} groundColor={"black"}/></Text>
 
-                <Text value={el.price + "$"} position={el.position_x + " 6 " + el.position_z} rotation={el.text_rotation}
+                <Text value={el.price + "$"} position={el.position_x + " 0 " + el.position_z} rotation={el.text_rotation}
                       wrap-count={10} negate={"false"} side={"double"} letter-spacing={15}
                       color={"coral"}>
                     <a-circle radius={"0.8"} position={"-2 0.3 0"}
@@ -56,10 +63,11 @@ const VRMenu = (props) => {
         }
     );
     return (
-        <Sphere radius={100} material={"color: #111; side: double;" }>
+        <Box width={30} height={20} depth={30} material={"color: white; side: double;" } position={"0 10 0"}>
             <MenuContent/>
+            <div className={(!models.loaded) ? "vr-loading" : "vr-loading-false"}>Loading models... </div>
             {best_products}
-            </Sphere>
+            </Box>
     );
 };
 

@@ -14,12 +14,12 @@ export function* animationSteps(){
         code: <Cylinder position={"2 4 3"} height={0.3} radius={1.8} material={"color: black;"}>
             <a-entity obj-model={"obj: url(" + chairs + ");"} material={"color: white; wireframe: true; opacity: 0;"}  rotation={"0 150 0"}
                         scale={"0.5 0.5 0.5"} position={"0 0.5 -0.3"}
-                        animation={"property: material.opacity; from: 0; to: 1; dur: 3000; easing: linear; delay: 2000;"}>
+                        animation={"property: material.opacity; from: 0; to: 1; dur: 3000; easing: linear; "}>
                      <Text value={"It was our first design of chairs. We created only chairs in 1990. And start price was 20$."} color={"white"} align="center" width={"2"} height={0.8} position={"5 3 -3"} wrap-count={25} opacity={0} scale={"4 4 4"} rotation={"0 30 0"}
-                  animation={"property: opacity; from: 0; to: 1; dur: 3000; easing: linear; delay: 2000; "}/>
+                  animation={"property: opacity; from: 0; to: 1; dur: 3000; easing: linear;"}/>
                     </a-entity>
         </Cylinder>,
-        timer: 8000,
+        timer: 3000,
     };
     yield {
         step: 2,
@@ -31,7 +31,7 @@ export function* animationSteps(){
             <Text value={"Smth"} color={"white"} align="center" width={"6"} height={6} position={"-6 6 4"} wrap-count={10} opacity={1} side={"double"} rotation={"0 -170 0"}
                   animation__step2={"property: opacity; from: 0; to: 1; dur: 3000; easing: linear;"}/>
         </Cylinder>,
-        timer: 16000,
+        timer: 11000,
     };
     yield {
         step: 3,
@@ -45,7 +45,7 @@ export function* animationSteps(){
                       <Text value={"SMTH"} color={"white"} align="center" width={"6"} height={6} position={"-6 8 4"} wrap-count={10} opacity={1} side={"double"} rotation={"0 -190 0"}
                             animation__step3={"property: opacity; from: 0; to: 1; dur: 3000; easing: linear;"}/>
         </Cylinder>,
-        timer: 24000,
+        timer: 19000,
     };
     yield {
         step: 5,
@@ -59,7 +59,7 @@ export function* animationSteps(){
             <Text value={"SMTH"} color={"white"} align="center" width={"6"} height={6} position={"-6 8 4"} wrap-count={10} opacity={1} side={"double"} rotation={"0 -190 0"}
                   animation__step4={"property: opacity; from: 0; to: 1; dur: 3000; easing: linear;"}/>
         </Cylinder>,
-        timer: 40000,
+        timer: 27000,
     };
     yield {
         step: 6,
@@ -73,7 +73,7 @@ export function* animationSteps(){
             <Text value={"ANOTHER SMTH"} color={"white"} align="center" width={"10"} height={6} position={"-6 8 4"} wrap-count={25} opacity={1} side={"double"} rotation={"0 -190 0"}
                   animation__step6={"property: opacity; from: 0; to: 1; dur: 3000; easing: linear;"}/>
         </Cylinder>,
-        timer: 50000,
+        timer: 35000,
     };
     yield {
         step: 7,
@@ -87,7 +87,7 @@ export function* animationSteps(){
             <Text value={"And we did this."} color={"white"} align="center" width={"10"} height={6} position={"-6 8 4"} wrap-count={25} opacity={1} side={"double"} rotation={"0 -190 0"}
                   animation__step7={"property: opacity; from: 0; to: 1; dur: 3000; easing: linear;"}/>
         </Cylinder>,
-        timer: 60000,
+        timer: 43000,
     };
     return 0;
 }
