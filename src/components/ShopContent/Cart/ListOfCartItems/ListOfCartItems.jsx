@@ -13,7 +13,7 @@ const ListOfCartItems = (props) => {
                 setItem(result);
             });
         }, [props.data]);
-        console.log(item);
+
         return(
             <li key={item.id+"cart"} className={style.furnitureInCart}>
                 <img src={item.image} alt="" />

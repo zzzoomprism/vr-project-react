@@ -1,8 +1,6 @@
 import React, {useState, useEffect, useRef} from "react";
-import ReactDOM from "react-dom";
 import style from "./Cart.module.css";
 import {Link} from "react-router-dom";
-import Button from "../Button/Button";
 import ListOfCartItems from "../../../container/ShopContent/ListOfCartItems";
 
 function useComponentVisible(initialState){

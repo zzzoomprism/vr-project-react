@@ -8,12 +8,11 @@ window.AFRAME.registerComponent('stars', {
     },
     update: function(){
         let el = this.el;
-        var starsGeometry = new THREE.Geometry();
-        var starsMaterial = new THREE.PointsMaterial({size: 1, sizeAttenuation: false});
-        var angle = 0;
+        let starsGeometry = new THREE.Geometry();
+        let starsMaterial = new THREE.PointsMaterial({size: 1, sizeAttenuation: false});
         let radius = this.data.radius;
-        for(var i = 0; i<10000; i++){
-            var vertex = new THREE.Vector3();
+        for(let i = 0; i<10000; i++){
+            let vertex = new THREE.Vector3();
             const theta = 2 * Math.PI * Math.random();
             const phi = Math.acos(2 * Math.random() - 1);
             vertex.x = radius * Math.sin(phi) * Math.cos(theta);

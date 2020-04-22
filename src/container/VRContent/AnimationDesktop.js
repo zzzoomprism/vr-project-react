@@ -8,7 +8,6 @@ const mapStoreToProps = (store) => {
         menu_open: store.vrAnimationDesktop.menu_open,
         animation_step: store.vrAnimationDesktop.animation_step,
         animation_run: store.vrAnimationDesktop.animation_run,
-        cursor_check: store.vrAnimationDesktop.cursor,
     }
 };
 
