@@ -2,6 +2,7 @@ import React from "react";
 import {Field, reduxForm, SubmissionError} from "redux-form";
 import submit from "./validationSubmit";
 import {renderField, renderRadioField, renderSelectAreaField, renderTextAreaField} from "./rendersForm";
+import style from "../OrderCheckout.module.css";
 
 
 const ContactFormFunc = (props) => {
@@ -53,7 +54,11 @@ const ContactFormFunc = (props) => {
                 </div>
             </div>
         </div>
-        <button type={"submit"}>OK!</button>
+        <hr/>
+        <div className={style.totalPrice}>
+            {<h3 className={"text-center"}>TOTAL: <span>{props.price}$</span></h3>}
+        </div>
+        <button type={"submit"} className={"btn-black"} style={{float: "right", marginRight: "20px", marginBottom: "20px"}}>OK!</button>
     </form>
 };
 

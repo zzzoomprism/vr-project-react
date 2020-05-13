@@ -2,11 +2,10 @@ import React from 'react';
 import VRContent from "./container/VRContent/VRContent";
 import HomeContent from "./components/HomeContent/HomeContent";
 import ShopContent from "./components/ShopContent/ShopContent";
-import Content from "./container/ShopContent/Content";
 import "./App.css";
-
 import {HashRouter, Route, Switch, withRouter} from "react-router-dom";
-import Furniture from "./components/ShopContent/Furniture/Furniture";
+import AboutUs from "./components/About Us/Content";
+
 
 class App extends React.Component{
     render() {
@@ -15,6 +14,7 @@ class App extends React.Component{
                 <Route exact path='/' component={HomeContent}/>
                 <Route path='/vr' component={VRContent}/>
                 <Route path={'/shop'} component={ShopContent}/>
+                <Route path={'/about-us'} component={AboutUs}/>
             </Switch>
     );
     return(

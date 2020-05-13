@@ -4,6 +4,7 @@ const initialState = {
   isReady: false,
   items: modelLoading(),
     filter_key_words: [],
+    isLoading: false
 };
 
 const reducer = (state = initialState, action) => {
@@ -44,6 +45,7 @@ const reducer = (state = initialState, action) => {
             newState.filter_key_words.splice(index, 1);
             break;
         }
+
     return newState;
 };
 

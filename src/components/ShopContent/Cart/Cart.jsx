@@ -54,8 +54,9 @@ const Cart = (props) => {
                     </ul>
                         <div className={style.footerOfCart}>
                             {(props.cartItems.length !== 0) && <h3>TOTAL: <span>{props.sum}$</span></h3>}
-                            {(props.cartItems.length !== 0) && <Link to="/shop/checkout" className={style.checkout}>checkout</Link>}
+                            {(props.cartItems.length !== 0) && <Link to="/shop/checkout" className={"btn-black"}>checkout</Link>}
                         </div>
+
                     </div>
                 </div>
                 <div className={style.blurDiv} style={{height: (isComponentVisible) ? "100vh" : "0px"}}/>

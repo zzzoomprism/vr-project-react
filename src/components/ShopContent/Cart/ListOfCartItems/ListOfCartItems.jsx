@@ -18,7 +18,7 @@ const ListOfCartItems = (props) => {
             <li key={item.id+"cart"} className={style.furnitureInCart}>
                 <img src={item.image} alt="" />
                 <div className={style.cartDescriptionOfItem}>
-                    <Link to={`/shop/${item.id}`}><h3>{item.name}</h3></Link>
+                    <Link to={`/shop/collection/${item.id}`}><h3>{item.name}</h3></Link>
                     <p><span>{item.short_description}</span></p>
                     <p className={style.priceOfProduct}>{item.price + "$"}</p>
                 </div>

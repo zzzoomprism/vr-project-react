@@ -5,6 +5,7 @@
     overflow: auto;
     border: 2px solid white;
     margin: auto;
+    background-color: rgba(0,0,0,.4);
 }
 
 

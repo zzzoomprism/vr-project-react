@@ -8,9 +8,8 @@ html{
 
 body{
     background-image: url("./media/2.jpg");
-    background-size: 100% 100%;
+    background-size: cover;
     background-attachment: fixed;
-    background-position: center;
 }
 
 h1{
@@ -141,6 +140,7 @@ select{
     margin: 20px;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+    padding-left: 50px;
 }
 
 textarea{
@@ -242,6 +242,25 @@ hr{
     display: none;
 }
 
+.btn-black {
+    width: 200px;
+    height: 50px;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    transition: 500ms;
+    font-family: 'Staatliches', cursive;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.btn-black:hover{
+    background-color: white;
+    color: black;
+}
 /* width */
 ::-webkit-scrollbar {
     width: 10px;

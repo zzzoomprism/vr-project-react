@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import style from "./Content.module.css";
 import {modelLoading} from "./../../../info";
 import CartButton from "./../../../container/ShopContent/CartButton";
@@ -6,11 +6,9 @@ import {Link} from "react-router-dom";
 import Button from "./../Button/Button";
 import ModalFilter from "./../../../container/ShopContent/ModalFilter";
 import TopMenu from "./../../../container/ShopContent/TopMenu";
-import Alert from "./../../../container/ShopContent/Alert";
 import cartBtnStyle from "./../Button/CartButton.module.css";
 
-class Content extends React.Component{
-    render() {
+const Content = (props) => {
         const style_open = {
             width: "calc(100% - 480px)",
         };
@@ -18,8 +16,8 @@ class Content extends React.Component{
             width: "calc(100% - 140px)"
         };
         const info = modelLoading();
-        this.props.setItems(info, this.props.sort);
-        const furnitureInfo = this.props.items.map((el) => {
+        props.setItems(info, props.sort);
+        const furnitureInfo = props.items.map((el) => {
             return  <div className={style.furnitureSection} key={el.id}>
                 <Link to={`/shop/collection/${el.id}`}>
                 <div className={style.funitureImageContent}>
@@ -43,15 +41,15 @@ class Content extends React.Component{
             </div>
 
         });
-        return <div >
+
+
+        return <div>
             <TopMenu/>
-            <div className={style.mainFurnitureBlock} style={(this.props.filter_open) ? style_open : style_close}>
-            {(this.props.isReady) ? furnitureInfo : "Загружаем..."}
+            <div className={style.mainFurnitureBlock} style={(props.filter_open) ? style_open : style_close}>
+            {(props.isReady) ? furnitureInfo : "Загружаем..."}
             </div>
             <ModalFilter/>
         </div>
-
-    }
-}
+};
 
 export default Content;

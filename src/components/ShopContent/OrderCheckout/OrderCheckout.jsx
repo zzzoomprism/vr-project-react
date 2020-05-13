@@ -17,11 +17,7 @@ const OrderCheckout = (props) => {
         </div>}
 
         <div>
-            <ContactForm/>
-        </div>
-        <hr/>
-        <div className={style.totalPrice}>
-            {<h3 className={"text-center"}>TOTAL: <span>{props.total_sum}$</span></h3>}
+            <ContactForm price={props.total_sum}/>
         </div>
     </div>)
 };

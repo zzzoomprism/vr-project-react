@@ -54,4 +54,3 @@ export function* cursorWatch(action){
 export function* watchCursorFunc(){
     yield takeLatest('MOUSE_ENTER_ANIMATION_SYNC', cursorWatch);
 }
-
