@@ -1,0 +1,69 @@
+.title{
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    color: white;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+}
+.title h1 {
+    margin: 0;
+    padding: 0;
+}
+.statistics{
+    width: 100%;
+    min-height: 100px;
+    background-color: #333;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 1fr;
+    grid-row-gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+.statistics h4{
+    margin: 0;
+}
+
+.statistics p{
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 0;
+}
+
+.firstRow{
+    display: grid;
+    grid-template-columns: 300px minmax(300px, 1fr);
+    grid-auto-rows: 1fr;
+    grid-column-gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+}
+
+.firstRow div{
+    background-color: rgba(255,255,255,.4);
+    border: 2px solid white;
+    padding: 20px;
+    display: grid;
+    justify-content: center;
+}
+
+.secondRow{
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(255,255,255,.4);
+    border: 2px solid white;
+    display: grid;
+    justify-content: center;
+}
+
+@media screen and (max-width: 800px){
+    .firstRow{
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-row-gap: 20px;
+    }
+}

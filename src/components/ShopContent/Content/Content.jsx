@@ -42,11 +42,15 @@ const Content = (props) => {
 
         });
 
-
+    const [loaded, setLoaded] = useState(false);
+    useEffect(()=>{
+        setTimeout(()=>setLoaded(true), 2000);
+    }, []);
         return <div>
+            {!loaded && <div className={"loading"}><span>Loading...</span></div>}
             <TopMenu/>
             <div className={style.mainFurnitureBlock} style={(props.filter_open) ? style_open : style_close}>
-            {(props.isReady) ? furnitureInfo : "Загружаем..."}
+            {(props.isReady) ? furnitureInfo : "Loading..."}
             </div>
             <ModalFilter/>
         </div>

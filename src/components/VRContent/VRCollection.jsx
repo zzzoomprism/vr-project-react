@@ -1,14 +1,15 @@
-import React from "react";
+import React, {Fragment} from "react";
 import {Box, Cylinder, Sphere, Plane, Sky, Text, Curvedimage, Camera, Cursor, Image, Ring, Event,Circle} from "react-aframe-ar";
 import {Entity, Scene} from "aframe-react";
 import {modelLoading} from "./../../info";
 import "./button";
+import VRCart from "./components/VRCart";
 
 const VRCollection = (props) => {
     const info = modelLoading();
 
     return(
-        <Sphere radius={100} material={"color: #333; side: double;" }>
+       <Fragment>
             <Cylinder material={"color: black;"}
                       position={"1 2 -8"} radius={4}>
                 <Entity gltf-model={info[props.item].model}
@@ -29,8 +30,14 @@ const VRCollection = (props) => {
                                width={0.6} height={0.6}
                                animation__mouseenter="property: components.material.material.color; type: color; to: blue; startEvents: mouseenter; dur: 500"
                                events={{
+                                   'mouseenter': () => {
+                                       props.cursorChange(info[props.item].id, true);
+
+                                   },
+                                   'mouseleave': () => {
+                                       props.cursorChange(false)
+                                   },
                                    'click': () => {
-                                       console.log("clik");
                                        props.updateCartCount(info[props.item]);
                                        window.location = "#/shop/" + info[props.item].id;
                                    }
@@ -40,6 +47,8 @@ const VRCollection = (props) => {
                 </Text>
             </Cylinder>
 
+
+           <Plane width={40} height={40} rotation={"-90 0 0"} position={"0 1 0"} material={"color: black; emissive: black; side: double"}/>
             <Plane width={2} height={1} position={"6 4 -7"} material={"color: white; emissive: white;"}
                    events={{
                        'click': () => {
@@ -56,7 +65,9 @@ const VRCollection = (props) => {
                    }}>
                 <Text value={"PREV"} color={"black"} side={"double"} position={"0 0 0.01"}/>
             </Plane>
-        </Sphere>
+
+           <VRCart count={"0"}/>
+       </Fragment>
     )
 };
 

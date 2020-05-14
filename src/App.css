@@ -4,12 +4,14 @@
 html{
     scroll-behavior: smooth;
     position: relative;
+    overflow: auto !important;
 }
 
 body{
     background-image: url("./media/2.jpg");
     background-size: cover;
     background-attachment: fixed;
+    overflow: auto !important;
 }
 
 h1{
@@ -47,13 +49,32 @@ tr:hover{
     cursor: pointer;
 }
 
+.loading{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0,0,0,.8);
+    z-index: 100;
+    text-align: center;
+    color: white;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.loading span{
+    font-size: 1.5rem;
+    color: white;
+    font-family: 'Abril Fatface', cursive;
+}
+
 .content{
     width: calc(100% - 100px);
     min-height: 100vh;
     float: right;
     background-color: rgba(0,0,0,.2);
     backdrop-filter: blur(5px);
-
+    height: 100%;
 }
 form{
     width: calc(100% - 40px);

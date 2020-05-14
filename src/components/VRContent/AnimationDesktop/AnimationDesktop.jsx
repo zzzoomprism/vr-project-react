@@ -40,7 +40,7 @@ const AnimationDesktop = (props) => {
         useEffect(()=>{
             setTimeout(()=>{
                 setLoaded(true)
-            }, 3000);
+            }, 4500);
         }, []);
         for(let val of step){
             setTimeout(()=>{props.updateText(val)}, seconds+=10100);
@@ -90,8 +90,8 @@ const AnimationDesktop = (props) => {
                 {/*MENU BUTTON*/}
             <Plane width={1} height={0.3} position={"0 5 -1"} material={"color: white; opacity: 0.1;emissive: white;"}
             events={{
-                "mouseenter": ()=>{props.changePage("#/vr/vr-menu", true)},
-                "mouseleave": ()=>{props.changePage("", false)},
+                "mouseenter": ()=>{props.changePage("CHANGE_VR_PAGE", "#/vr/vr-menu", true)},
+                "mouseleave": ()=>{props.changePage("CHANGE_VR_PAGE","", false)},
             }}>
                 <Text value={"menu"} color={"white"} width={1.5} height={0.3} align={"center"} wrap-count={20}
                       alphaTest={20}

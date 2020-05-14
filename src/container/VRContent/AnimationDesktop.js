@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch) => {
         updateText: (stepValue)=>dispatch({type: "UPDATE_TEXT_STEP", value: stepValue}),
         nextStep: (step)=>dispatch({type: "NEXT_STEP_ANIMATION", value: step}),
         nextStepBtn: (val)=>dispatch({type: "MOUSE_ENTER_ANIMATION_SYNC", cursor: val}),
-        changePage: (page, cursor)=>dispatch({type: "CHANGE_VR_PAGE_ASYNC", page: page, cursor: cursor })
+        changePage: (action, page, cursor)=>dispatch({type: "CHANGE_VR_PAGE_ASYNC", action: action,  page: page, cursor: cursor })
     }
 };
 

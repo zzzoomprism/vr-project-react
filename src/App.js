@@ -5,6 +5,7 @@ import ShopContent from "./components/ShopContent/ShopContent";
 import "./App.css";
 import {HashRouter, Route, Switch, withRouter} from "react-router-dom";
 import AboutUs from "./components/About Us/Content";
+import Deliver from "./components/Deliver/Content";
 
 
 class App extends React.Component{
@@ -15,6 +16,7 @@ class App extends React.Component{
                 <Route path='/vr' component={VRContent}/>
                 <Route path={'/shop'} component={ShopContent}/>
                 <Route path={'/about-us'} component={AboutUs}/>
+                <Route path={'/deliver'} component={Deliver}/>
             </Switch>
     );
     return(

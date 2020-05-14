@@ -15,7 +15,7 @@ export function* animationSteps(){
             <a-entity obj-model={"obj: url(" + chairs + ");"} material={"color: white; wireframe: true; opacity: 0;"}  rotation={"0 150 0"}
                         scale={"0.5 0.5 0.5"} position={"0 0.5 -0.3"}
                         animation={"property: material.opacity; from: 0; to: 1; dur: 3000; easing: linear; "}>
-                     <Text value={"It was our first design of chairs. We created only chairs in 1990. And start price was 20$."} color={"white"} align="center" width={"2"} height={0.8} position={"5 3 -3"} wrap-count={25} opacity={0} scale={"4 4 4"} rotation={"0 30 0"}
+                     <Text value={"It was our first design of chairs. We created only chairs in 2009. And start price was 20$."} color={"white"} align="center" width={"2"} height={0.8} position={"5 3 -3"} wrap-count={25} opacity={0} scale={"4 4 4"} rotation={"0 30 0"}
                   animation={"property: opacity; from: 0; to: 1; dur: 3000; easing: linear;"}/>
                     </a-entity>
         </Cylinder>,
@@ -28,7 +28,7 @@ export function* animationSteps(){
                         scale={"0.05 0.05 0.05"} position={"0 0.3 0"}
                         animation__step2={"property: material.opacity; from: 0; to: 1; dur: 3000; easing: linear;"}>
         </a-entity>
-            <Text value={"Smth"} color={"white"} align="center" width={"6"} height={6} position={"-6 6 4"} wrap-count={10} opacity={1} side={"double"} rotation={"0 -170 0"}
+            <Text value={"But once client asked us did the same type of sofa. It was in 2010. "} color={"white"} align="center" width={"6"} height={6} position={"-6 6 4"} wrap-count={10} opacity={1} side={"double"} rotation={"0 -170 0"}
                   animation__step2={"property: opacity; from: 0; to: 1; dur: 3000; easing: linear;"}/>
         </Cylinder>,
         timer: 11000,
@@ -42,7 +42,7 @@ export function* animationSteps(){
             <a-entity obj-model={"obj: url(" + sofa + ");"} material={"color: white; wireframe: true; opacity: 0; emissive: white;"}  rotation={"0 -190 0"}
                       scale={"6 6 6"} position={"-8 1.2 2"}
                       animation__step3={"property: material.opacity; from: 0; to: 1; dur: 3000; easing: linear; delay: 2000;"}/>
-                      <Text value={"SMTH"} color={"white"} align="center" width={"6"} height={6} position={"-6 8 4"} wrap-count={10} opacity={1} side={"double"} rotation={"0 -190 0"}
+                      <Text value={"And we did two type of sofa and he loved one and bought. It was in 2014. After a year we had a crisis. We didn't have any ordered. To save our company we started the kickstarter in 2015."} color={"white"} align="center" width={"12"} height={6} position={"-6 8 4"} wrap-count={25} opacity={1} side={"double"} rotation={"0 -190 0"}
                             animation__step3={"property: opacity; from: 0; to: 1; dur: 3000; easing: linear;"}/>
         </Cylinder>,
         timer: 19000,
@@ -56,7 +56,7 @@ export function* animationSteps(){
             <a-entity obj-model={"obj: url(" + sofa3 + ");"} material={"color: white; wireframe: true; opacity: 0; emissive: white;"}  rotation={"0 -190 0"}
                       scale={"0.05 0.05 0.05"} position={"-9 3.2 2"}
                       animation__step5={"property: material.opacity; from: 0; to: 1; dur: 3000; easing: linear; delay: 2000;"}/>
-            <Text value={"SMTH"} color={"white"} align="center" width={"6"} height={6} position={"-6 8 4"} wrap-count={10} opacity={1} side={"double"} rotation={"0 -190 0"}
+            <Text value={"After published our company in this service "} color={"white"} align="center" width={"6"} height={6} position={"-6 8 4"} wrap-count={10} opacity={1} side={"double"} rotation={"0 -190 0"}
                   animation__step4={"property: opacity; from: 0; to: 1; dur: 3000; easing: linear;"}/>
         </Cylinder>,
         timer: 27000,

@@ -27,7 +27,8 @@ const SidebarMenu = (props) => {
                         <li onClick={props.updateMessage}><Link to="/">Home </Link><span><i className='fas fa-chevron-right'></i></span></li>
                         <li onClick={props.updateMessage}><Link to={"/vr"}>VR</Link><span><i className='fas fa-chevron-right'></i></span></li>
                         <li onClick={props.updateMessage}><Link to={"/shop/collection"}>Collection</Link><span><i className='fas fa-chevron-right'></i></span></li>
-                        <li onClick={props.updateMessage}><a href="">About Us </a><span><i className='fas fa-chevron-right'></i></span></li>
+                        <li onClick={props.updateMessage}><Link to={"/about-us"}>About Us </Link><span><i className='fas fa-chevron-right'></i></span></li>
+                        <li onClick={props.updateMessage}><Link to={"/deliver"}>Deliver </Link><span><i className='fas fa-chevron-right'></i></span></li>
                     </menu>
                 </div>
 

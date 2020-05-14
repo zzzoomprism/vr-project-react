@@ -1,23 +1,31 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, Fragment} from 'react';
 import {Box, Cylinder, Sphere, Plane, Sky, Text, Curvedimage, Camera, Cursor, Image, Ring, Event,Circle} from "react-aframe-ar";
 import {Entity, Scene} from "aframe-react";
 import MenuContent from "./../../container/VRContent/MenuContent";
 import {modelLoading} from "./../../info";
+import VRCart from "./components/VRCart";
 
 const VRMenu = (props) => {
-
+    let [count, setCount] = useState(0);
+    useEffect(()=>setCount(props.products_count));
+    let [loaded, setLoaded] = useState(false);
     let [models, setModels] = useState({data: [], loaded: false});
     useEffect(()=>{
+        setTimeout(()=>setLoaded(true), 2000);
         setModels({data: modelLoading(), loaded: true});
     },[]);
-    console.log(models);
+
+    let [modelId, setModelId] = useState("");
+    useEffect(()=>{
+        setModelId(props.modelId);
+    }, [props.modelId]);
     const best_products = models.data.map((el) => {
         if(el.key_word.split(' ').includes("top"))
         return <Entity key={el.id + "helloworld"}>
             <Cylinder segments-height={64} sefments-radial={64}
                 material={"color: black;"} position={el.position_x + " " + `${el.position_y - 5}` + " " + el.position_z} radius={4}
-                      animation={(props.modelId === el.id) ? "property: position; to: 0 -10 4; dur: 2000; " : "property: position; to: " + el.position_x + " " + `${el.position_y - 5}` + " " + el.position_z + "; dur: 2000;"}
-                      animation__rotation={(props.modelId === el.id) ? "property: rotation; to: 0 " + `${(el.rotation > 0) ? 180 - el.rotation : -180 - el.rotation}` + " 0; dur: 2000; " : "property: rotation; to: 0 0 0; dur: 2000;"}
+                      animation={(modelId === el.id) ? "property: position; to: 0 -10 4; dur: 2000; " : "property: position; to: " + el.position_x + " " + `${el.position_y - 5}` + " " + el.position_z + "; dur: 2000;"}
+                      animation__rotation={(modelId === el.id) ? "property: rotation; to: 0 " + `${(el.rotation > 0) ? 180 - el.rotation : -180 - el.rotation}` + " 0; dur: 2000; " : "property: rotation; to: 0 0 0; dur: 2000;"}
                          >
                 <Entity gltf-model={el.model} rotation={"0 " + el.rotation + " 0"}
                         position="0 0.5 0" scale={el.scale}
@@ -47,14 +55,14 @@ const VRMenu = (props) => {
                                events={{
                                    'mouseenter': () => {
                                        props.vrCartMouseEnter(el.id);
+                                       props.cursorChange(el, true);
+
                                    },
                                    'mouseleave': () => {
                                        props.vrCartMouseLeave();
+                                       props.cursorChange(false)
                                    },
-                                   'click': () => {
-                                       props.updateCartCount(el);
-                                       window.location = "#/shop/" + el.id;
-                                   }
+
                                }}/>
                     </a-circle>
                 </Text>
@@ -62,11 +70,17 @@ const VRMenu = (props) => {
         }
     );
     return (
+        <Fragment>
+            {!loaded && <div className={"vr-loading"}><h3>LOADING...</h3></div>}
         <Box width={30} height={20} depth={30} material={"color: white; side: double;" } position={"0 10 0"}>
             <MenuContent/>
             <div className={(!models.loaded) ? "vr-loading" : "vr-loading-false"}>Loading models... </div>
             {best_products}
+
+
+           <VRCart count={count}/>
             </Box>
+        </Fragment>
     );
 };
 

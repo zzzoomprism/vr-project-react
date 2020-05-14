@@ -1,12 +1,34 @@
 import React from "react";
 import SidebarMenu from "../../container/HomeContent/SidebarMenu";
+import style from "./AboutUs.module.css";
+import Footer from "../ShopContent/Footer/Footer";
 
 const Content = (props) => {
    return <div>
        <SidebarMenu/>
        <div className={"content"}>
-           <h1>Caroline</h1>
-       <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid dignissimos ducimus, ea eveniet fugiat laboriosam magnam minima nihil, nisi, pariatur quia reprehenderit ut? Culpa expedita necessitatibus nesciunt vero voluptate.</span><span>Consectetur deleniti dicta dignissimos, doloribus ducimus eligendi enim eos esse harum hic in incidunt ipsa ipsam iusto laborum magni minus pariatur, perspiciatis quas quo ratione sequi sit, sunt totam voluptatibus?</span><span>Ab aspernatur corporis dolorum ea eum impedit incidunt ipsum, libero maiores minima modi officia quae quos, soluta, suscipit velit vitae. Accusantium deserunt distinctio id iusto libero perspiciatis repudiandae rerum sequi!</span><span>Cum cumque ea eaque, eligendi mollitia numquam vitae! Accusamus adipisci animi assumenda beatae consequatur dicta, ducimus eos error facilis illo inventore, itaque maxime minus provident repudiandae ut vel voluptatem voluptates.</span><span>Consequatur enim fugit, inventore nemo numquam officia officiis quo voluptate. Beatae cum cupiditate dicta doloremque, ea eaque expedita iusto laboriosam libero neque nostrum officia possimus quis quos sapiente sed sit.</span></p></div>
+           <div className={style.title}><h1>About Us</h1></div>
+           <div className={style.firstRow}>
+               <div>
+                   <h3>Numbers</h3>
+                   <p><a href="">+375-44-502-502-1</a></p>
+                   <p><a href="">+375-44-502-502-1</a></p>
+                   <p><a href="">+375-44-502-502-1</a></p>
+               </div>
+               <div>
+                   <h3>Other information</h3>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet blanditiis commodi debitis
+                       doloribus ex, hic incidunt ipsum magni natus quae quasi, quis rem suscipit tempore temporibus
+                       totam voluptas voluptatem voluptatum. Autem culpa cum delectus dolore error id iure laudantium, quibusdam quo rerum saepe sapiente
+                       sint soluta. A aliquid autem corporis, dicta doloremque ducimus illo laborum nesciunt porro quasi
+                       quidem, similique.</p>
+               </div>
+           </div>
+           <div>
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1398.0126816157065!2d27.54628360361813!3d53.89322310183472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcfe79c5d5f91%3A0x4a6f20abe71d30b!2z0JPQu9Cw0LLQvdGL0Lkg0JrQvtGA0L_Rg9GBINCR0JPQow!5e0!3m2!1sru!2sby!4v1589438073830!5m2!1sru!2sby" style={{width: "100%", height: "500px", border: "none"}}></iframe>
+           </div>
+           <Footer/>
+       </div>
    </div>
 };
 

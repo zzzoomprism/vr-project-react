@@ -6,6 +6,8 @@ import * as api from "./../../../../info";
 
 
 const ListOfCartItems = (props) => {
+
+    console.log(props.data);
         let [item, setItem] = useState({});
 
         useEffect(()=>{
