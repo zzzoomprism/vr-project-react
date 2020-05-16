@@ -2,8 +2,8 @@ import React from "react";
 import {Box, Image, Text} from "react-aframe-ar";
 
 const VRCart = (props) => {
-    return  <a-circle radius={3} material={"color: white; side: double; emissive: white;"} position={"-6 5 14.9"} segments={128}
-    >
+    return  <a-circle radius={3} material={"color: white; side: double; emissive: white;"} position={props.position} segments={128}
+    rotation={props.rotation}>
         <Image src={"https://image.flaticon.com/icons/svg/1374/1374128.svg"} position={"0 0 -0.01"}
                width={1.5} height={1.5} rotation={"0 180 0"}
                animation__mouseenter="property: components.material.material.color; type: color; to: blue; startEvents: mouseenter; dur: 500"

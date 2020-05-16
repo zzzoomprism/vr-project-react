@@ -37,8 +37,8 @@ class ModalFilter extends React.Component{
                             <p className={style.checkmark}>Table</p>
                         </label>
                         <label className={style.container}>
-                            <input type="checkbox" value={"blocks"} onChange={this.inputChange.bind(this)} checked={ this.state.checkbox.indexOf("blocks") > -1 }/>
-                            <p className={style.checkmark}>Blocks</p>
+                            <input type="checkbox" value={"bed"} onChange={this.inputChange.bind(this)} checked={ this.state.checkbox.indexOf("bed") > -1 }/>
+                            <p className={style.checkmark}>Bed</p>
                         </label>
                     </div>
                 </div>

@@ -2,6 +2,7 @@
   "name": "source",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://zzzoomprism.github.io/vr-project-react",
   "dependencies": {
     "aframe": "^1.0.3",
     "aframe-react": "^4.4.0",

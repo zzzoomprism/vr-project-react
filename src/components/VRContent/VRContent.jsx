@@ -6,13 +6,15 @@ import VRCollection from "./../../container/VRContent/VRCollection";
 import AnimationDesktop from "./../../container/VRContent/AnimationDesktop";
 import sound from "./../../media/betterday.mp3";
 import Cursor from "./../../container/VRContent/Cursor";
+import VRFurniture from "../../container/VRContent/VRFurniture";
 
 const VRContent = (props) => {
         const VRContent = () => (
             <Switch>
                 <Route exact path={'/vr/vr-menu'} component={VRMenu}/>
-                <Route path={'/vr/vr-collection'} component={VRCollection}/>
-                <Route path={'/vr'} component={AnimationDesktop}/>
+                <Route exact path={'/vr/vr-collection'} component={VRCollection}/>
+                <Route exact path={'/vr'} component={AnimationDesktop}/>
+                <Route path={'/vr/vr-collection/:id'} component={VRFurniture} />
             </Switch>
         );
 

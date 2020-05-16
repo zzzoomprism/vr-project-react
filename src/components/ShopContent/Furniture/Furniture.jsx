@@ -55,8 +55,8 @@ class Furniture extends React.Component{
                     <p>{info.description}</p>
                     <table>
                         <tbody>
-                        <tr><td>Type</td><td>corner sofa</td></tr>
-                        <tr><td>For what</td><td>home</td></tr>
+                        <tr><td>Materials</td><td> Polyester, Metal, Wood</td></tr>
+                        <tr><td>Seatback Height</td><td>15"</td></tr>
                         <tr><td>Place count</td><td>3</td></tr>
                         <tr><td>Sleep place</td><td> + </td></tr>
                         <tr><td>Transformation mechanism</td><td>euro book</td></tr>

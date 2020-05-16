@@ -4,10 +4,11 @@ import {Entity, Scene} from "aframe-react";
 import MenuContent from "./../../container/VRContent/MenuContent";
 import {modelLoading} from "./../../info";
 import VRCart from "./components/VRCart";
+import VRCartButton from "./../../container/VRContent/VRCartButton";
 
 const VRMenu = (props) => {
     let [count, setCount] = useState(0);
-    useEffect(()=>setCount(props.products_count));
+    useEffect(()=>setCount(props.products_count),[]);
     let [loaded, setLoaded] = useState(false);
     let [models, setModels] = useState({data: [], loaded: false});
     useEffect(()=>{
@@ -44,28 +45,8 @@ const VRMenu = (props) => {
                       animation__position={"property: position; to: " + el.position_x + " -3.5 " + el.position_z + "; dur: 2000; loop: true; dir: alternate; delay: " + `${Math.random() * 1000 + " ;"}`}
                 />
 
-                <Text value={el.price + "$"} position={el.position_x + " -5 " + el.position_z} rotation={el.text_rotation}
-                      wrap-count={10} negate={"false"} side={"double"} letter-spacing={15}
-                      color={"coral"}>
-                    <a-circle radius={"0.8"} position={"-2 0.3 0"}
-                              material={(props.cartId === el.id) ? "color: coral; side: double; emissive: coral;" : "color: white; side: double; emissive: white;"}>
-                        <Image src={"https://image.flaticon.com/icons/svg/1374/1374128.svg"} position={"0 0 0.01"}
-                               width={0.6} height={0.6}
-                               animation__mouseenter="property: components.material.material.color; type: color; to: blue; startEvents: mouseenter; dur: 500"
-                               events={{
-                                   'mouseenter': () => {
-                                       props.vrCartMouseEnter(el.id);
-                                       props.cursorChange(el, true);
-
-                                   },
-                                   'mouseleave': () => {
-                                       props.vrCartMouseLeave();
-                                       props.cursorChange(false)
-                                   },
-
-                               }}/>
-                    </a-circle>
-                </Text>
+               <VRCartButton price={el.price} position={el.position_x + " -5 " + el.position_z}
+                             rotation={el.text_rotation} obj={el}/>
         </Entity>
         }
     );
@@ -78,7 +59,7 @@ const VRMenu = (props) => {
             {best_products}
 
 
-           <VRCart count={count}/>
+           <VRCart count={count} position={"-6 5 14.9"}/>
             </Box>
         </Fragment>
     );

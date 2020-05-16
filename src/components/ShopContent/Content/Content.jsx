@@ -35,7 +35,7 @@ const Content = (props) => {
                     </p>
                     <div>
                         <CartButton btnId={el.id} item={el} btnStyle={cartBtnStyle.cartButton}/>
-                        <Button icon={"fas fa-vr-cardboard"} btnId={el.id} content={"Look at VR"}/>
+                        <Link to={"/vr/vr-collection/" + el.id}><Button icon={"fas fa-vr-cardboard"} btnId={el.id} content={"Look at VR"}/></Link>
                     </div>
                 </div>
             </div>
